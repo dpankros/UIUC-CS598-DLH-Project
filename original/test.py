@@ -13,10 +13,10 @@ THRESHOLD = 1
 FOLD = 5
 
 
-def test(config, fold=None):
+def test(config: dict[str, str], fold=None):
     data = np.load(config["data_path"], allow_pickle=True)
     ############################################################################
-    x, y_apnea, y_hypopnea = data['x'], data['y_apnea'], data['y_hypopnea']
+    x, y_apnea, y_hypopnea = data["x"], data["y_apnea"], data["y_hypopnea"]
     y = y_apnea + y_hypopnea
     for i in range(FOLD):
         x[i], y[i] = shuffle(x[i], y[i])
@@ -28,16 +28,25 @@ def test(config, fold=None):
     folds = range(FOLD) if fold is None else [fold]
     for fold in folds:
         x_test = x[fold]
+        # NOTE: this config key is not set in both `main_chat.py` and
+        # `main_nch.py`. if it were, the code under this `if` would fail
+        # because there is no `add_noise_to_data` function in this repository.
         if config.get("test_noise_snr"):
             x_test = add_noise_to_data(x_test, config["test_noise_snr"])
 
-        y_test = y[fold]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
+        y_test = y[
+            fold
+        ]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
 
-        model = tf.keras.models.load_model(config["model_path"] + str(fold), compile=False)
+        model = tf.keras.models.load_model(
+            config["model_path"] + str(fold), compile=False
+        )
 
         predict = model.predict(x_test)
         y_score = predict
-        y_predict = np.where(predict > 0.5, 1, 0)# For MultiClass np.argmax(y_score, axis=-1)
+        y_predict = np.where(
+            predict > 0.5, 1, 0
+        )  # For MultiClass np.argmax(y_score, axis=-1)
 
         result.add(y_test, y_predict, y_score)
 
@@ -47,19 +56,15 @@ def test(config, fold=None):
     del data, x_test, y_test, model, predict, y_score, y_predict
 
 
-
-
-
-
 def test_age_seperated(config):
     x = []
     y_apnea = []
     y_hypopnea = []
     for i in range(10):
         data = np.load(config["data_path"] + str(i) + ".npz", allow_pickle=True)
-        x.append(data['x'])
-        y_apnea.append(data['y_apnea'])
-        y_hypopnea.append(data['y_hypopnea'])
+        x.append(data["x"])
+        y_apnea.append(data["y_apnea"])
+        y_hypopnea.append(data["y_hypopnea"])
     ############################################################################
     y = np.array(y_apnea) + np.array(y_hypopnea)
     for i in range(10):
@@ -75,13 +80,17 @@ def test_age_seperated(config):
         if config.get("test_noise_snr"):
             x_test = add_noise_to_data(x_test, config["test_noise_snr"])
 
-        y_test = y[fold]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
+        y_test = y[
+            fold
+        ]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
 
         model = tf.keras.models.load_model(config["model_path"] + str(0), compile=False)
 
         predict = model.predict(x_test)
         y_score = predict
-        y_predict = np.where(predict > 0.5, 1, 0)# For MultiClass np.argmax(y_score, axis=-1)
+        y_predict = np.where(
+            predict > 0.5, 1, 0
+        )  # For MultiClass np.argmax(y_score, axis=-1)
 
         result.add(y_test, y_predict, y_score)
 
