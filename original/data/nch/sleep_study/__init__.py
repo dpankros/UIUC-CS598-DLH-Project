@@ -3,7 +3,7 @@ from . import data
 from . import dataset
 
 
-data_dir = r'D:\nchsdb'
+data_dir = r'/mnt/e/data/physionet.org/files/nch-sleep/3.1.0'
 
 
 def __init__():

@@ -32,7 +32,7 @@ def test(config: dict[str, str], fold=None):
         # `main_nch.py`. if it were, the code under this `if` would fail
         # because there is no `add_noise_to_data` function in this repository.
         if config.get("test_noise_snr"):
-            x_test = add_noise_to_data(x_test, config["test_noise_snr"])
+           x_test = add_noise_to_data(x_test, config["test_noise_snr"])
 
         y_test = y[
             fold

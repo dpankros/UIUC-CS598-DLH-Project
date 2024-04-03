@@ -1,4 +1,6 @@
 import concurrent.futures
+import logging.config
+import os.path
 from datetime import datetime
 import pandas as pd
 import mne
@@ -16,7 +18,8 @@ NUM_WORKER = 8
 SN = 3984  # STUDY NUMBER
 FREQ = 64.0
 CHUNK_DURATION = 30.0
-OUT_FOLDER = 'D:\\nch_30x64'
+# OUT_FOLDER = 'D:\\nch_30x64'
+OUT_FOLDER = '/mnt/e/data/nch_30x64'
 
 # channels = [
 #     "EOG LOC-M2",  # 0
@@ -216,8 +219,10 @@ def preprocess(i, annotation_modifier, out_dir, ahi_dict):
 
 
 if __name__ == "__main__":
-    ahi = pd.read_csv(r"D:\Data\AHI.csv")
-    ahi_dict = dict(zip(ahi.Study, ahi.AHI))
+    ahi = pd.read_csv(r"./AHI.csv")
+    # ahi_dict = dict(zip(ahi.Study, ahi.AHI))
+    ahi_dict = dict(zip(ahi['Study'], ahi['AHI']))
+
     ss.__init__()
 
     if NUM_WORKER < 2:

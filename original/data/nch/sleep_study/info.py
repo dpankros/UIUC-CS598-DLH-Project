@@ -70,23 +70,23 @@ SLEEP_STUDY_NAME = 'SLEEP_STUDY.csv'
 SLEEP_STUDY = SLEEP_STUDY_NAME
 
 HEALTH_DATA_FNS = [DEMOGRAPHIC,
-                   DIAGNOSIS, 
-                   ENCOUNTER, 
-                   MEASUREMENT, 
-                   MEDICATION, 
-                   PROCEDURE_SURG_HX, 
-                   PROCEDURE, 
-                   SLEEP_ENC_ID, 
+                   DIAGNOSIS,
+                   ENCOUNTER,
+                   MEASUREMENT,
+                   MEDICATION,
+                   PROCEDURE_SURG_HX,
+                   PROCEDURE,
+                   SLEEP_ENC_ID,
                    SLEEP_STUDY_NAME]
 INTERVAL = 30 # seconds.
 REFERENCE_FREQ = 128 # Hz. 80% of the studies have sampling frequency of 256 HZ.
 
 def load_health_info(name, convert_datetime=True):
     assert type(name) == str
-        
+
     path = os.path.join(ss.data_dir, 'Health_Data', name)
     df = pd.read_csv(path)
-    
+
     if convert_datetime:
         if name == DEMOGRAPHIC:
             df['BIRTH_DATE'] = pd.to_datetime(df['BIRTH_DATE'], infer_datetime_format=True)

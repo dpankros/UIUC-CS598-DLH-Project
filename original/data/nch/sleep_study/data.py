@@ -33,10 +33,17 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
     path = os.path.join(ss.data_dir, 'Sleep_Data', name + '.edf')
     path = os.path.abspath(path)
     # file_size = os.stat(path).st_size / 1024 / 1024
-
-    raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
+    # print(f"Using study path: {path} preload: {preload} exclude: {exclude} verbose: {verbose}")
+    print(f"Using study path: {path}", os.path.isfile(path))
+    raw = None
+    try:
+        raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
                                 verbose=verbose)
-
+    except Exception as e:
+        # THROWS: No mne.io attribute edf
+        print(e)
+        exit(1)
+    print("Not here")
     patient_id, study_id = name.split('_')
 
     tmp = ss.info.SLEEP_STUDY
@@ -66,38 +73,38 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
 
 def get_sleep_eeg_and_stages(name, channels=ss.info.EEG_CH_NAMES, verbose=False, downsample=True):
     raw = ss.data.load_study(name)
-    
+
     freq = int(raw.info['sfreq']) # 256, 400, 512
     n_samples = raw.n_times
-    
+
     if verbose:
         print('sampling rate:', freq, 'Hz')
         print('channel names:', raw.info['ch_names'])
         print( )
         sleep_stage_stats = ss.data.sleep_stage_stats([study])
         print( )
-    
+
     events, event_id = mne.events_from_annotations(raw, event_id = ss.info.EVENT_DICT, verbose=verbose)
-    
+
     labels = []
     data = []
-    
+
     for event in events:
         label, onset = event[[2, 0]]
-        
+
         # get 30 seconds of data corresponding to the label
         indices = [onset, onset + ss.info.INTERVAL*freq]
-        
+
         if indices[1] <= n_samples:
-            interval_data = raw.get_data(channels, start=indices[0], stop=indices[1]) 
-            data.append(interval_data) 
+            interval_data = raw.get_data(channels, start=indices[0], stop=indices[1])
+            data.append(interval_data)
             labels.append(label)
             # sometimes the last interval seems to go over the length of the data and cause problems.
             # it's probably okay to just skip those for now.
-   
+
     labels = np.array(labels)
     data = np.array(data)
-        
+
     # Downsample to 128Hz
     if downsample:
         if freq % ss.info.REFERENCE_FREQ == 0:
@@ -109,13 +116,13 @@ def get_sleep_eeg_and_stages(name, channels=ss.info.EEG_CH_NAMES, verbose=False,
             new_x = np.linspace(0, ss.info.INTERVAL, num=ss.info.INTERVAL*ss.info.REFERENCE_FREQ)
 
             f = interpolate.interp1d(x, data, kind='linear', axis= -1, assume_sorted=True)
-            data = f(new_x)   
-    
-    # data is (num events) by (num channels) by (30s x ss.info.REFERENCE_FREQ)            
+            data = f(new_x)
+
+    # data is (num events) by (num channels) by (30s x ss.info.REFERENCE_FREQ)
     return np.array(data), labels
 
 def get_demo_wavelet_features(data, n=4, level=2):
-    
+
     def get_stats(x, axis=-1):
         stats = []
         stats.extend(np.expand_dims(np.mean(x, axis), 0))
@@ -123,8 +130,8 @@ def get_demo_wavelet_features(data, n=4, level=2):
         stats.extend(np.expand_dims(np.min(x, axis),0))
         stats.extend(np.expand_dims(np.max(x, axis),0))
 
-        return np.array(stats)   
-    
+        return np.array(stats)
+
     coeffs = pywt.wavedec(data, 'db%d' % n, level=level, axis=-1)
 
     # coeffs is a list of length (level+1)
@@ -133,14 +140,14 @@ def get_demo_wavelet_features(data, n=4, level=2):
 
     for i in range(len(coeffs)):
         stats = get_stats(coeffs[i]) # this has (num stats) by (num events) by (num channels)
-        res.extend(stats)    
+        res.extend(stats)
 
     return np.array(res).transpose((1, 2, 0))
 
 def get_demo_wavelet_features_and_labels(name):
     data, labels = get_sleep_eeg_and_stages(name)
     features = get_demo_wavelet_features(data)
-    
+
     return features, labels
 
 def channel_stats(verbose=True):
@@ -173,7 +180,7 @@ def sleep_stage_stats(studies=[]):
     res = {k.lower(): 0 for k in ss.info.EVENT_DICT}
     if len(studies)<1:
         studies = study_list
-        
+
     for i, study in enumerate(studies):
 
         if (i + 1) % 100 == 0:
