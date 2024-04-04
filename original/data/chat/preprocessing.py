@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from mne import make_fixed_length_events
 
+from data.raw import read_raw_edf
+
 THRESHOLD = 3
 NUM_WORKER = 1
 SN = 3984  # STUDY NUMBER
@@ -90,7 +92,8 @@ def change_duration(df, label_dict=POS_EVENT_DICT, duration=EPOCH_LENGTH):
 
 
 def load_study_chat(edf_path, annotation_path, annotation_func, preload=False, exclude=[], verbose='CRITICAL'):
-    raw = mne.io.edf.edf.RawEDF(input_fname=edf_path, exclude=exclude, preload=preload, verbose=verbose)
+    # raw = mne.io.edf.edf.RawEDF(input_fname=edf_path, exclude=exclude, preload=preload, verbose=verbose)
+    raw = read_raw_edf(edf_path, exclude, preload, verbose)
 
     df = annotation_func(pd.read_csv(annotation_path, sep='\t'))
     annotations = mne.Annotations(df.onset, df.duration, df.description)  # ,orig_time=new_datetime)

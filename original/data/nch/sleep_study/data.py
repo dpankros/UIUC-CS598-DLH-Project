@@ -8,6 +8,7 @@ import pywt
 from scipy import signal, interpolate
 
 import sleep_study as ss
+from data.raw import read_raw_edf
 
 study_list = None # Will be initialized after the module is initialized.
 
@@ -37,8 +38,9 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
     print(f"Using study path: {path}", os.path.isfile(path))
     raw = None
     try:
-        raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
-                                verbose=verbose)
+        # raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
+        #                         verbose=verbose)
+        raw = read_raw_edf(path, exclude, preload, verbose)
     except Exception as e:
         # THROWS: No mne.io attribute edf
         print(e)
