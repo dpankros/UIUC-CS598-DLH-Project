@@ -89,8 +89,13 @@ def _parse_ss_tsv_filename(filename: str) -> tuple[str, str]:
 def _write_tsv(out_filename: str, data: list[tuple[str, str, float]]):
     with open(out_filename, 'w', newline='') as tsvfile:
         writer = csv.writer(tsvfile, delimiter='\t')
+        # in ./preprocessing.py, we need to have at least 'Study'
+        # and 'AHI'. Since they chose PascalCase, I extended that usage
+        # to patient ID.
+        writer.writerow(("PatID", "Study", "AHI"))
         for row in data:
             writer.writerow(row)
+
 
 def calculate_ahi(
     sleep_study_metadata_file: str,
