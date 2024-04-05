@@ -16,12 +16,12 @@ def clean_ch_names(ch_names):
     return [x.upper() for x in ch_names]
 
 def init_study_list():
-    path = os.path.join(ss.data_dir, 'sleep_data')
+    path = os.path.join(ss.data_dir, 'Sleep_Data')
     return [x[:-4] for x in os.listdir(path) if x.endswith('edf')]
 
 def init_age_file():
     new_fn = 'age_file.csv'
-    age_path = os.path.join(ss.data_dir, 'health_data', ss.info.SLEEP_STUDY)
+    age_path = os.path.join(ss.data_dir, 'Health_Data', ss.info.SLEEP_STUDY)
 
     df = pd.read_csv(age_path, sep=',', dtype='str')
     df['FILE_NAME'] = df["STUDY_PAT_ID"].str.cat(df["SLEEP_STUDY_ID"], sep='_')

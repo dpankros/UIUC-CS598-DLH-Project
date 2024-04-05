@@ -106,7 +106,7 @@ def _parse_ss_tsv_filename(filename: str) -> tuple[int, int]:
 
 def _write_tsv(out_filename: str, data: list[tuple[str, str, float]]):
     with open(out_filename, 'w', newline='') as tsvfile:
-        writer = csv.writer(tsvfile, delimiter='\t')
+        writer = csv.writer(tsvfile, delimiter=',')
         # in ./preprocessing.py, we need to have at least 'Study'
         # and 'AHI'. Since they chose PascalCase, I extended that usage
         # to patient ID.
