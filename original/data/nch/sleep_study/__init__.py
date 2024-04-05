@@ -1,9 +1,14 @@
+import os
+
 from . import info
 from . import data
 from . import dataset
 
-
-data_dir = r'/mnt/e/data/physionet.org/files/nch-sleep/3.1.0'
+_data_root = os.getenv(
+    "DLHPROJ_DATA_ROOT",
+    '/mnt/e/data/physionet.org'
+)
+data_dir = f'{_data_root}/files/nch-sleep/3.1.0'
 
 
 def __init__():

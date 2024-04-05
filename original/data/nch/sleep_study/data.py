@@ -8,6 +8,7 @@ import pywt
 from scipy import signal, interpolate
 
 import sleep_study as ss
+from data.raw import read_raw_edf
 
 study_list = None # Will be initialized after the module is initialized.
 
@@ -15,12 +16,12 @@ def clean_ch_names(ch_names):
     return [x.upper() for x in ch_names]
 
 def init_study_list():
-    path = os.path.join(ss.data_dir, 'sleep_data')
+    path = os.path.join(ss.data_dir, 'Sleep_Data')
     return [x[:-4] for x in os.listdir(path) if x.endswith('edf')]
 
 def init_age_file():
     new_fn = 'age_file.csv'
-    age_path = os.path.join(ss.data_dir, 'health_data', ss.info.SLEEP_STUDY)
+    age_path = os.path.join(ss.data_dir, 'Health_Data', ss.info.SLEEP_STUDY)
 
     df = pd.read_csv(age_path, sep=',', dtype='str')
     df['FILE_NAME'] = df["STUDY_PAT_ID"].str.cat(df["SLEEP_STUDY_ID"], sep='_')
@@ -37,8 +38,9 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
     print(f"Using study path: {path}", os.path.isfile(path))
     raw = None
     try:
-        raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
-                                verbose=verbose)
+        # raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
+        #                         verbose=verbose)
+        raw = read_raw_edf(path, exclude, preload, verbose)
     except Exception as e:
         # THROWS: No mne.io attribute edf
         print(e)
