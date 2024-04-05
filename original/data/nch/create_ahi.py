@@ -83,6 +83,7 @@ def _parse_ss_tsv_filename(filename: str) -> tuple[str, str]:
     underscore_spl = filename[:-4].split("_")
     if len(underscore_spl) != 2:
         raise FileNotFoundError(f'malformed filename {filename}')
+    [pat_id, study_id] = underscore_spl
     return (pat_id, study_id)
 
 
