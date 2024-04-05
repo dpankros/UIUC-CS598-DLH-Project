@@ -45,6 +45,7 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
         # THROWS: No mne.io attribute edf
         print(e)
         exit(1)
+        
     patient_id, study_id = name.split('_')
 
     tmp = ss.info.SLEEP_STUDY
@@ -172,8 +173,8 @@ def channel_stats(verbose=True):
                 names[x] = 1
 
     names = {k: v for k, v in sorted(names.items(), key=lambda item: item[1], reverse=True)}
-
     print('\n'.join(('%-20s %4d &  %.2f%%' + os.path.sep) % (k, v, v / len(study_list) * 100) for k, v in names.items()))
+
     return names
 
 

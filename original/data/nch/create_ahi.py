@@ -37,7 +37,6 @@ def _ahi_for_study(
     sleep_study: pd.DataFrame,
     pat_id: int,
     study_id: int,
-
 ) -> float:
     '''
     calculate the apnea-hypopnea index (AHI) for a given sleep study.
@@ -56,7 +55,6 @@ def _ahi_for_study(
         the ID of the patient on whom the given study was done
     study_id:
         the ID of the study
-
     All apnea and hypopnea events will be counted from the sleep_study
     DataFrame, and then divided by the total sleep duration, which
     will be gotten from the sleep_study_metadata DataFrame. The result will
