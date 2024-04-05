@@ -1,32 +1,42 @@
 import sys
 import os
 import os.path
-from .preprocessing import HYPOPNEA_EVENT_DICT, APNEA_EVENT_DICT
+from data.nch.preprocessing import HYPOPNEA_EVENT_DICT, APNEA_EVENT_DICT
 import pandas as pd
-from datetime.datetime import strptime
+from datetime import datetime
 import csv
 
 
 def _num_sleep_hours(
     sleep_study_metadata: pd.DataFrame,
-    pat_id: str,
-    study_id: str,
+    pat_id: int,
+    study_id: int,
 ) -> int:
-    sleep_duration_df = ssl.loc[[
-        ssl["STUDY_PAT_ID"] == pat_id and 
-        ssl["SLEEP_STUDY_ID"] == study_id
-    ]]
-    sleep_duration_datetime = strptime(sleep_duration_df[
-        "SLEEP_STUDY_DURATION_DATETIME"
-    ], "%H:%M:%S")
+    ssm = sleep_study_metadata
+    sleep_duration_df = ssm.loc[
+        (ssm["STUDY_PAT_ID"] == pat_id) & 
+        (ssm["SLEEP_STUDY_ID"] == study_id)
+    ]
+    assert len(sleep_duration_df) == 1, (
+        f'expected just 1 study with patient {pat_id} and study '
+        f'{study_id}, but got {len(sleep_duration_df)} instead'
+    )
+    sleep_duration_datetime = datetime.strptime(
+        str(
+            sleep_duration_df[
+                "SLEEP_STUDY_DURATION_DATETIME"
+            ].iloc[0]
+        ).strip(),
+        "%H:%M:%S"
+    )
     return sleep_duration_datetime.hour
 
 
 def _ahi_for_study(
     sleep_study_metadata: pd.DataFrame,
     sleep_study: pd.DataFrame,
-    pat_id: str,
-    study_id: str,
+    pat_id: int,
+    study_id: int,
     
 ) -> float:
     '''
@@ -56,11 +66,17 @@ def _ahi_for_study(
 
     https://www.sleepfoundation.org/sleep-apnea/ahi
     '''
+
+    # example tsv file:
+    # onset duration description
+    # 29766.7421875	11.0546875	Obstructive Hypopnea
+
     df = sleep_study
     hypopnea_keys = set(HYPOPNEA_EVENT_DICT.keys())
     apnea_keys = set(APNEA_EVENT_DICT.keys())
-    hypopnea_events = df.loc[df.description in hypopnea_keys]
-    apnea_events = df.loc[df.description in apnea_keys]
+
+    hypopnea_events = df.loc[df["description"].isin(hypopnea_keys)]
+    apnea_events = df.loc[df["description"].isin(apnea_keys)]
     total_num_events = len(hypopnea_events) + len(apnea_events)
     sleep_hours = float(_num_sleep_hours(
         sleep_study_metadata,
@@ -70,7 +86,7 @@ def _ahi_for_study(
     return float(total_num_events) / sleep_hours
 
 
-def _parse_ss_tsv_filename(filename: str) -> tuple[str, str]:
+def _parse_ss_tsv_filename(filename: str) -> tuple[int, int]:
     '''
     given a sleep study filename like `10048_24622.tsv`, that represents
     <patient_id>_<sleep_study_id>.tsv, return a 2-tuple containing
@@ -80,11 +96,12 @@ def _parse_ss_tsv_filename(filename: str) -> tuple[str, str]:
         raise FileNotFoundError(
             f"expected {filename} to end with .tsv but it didn't"
         )
-    underscore_spl = filename[:-4].split("_")
+
+    underscore_spl = filename.split("/")[-1][:-4].split("_")
     if len(underscore_spl) != 2:
         raise FileNotFoundError(f'malformed filename {filename}')
     [pat_id, study_id] = underscore_spl
-    return (pat_id, study_id)
+    return (int(pat_id), int(study_id))
 
 
 def _write_tsv(out_filename: str, data: list[tuple[str, str, float]]):
@@ -103,7 +120,10 @@ def calculate_ahi(
     sleep_study_root: str,
     out_file: str,
 ) -> None:
-    metadata_df = pd.read_csv(sleep_study_metadata_file)
+    metadata_df = pd.read_csv(
+        sleep_study_metadata_file,
+        sep=","
+    )
 
     tsv_files = [
         f for f in os.listdir(sleep_study_root)
@@ -112,7 +132,7 @@ def calculate_ahi(
 
     print(
         f"creating AHI from {len(tsv_files)} in {sleep_study_root}, "
-        "outputting to {out_file}"
+        f"outputting to {out_file}"
     )
 
     # each tuple is (patient_id, study_id, AHI)
@@ -120,7 +140,10 @@ def calculate_ahi(
     for tsv_file in tsv_files:
         filename = os.path.join(sleep_study_root, tsv_file)
         pat_id, study_id = _parse_ss_tsv_filename(filename)
-        sleep_study_df = pd.read_csv(filename)
+        sleep_study_df = pd.read_csv(
+            filename,
+            sep="\t",
+        )
         ahi = _ahi_for_study(
             metadata_df,
             sleep_study_df,
@@ -132,20 +155,35 @@ def calculate_ahi(
 
 
 if __name__ == "__main__":
-    # example tsv file:
-    # onset duration description
-    # 29766.7421875	11.0546875	Obstructive Hypopnea
     def usage():
         print(
-            "Usage: python create_ahi.py <sleep study metadata file> "
-            "<nch sleep study root> <output file>"
+            "Usage: python create_ahi.py DATA_ROOT OUT_FILE"
         )
         sys.exit(1)
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 3:
         usage()
         sys.exit(1)
+    
+    [_, data_root, out_file] = sys.argv
+
+    sleep_study_metadata_file = os.path.join(
+        data_root,
+        "files",
+        "nch-sleep",
+        "3.1.0",
+        "Health_Data",
+        "SLEEP_STUDY.csv"
+    )
+    sleep_study_root = os.path.join(
+        data_root,
+        "files",
+        "nch-sleep",
+        "3.1.0",
+        "Sleep_Data"
+    )
+
     calculate_ahi(
-        sleep_study_metadata_file=sys.argv[1],
-        sleep_study_root=sys.argv[2],
-        out_file=sys.argv[3],
+        sleep_study_metadata_file,
+        sleep_study_root,
+        out_file=sys.argv[2],
     )
