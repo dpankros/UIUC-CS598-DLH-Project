@@ -44,7 +44,7 @@ for ch in channel_list:
         chstr += name
         chs = chs + sig_dict[name]
     config = {
-        "data_path": "D:\\Data\\nch_30x64.npz",
+        "data_path": "/mnt/e/data/nch_30x64.npz",
         "model_path": "./weights/semscnn_ecgspo2/f",
         "model_name": "sem-mscnn_" + chstr,
         "regression": False,
