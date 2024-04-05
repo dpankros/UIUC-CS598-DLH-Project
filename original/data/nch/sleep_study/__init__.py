@@ -3,6 +3,7 @@ import os
 from . import info
 from . import data
 from . import dataset
+from . import raw
 
 _data_root = os.getenv(
     "DLHPROJ_DATA_ROOT",
