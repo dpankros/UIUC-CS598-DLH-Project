@@ -131,8 +131,8 @@ def calculate_ahi(
     ]
 
     print(
-        f"creating AHI from {len(tsv_files)} in {sleep_study_root}, "
-        f"outputting to {out_file}"
+        f"creating AHI from {len(tsv_files)} sleep studies in "
+        f"{sleep_study_root} and outputting the AHI results to {out_file}"
     )
 
     # each tuple is (patient_id, study_id, AHI)
@@ -157,7 +157,8 @@ def calculate_ahi(
 if __name__ == "__main__":
     def usage():
         print(
-            "Usage: python create_ahi.py DATA_ROOT OUT_FILE"
+            "Usage: python create_ahi.py DATA_ROOT OUT_FILE\n"
+            "----> Example: python create_ahi.py ~/data '${PWD}/AHI.csv'"
         )
         sys.exit(1)
     if len(sys.argv) != 3:
