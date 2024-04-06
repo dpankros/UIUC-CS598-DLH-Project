@@ -1,7 +1,7 @@
 import sys
 import os
 import os.path
-from data.nch.preprocessing import HYPOPNEA_EVENT_DICT, APNEA_EVENT_DICT
+from preprocessing import HYPOPNEA_EVENT_DICT, APNEA_EVENT_DICT
 import pandas as pd
 from datetime import datetime
 import csv
@@ -14,7 +14,7 @@ def _num_sleep_hours(
 ) -> int:
     ssm = sleep_study_metadata
     sleep_duration_df = ssm.loc[
-        (ssm["STUDY_PAT_ID"] == pat_id) & 
+        (ssm["STUDY_PAT_ID"] == pat_id) &
         (ssm["SLEEP_STUDY_ID"] == study_id)
     ]
     assert len(sleep_duration_df) == 1, (
@@ -37,7 +37,6 @@ def _ahi_for_study(
     sleep_study: pd.DataFrame,
     pat_id: int,
     study_id: int,
-    
 ) -> float:
     '''
     calculate the apnea-hypopnea index (AHI) for a given sleep study.
@@ -56,10 +55,9 @@ def _ahi_for_study(
         the ID of the patient on whom the given study was done
     study_id:
         the ID of the study
-    
     All apnea and hypopnea events will be counted from the sleep_study
-    DataFrame, and then divided by the total sleep duration, which 
-    will be gotten from the sleep_study_metadata DataFrame. The result will 
+    DataFrame, and then divided by the total sleep duration, which
+    will be gotten from the sleep_study_metadata DataFrame. The result will
     be returned as a float
 
     For more on AHI, see the following link:
@@ -164,7 +162,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         usage()
         sys.exit(1)
-    
+
     [_, data_root, out_file] = sys.argv
 
     sleep_study_metadata_file = os.path.join(

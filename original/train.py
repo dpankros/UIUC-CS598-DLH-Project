@@ -19,7 +19,9 @@ def lr_schedule(epoch, lr):
 
 def train(config, fold=None):
     data = np.load(config["data_path"], allow_pickle=True)
+
     x, y_apnea, y_hypopnea = data['x'], data['y_apnea'], data['y_hypopnea']
+    print(x, y_apnea, y_hypopnea)
     y = y_apnea + y_hypopnea
     ########################################################################################
     for i in range(FOLD):

@@ -19,7 +19,13 @@ SN = 3984  # STUDY NUMBER
 FREQ = 64.0
 CHUNK_DURATION = 30.0
 # OUT_FOLDER = 'D:\\nch_30x64'
-OUT_FOLDER = '/mnt/e/data/nch_30x64'
+# OUT_FOLDER = '/mnt/e/data/physionet.org/nch_30x64'
+_data_root = os.getenv(
+    "DLHPROJ_DATA_ROOT",
+    '/mnt/e/data/physionet.org'
+)
+AHI_PATH = os.path.join(_data_root, "AHI.csv")
+OUT_FOLDER = os.path.join(_data_root, "nch_30x64")
 
 # channels = [
 #     "EOG LOC-M2",  # 0
@@ -130,21 +136,34 @@ def change_duration(df, label_dict=POS_EVENT_DICT, duration=CHUNK_DURATION):
 def preprocess(i, annotation_modifier, out_dir, ahi_dict):
     is_apnea_available, is_hypopnea_available = True, True
     study = ss.data.study_list[i]
+
+    # print(f"loading study {study}")
     raw = ss.data.load_study(study, annotation_modifier, verbose=True)
+
     ########################################   CHECK CRITERIA FOR SS   #################################################
     if not all([name in raw.ch_names for name in channels]):
         print("study " + str(study) + " skipped since insufficient channels")
         return 0
 
-    if ahi_dict.get(study, 0) < THRESHOLD:
-        print("study " + str(study) + " skipped since low AHI ---  AHI = " + str(ahi_dict.get(study, 0)))
+    ahi_value = ahi_dict.get(study,None)
+    if ahi_value is None:
+        print(ahi_dict)
+        print("study " + str(study) + " skipped since AHI is MISSING")
+        return 0
+
+    if ahi_value < THRESHOLD:
+        print("study " + str(study) + " skipped since low AHI ---  AHI = " + str(ahi_value))
         return 0
 
     try:
         apnea_events, event_ids = mne.events_from_annotations(raw, event_id=POS_EVENT_DICT, chunk_duration=1.0,
                                                               verbose=None)
+        print('|')
     except ValueError:
         print("No Chunk found!")
+        return 0
+    except Exception as e:
+        print(e)
         return 0
     ########################################   CHECK CRITERIA FOR SS   #################################################
     print(str(i) + "---" + str(datetime.now().time().strftime("%H:%M:%S")) + ' --- Processing %d' % i)
@@ -211,19 +230,24 @@ def preprocess(i, annotation_modifier, out_dir, ahi_dict):
     labels_apnea = list(compress(labels_apnea, labels_wake))
     labels_hypopnea = list(compress(labels_hypopnea, labels_wake))
 
-    np.savez_compressed(
-        out_dir + '\\' + study + "_" + str(total_apnea_event_second) + "_" + str(total_hypopnea_event_second),
-        data=data, labels_apnea=labels_apnea, labels_hypopnea=labels_hypopnea)
+    out_name = study + "_" + str(total_apnea_event_second) + "_" + str(total_hypopnea_event_second)
+    out_path = os.path.join(out_dir, out_name)
+    print(f"Saving {study} to {out_path}.npz")
+    np.savez_compressed(out_path, data=data, labels_apnea=labels_apnea, labels_hypopnea=labels_hypopnea)
 
     return data.shape[0]
 
 
 if __name__ == "__main__":
-    ahi = pd.read_csv(r"./AHI.csv")
+    ahi = pd.read_csv(AHI_PATH)
+    # filename is <patient_id>_<study>
+    filenames = ahi['PatID'].astype(str) + '_' + ahi['Study'].astype(str)
     # ahi_dict = dict(zip(ahi.Study, ahi.AHI))
-    ahi_dict = dict(zip(ahi['Study'], ahi['AHI']))
-
+    ahi_dict = dict(zip(filenames, ahi['AHI']))
     ss.__init__()
+
+    if not os.path.exists(OUT_FOLDER):
+        os.mkdir(OUT_FOLDER)
 
     if NUM_WORKER < 2:
         for idx in range(SN):
