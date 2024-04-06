@@ -2,6 +2,7 @@ import glob
 import os
 import random
 import sys
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -9,6 +10,7 @@ from scipy.signal import resample
 from biosppy.signals.ecg import hamilton_segmenter, correct_rpeaks
 from biosppy.signals import tools as st
 from scipy.interpolate import splev, splrep
+from collate import max_dimensions, pad_lists
 
 # "EOG LOC-M2",  # 0
 # "EOG ROC-M1",  # 1
@@ -72,7 +74,7 @@ def extract_rri(signal, ir, CHUNK_DURATION):
         return np.zeros((FREQ * EPOCH_DURATION)), np.zeros((FREQ * EPOCH_DURATION))
 
 
-def load_data(path):
+def load_data(path) -> tuple[list[Any], list[Any], list[Any]]:
     # demo = pd.read_csv("../misc/result.csv") # TODO
 
     ahi = pd.read_csv(AHI_PATH)
@@ -219,38 +221,22 @@ def list_lengths(lst):
     # Return None or some indication for non-list items, if needed
     return None
 
-def max_dimensions(lst, level=0, max_dims=None):
-    """
-    Finds the maximum dimension for each level of a nested list structure
-    :param lst: The list to pass in
-    :param level: INTERNAL USE ONLY (the dimension we are processing)
-    :param max_dims: INTERNAL USE ONLY (the current array of maximums)
-    :return: a tuple of sizes, similar to torch.Tensor.shape()
-    """
-    if max_dims is None:
-        max_dims = []
-
-    # Extend the max_dims list if this is the deepest level we've encountered so far
-    if level >= len(max_dims):
-        max_dims.append(len(lst))
-    else:
-        max_dims[level] = max(max_dims[level], len(lst))
-
-    for item in lst:
-        if isinstance(item, list):
-            # Recursively process each sublist
-            max_dimensions(item, level + 1, max_dims)
-
-    return tuple(max_dims)
-
 if __name__ == "__main__":
     x, y_apnea, y_hypopnea = load_data(PATH)
     print(f"Saving to {OUT_PATH}")
 
-    # these output the maximum size for dimension.  If we're going to make this a consistent size without truncating,
+    # these output the maximum size for dimension.  
+    # If we're going to make this a consistent size without truncating,
     # this is the size to make it
-    print("X",max_dimensions(x))
-    print("Y_a", max_dimensions(y_apnea))
-    print("Y_h", max_dimensions(y_hypopnea) )
-
-    np.savez_compressed(OUT_PATH, x=x, y_apnea=y_apnea, y_hypopnea=y_hypopnea)
+    print(f"original X.shape:{max_dimensions(x)}")
+    print(f"original Y_a shape: {max_dimensions(y_apnea)}")
+    print(f"original Y_h.shape:{max_dimensions(y_hypopnea)}")
+    x_norm = pad_lists(x, 0)
+    y_apnea_norm = pad_lists(y_apnea, 0)
+    y_hypopnea_norm = pad_lists(y_hypopnea, 0)
+    np.savez_compressed(
+        OUT_PATH,
+        x=x_norm,
+        y_apnea=y_apnea_norm,
+        y_hypopnea=y_hypopnea_norm,
+    )
