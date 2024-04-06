@@ -1,4 +1,5 @@
 import gc
+import os
 
 from test import test
 from train import train
@@ -32,32 +33,39 @@ sig_dict = {"EOG": [0, 1],
             }
 
 channel_list = [
-
     ["ECG", "SPO2"],
-
 ]
 
-for ch in channel_list:
-    chs = []
-    chstr = ""
-    for name in ch:
-        chstr += name
-        chs = chs + sig_dict[name]
-    config = {
-        "data_path": "/mnt/e/data/physionet.org/nch_30x64.npz",
-        "model_path": "./weights/semscnn_ecgspo2/f",
-        "model_name": "sem-mscnn_" + chstr,
-        "regression": False,
+if __name__ == "__main__":
+    data_root = os.getenv(
+        "DLHPROJ_DATA_ROOT",
+        "/mnt/e/data"
+    )
+    model_path = os.getenv(
+        "DLHPROJ_MODEL_PATH",
+        "./weights/semscnn_ecgspo2/f"
+    )
+    for ch in channel_list:
+        chs = []
+        chstr = ""
+        for name in ch:
+            chstr += name
+            chs = chs + sig_dict[name]
+        config = {
+            "data_path": f"{data_root}/physionet.org/nch_30x64.npz",
+            "model_path": f"{model_path}",
+            "model_name": "sem-mscnn_" + chstr,
+            "regression": False,
 
-        "transformer_layers": 5,  # best 5
-        "drop_out_rate": 0.25,  # best 0.25
-        "num_patches": 30,  # best 30 TBD
-        "transformer_units": 32,  # best 32
-        "regularization_weight": 0.001,  # best 0.001
-        "num_heads": 4,
-        "epochs": 100,  # best 200
-        "channels": chs,
-    }
-    train(config, 0)
-    test(config, 0)
-    gc.collect()
+            "transformer_layers": 5,  # best 5
+            "drop_out_rate": 0.25,  # best 0.25
+            "num_patches": 30,  # best 30 TBD
+            "transformer_units": 32,  # best 32
+            "regularization_weight": 0.001,  # best 0.001
+            "num_heads": 4,
+            "epochs": 100,  # best 200
+            "channels": chs,
+        }
+        train(config, 0)
+        test(config, 0)
+        gc.collect()
