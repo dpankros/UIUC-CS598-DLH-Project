@@ -86,6 +86,18 @@ if __name__ == "__main__":
             "epochs": n_epochs,  # best 200
             "channels": chs,
         }
+        print(
+            f"----------\n"
+            f"training channel {chstr}..."
+        )
         train(config=config, fold=0, force_retrain=force_retrain)
+        print(
+            f"\ndone training. beginning testing...\n"
+            f"----------\n"
+        )
         test(config, 0)
+        print(
+            f'done testing\n'
+            '----------'
+        )
         gc.collect()

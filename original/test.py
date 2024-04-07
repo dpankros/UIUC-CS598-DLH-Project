@@ -67,8 +67,19 @@ def test(config: dict[str, str], fold=None):
 
         result.add(y_test, y_predict, y_score)
 
+    print(
+        '\n----------\n'
+        'results:\n'
+    )
     result.print()
-    result.save("./results/" + config["model_name"] + ".txt", config)
+    model_name = config["model_name"]
+    results_file = f'results/{model_name}.txt'
+    print(
+        f'done, saving to {results_file}\n'
+        '----------\n'
+    )
+
+    result.save(path=results_file, config=config)
 
     del data, x_test, y_test, model, predict, y_score, y_predict
 
