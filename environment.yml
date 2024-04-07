@@ -3,13 +3,7 @@
 # ```
 # conda env create -f environment.yml
 # conda activate dlhproj
-# ```
-#
-# then, manually install 2 packages with pip:
-#
-# ```
-# pip install biosppy~=2.1.2 tensorflow-addons
-# ```
+
 name: dlhproj
 
 channels:
@@ -24,15 +18,14 @@ dependencies:
 
   - mne~=1.6.1
   - keras < 2.16
-  - tensorflow~=2.15
+  - tensorflow~=2.15.1
   - scikit-learn~=1.4.1.post1
   - python-dateutil~=2.8.2
+  - pyright
+  - pylint
   # these two packages are not installable with conda, so install with pip
   - pip
   - pip:
     - tensorflow-addons
     - biosppy~=2.1.2
-
-dev-dependencies:
-  - pyright
-  - pylint
+  

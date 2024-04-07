@@ -1,3 +1,7 @@
 log.txt
 AHI.csv
-
+/.envrc
+variables.*
+keras_metadata.pb
+fingerprint.pb
+saved_model.pb
