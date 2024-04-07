@@ -36,6 +36,10 @@ channel_list = [
     ["ECG", "SPO2"],
 ]
 
+def getenv_bool(key_name: str, default: bool) -> bool:
+    ret_str = os.getenv(key_name, str(default))
+    return True if ret_str == "True" else False
+
 if __name__ == "__main__":
     data_root = os.getenv(
         "DLHPROJ_DATA_ROOT",
@@ -49,11 +53,16 @@ if __name__ == "__main__":
         "DLHPROJ_NUM_EPOCHS",
         "100"
     ))
+    force_retrain = getenv_bool(
+        key_name="DLHPROJ_FORCE_RETRAIN",
+        default=True,
+    )
     print(
         f"-----beginning training-----\n"
         f"data_root={data_root}\n"
         f"model_path={model_path}\n"
         f"num_epochs={n_epochs}\n"
+        f"force_retrain={force_retrain}\n"
         "----------"
     )
     for ch in channel_list:
@@ -77,6 +86,6 @@ if __name__ == "__main__":
             "epochs": n_epochs,  # best 200
             "channels": chs,
         }
-        train(config, 0)
+        train(config=config, fold=0, force_retrain=force_retrain)
         test(config, 0)
         gc.collect()

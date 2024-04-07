@@ -1,3 +1,4 @@
+import os
 import keras
 import keras.metrics
 import numpy as np
@@ -19,7 +20,11 @@ def lr_schedule(epoch, lr):
     return lr
 
 
-def train(config, fold: int | None = None):
+def train(
+        config,
+        fold: int | None = None,
+        force_retrain: bool = False
+):
     print(f'training with config {config}, fold={fold}')
 
     data = np.load(config["data_path"], allow_pickle=True)
@@ -78,6 +83,17 @@ def train(config, fold: int | None = None):
     # folds = range(FOLD) if fold is None else range(fold)
     print(f'iterating over {folds} fold(s)')
     for fold in folds:
+        base_model_path = config["model_path"]
+        model_path = f"{base_model_path}/{str(fold)}"
+        if (
+            os.path.exists(model_path) and 
+            not force_retrain
+        ):
+            print(
+                f'Training fold {fold}: force_retrain==False and '
+                f'{model_path} already exists, skipping.'
+            )
+            continue
         x_train = concat_all_folds(orig=x_transform, except_fold=fold)
         y_train = concat_all_folds(orig=y, except_fold=fold)
 
@@ -94,8 +110,6 @@ def train(config, fold: int | None = None):
         model.fit(x=x_train, y=y_train, batch_size=512, epochs=config["epochs"], validation_split=0.1,
                   callbacks=[early_stopper, lr_scheduler])
         ################################################################################################################
-        base_model_path = config["model_path"]
-        model_path = f"{base_model_path}/{str(fold)}"
         print(f"saving model for fold {fold} to {model_path}")
         model.save(model_path)
         keras.backend.clear_session()
