@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from sklearn.utils import shuffle
 import tensorflow as tf
@@ -36,8 +37,16 @@ def test(config: dict[str, str], fold=None):
         x_transform[i] = x[i][:, :, config["channels"]]
     ############################################################################
     result = Result()
-    folds = range(FOLD) if fold is None else [fold]
+    # folds = range(FOLD) if fold is None else [fold]
+    folds = range(max_fold)
     for fold in folds:
+        base_model_path = config["model_path"]
+        model_path = f"{base_model_path}/{str(fold)}"
+        if not os.path.exists(model_path):
+            print(
+                f"WARNING: model path {model_path} does not exist, skipping!"
+            )
+            continue
         x_test = x_transform[fold]
         # NOTE: this config key is not set in both `main_chat.py` and
         # `main_nch.py`. if it were, the code under this `if` would fail
@@ -48,10 +57,7 @@ def test(config: dict[str, str], fold=None):
         y_test = y[
             fold
         ]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
-
-        model = tf.keras.models.load_model(
-            config["model_path"] + str(fold), compile=False
-        )
+        model = tf.keras.models.load_model(model_path, compile=False)
 
         predict = model.predict(x_test)
         y_score = predict

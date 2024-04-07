@@ -52,14 +52,9 @@ def train(config, fold: int | None = None):
             y[i] = np.where(y[i] >= THRESHOLD, 1, 0)
         
         replace = x[i][:, :, chans]
-        print(
-            f'x[{i}].shape = {x[i].shape}, '
-            f'assigning x_transform[{i}] to {replace.shape}'
-        )
         
         x_transform[i] = replace  # CHANNEL SELECTION
 
-    print(f'x_transform.shape={x_transform.shape}')
     ########################################################################################
     #
     # The original code for this is taken from the following link:
@@ -99,7 +94,8 @@ def train(config, fold: int | None = None):
         model.fit(x=x_train, y=y_train, batch_size=512, epochs=config["epochs"], validation_split=0.1,
                   callbacks=[early_stopper, lr_scheduler])
         ################################################################################################################
-        model_path = config["model_path"] = str(fold)
+        base_model_path = config["model_path"]
+        model_path = f"{base_model_path}/{str(fold)}"
         print(f"saving model for fold {fold} to {model_path}")
         model.save(model_path)
         keras.backend.clear_session()

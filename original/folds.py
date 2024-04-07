@@ -15,9 +15,5 @@ def concat_all_folds(orig: npt.NDArray, except_fold: int) -> npt.NDArray:
     for i in range(2, orig.shape[0]):
         if i == except_fold:
             continue
-        print(
-            f"concat_all_folds: concat.shape={concat.shape}, "
-            f"orig[{i}].shape = {orig[i].shape}"
-        )
         concat = np.concatenate((concat, orig[i]))
     return concat
