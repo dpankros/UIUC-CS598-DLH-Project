@@ -7,6 +7,8 @@ from sklearn.utils import shuffle
 import numpy.typing as npt
 
 from models.models import get_model
+from channels import transform_for_channels
+from folds import concat_all_folds
 
 THRESHOLD = 1
 FOLD = 5
@@ -15,18 +17,6 @@ def lr_schedule(epoch, lr):
     if epoch > 50 and (epoch - 1) % 5 == 0:
         lr *= 0.5
     return lr
-
-def _replace_final_dim(orig_x: npt.NDArray, final_dim_size: int) -> npt.NDArray:
-    '''
-    Given an NDArray `orig_x`, return a new NDArray of the same shape,
-    except with final dimension `final_dim_size`.
-    '''
-    orig_x_shape = orig_x.shape
-    x_transform = np.zeros(
-        (*orig_x_shape[:-1], final_dim_size)
-    )
-    assert x_transform.shape[:-1] == orig_x.shape[:-1]
-    return x_transform
 
 
 def train(config, fold: int | None = None):
@@ -41,22 +31,9 @@ def train(config, fold: int | None = None):
     y = y_apnea + y_hypopnea
     ########################################################################################
     # Channel selection
-    # 
-    # x has a shape similar to (NUM_FOLDS, 530, 1920, NUM_CHANNELS).
-    # each fold is thus shape (530, 1920, NUM_CHANNELS), but we're trying
-    # to only extract config["channels"] out into the last dimension.
-    # 
-    # The new x_transform ndarray is the same shape as the original x, except
-    # that its last dimension is the number of channels we're trying to 
-    # extract. Since the channels we want to extract comes from configuration,
-    # we can't guarantee we'll get the same number of channels as the size 
-    # of the final dimension of x, so we have to create a transformed x with
-    # the right size in the final dimension.
-    chans = config['channels']
-    assert (len(x.shape)) == 4
-    x_transform = _replace_final_dim(x, len(chans))
     
-    
+    chans = config["channels"]
+    x_transform = transform_for_channels(x=x, channels=chans)
     print(f'Extracting channels {chans}')
     max_fold = min(FOLD, x_transform.shape[0])
     if max_fold < x_transform.shape[0]:
@@ -82,28 +59,32 @@ def train(config, fold: int | None = None):
         
         x_transform[i] = replace  # CHANNEL SELECTION
 
+    print(f'x_transform.shape={x_transform.shape}')
     ########################################################################################
-    # we want to select either `fold` if it's not none, and otherwise `FOLD`
-    # after we do that selection, take the min of either that or the size
-    # of x_transform's first dimension. we'll end up with a number no more 
-    # than the number of available folds in x_transform.
+    #
+    # The original code for this is taken from the following link:
+    # 
+    # https://github.com/healthylaife/Pediatric-Apnea-Detection/blob/6dc5ec87ef17810c461d4738dd4f46240816999c/train.py#L39-L48
+    # 
+    # I (Aaron) think that in the inner loop, they're just trying to create
+    # one big NDArray with the concatenation of all the folds except for the 
+    # one on which they're currently on in the outer loop.
+    # 
+    # Then, they train on the concatenated array. In other words, the outer
+    # loop behaves similarly to epochs, with a small twist.
+    # 
+    # They used to have the logic to do this inside the outer loop,
+    # but I pulled it out.
+    # 
+    # also note, the folds selection (commented below) didn't work because 
+    # they pass fold=0 into this function, which results in no training 
+    # whatsoever.
+    folds = range(max_fold)
     # folds = range(FOLD) if fold is None else range(fold)
-    num_folds = min(
-        FOLD if fold is None else fold,
-        x_transform.shape[0]
-    )
-    folds = range(num_folds)
+    print(f'iterating over {folds} fold(s)')
     for fold in folds:
-        first = True
-        for i in range(5):
-            if i != fold:
-                if first:
-                    x_train = x_transform[i]
-                    y_train = y[i]
-                    first = False
-                else:
-                    x_train = np.concatenate((x_train, x_transform[i]))
-                    y_train = np.concatenate((y_train, y[i]))
+        x_train = concat_all_folds(orig=x_transform, except_fold=fold)
+        y_train = concat_all_folds(orig=y, except_fold=fold)
 
         model = get_model(config)
         if config["regression"]:
@@ -118,7 +99,9 @@ def train(config, fold: int | None = None):
         model.fit(x=x_train, y=y_train, batch_size=512, epochs=config["epochs"], validation_split=0.1,
                   callbacks=[early_stopper, lr_scheduler])
         ################################################################################################################
-        model.save(config["model_path"] + str(fold))
+        model_path = config["model_path"] = str(fold)
+        print(f"saving model for fold {fold} to {model_path}")
+        model.save(model_path)
         keras.backend.clear_session()
 
 
@@ -152,15 +135,29 @@ def train_age_seperated(config):
     model = get_model(config)
     if config["regression"]:
         model.compile(optimizer="adam", loss=BinaryCrossentropy())
-        early_stopper = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+        early_stopper = EarlyStopping(
+            monitor='val_loss',
+            patience=10,
+            restore_best_weights=True
+        )
 
     else:
         model.compile(optimizer="adam", loss=BinaryCrossentropy(),
                       metrics=[keras.metrics.Precision(), keras.metrics.Recall()])
-        early_stopper = EarlyStopping(monitor='val_loss', patience=10, restore_best_weights=True)
+        early_stopper = EarlyStopping(
+            monitor='val_loss',
+            patience=10,
+            restore_best_weights=True
+        )
     lr_scheduler = LearningRateScheduler(lr_schedule)
-    model.fit(x=x_train, y=y_train, batch_size=512, epochs=config["epochs"], validation_split=0.1,
-              callbacks=[early_stopper, lr_scheduler])
+    model.fit(
+        x=x_train,
+        y=y_train,
+        batch_size=512,
+        epochs=config["epochs"],
+        validation_split=0.1,
+        callbacks=[early_stopper, lr_scheduler]
+    )
     ################################################################################################################
     model.save(config["model_path"] + str(0))
     keras.backend.clear_session()

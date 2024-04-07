@@ -4,6 +4,7 @@ import tensorflow as tf
 from metrics import Result
 from data.noise_util import add_noise_to_data
 
+from channels import transform_for_channels
 
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -17,17 +18,27 @@ def test(config: dict[str, str], fold=None):
     data = np.load(config["data_path"], allow_pickle=True)
     ############################################################################
     x, y_apnea, y_hypopnea = data["x"], data["y_apnea"], data["y_hypopnea"]
+    x_transform = transform_for_channels(x=x, channels=config["channels"])
     y = y_apnea + y_hypopnea
-    for i in range(FOLD):
-        x[i], y[i] = shuffle(x[i], y[i])
+
+    max_fold = min(FOLD, x_transform.shape[0])
+    if max_fold < x_transform.shape[0]:
+        print(
+            f'WARNING: only looking at the first {max_fold} of '
+            f'{x_transform.shape[0]} total folds in X'
+        )
+    
+    # for i in range(FOLD):
+    for i in range(max_fold):
+        x_transform[i], y[i] = shuffle(x_transform[i], y[i])
         x[i] = np.nan_to_num(x[i], nan=-1)
         y[i] = np.where(y[i] >= THRESHOLD, 1, 0)
-        x[i] = x[i][:, :, config["channels"]]
+        x_transform[i] = x[i][:, :, config["channels"]]
     ############################################################################
     result = Result()
     folds = range(FOLD) if fold is None else [fold]
     for fold in folds:
-        x_test = x[fold]
+        x_test = x_transform[fold]
         # NOTE: this config key is not set in both `main_chat.py` and
         # `main_nch.py`. if it were, the code under this `if` would fail
         # because there is no `add_noise_to_data` function in this repository.

@@ -45,6 +45,17 @@ if __name__ == "__main__":
         "DLHPROJ_MODEL_PATH",
         "./weights/semscnn_ecgspo2/f"
     )
+    n_epochs = int(os.getenv(
+        "DLHPROJ_NUM_EPOCHS",
+        "100"
+    ))
+    print(
+        f"-----beginning training-----\n"
+        f"data_root={data_root}\n"
+        f"model_path={model_path}\n"
+        f"num_epochs={n_epochs}\n"
+        "----------"
+    )
     for ch in channel_list:
         chs = []
         chstr = ""
@@ -63,7 +74,7 @@ if __name__ == "__main__":
             "transformer_units": 32,  # best 32
             "regularization_weight": 0.001,  # best 0.001
             "num_heads": 4,
-            "epochs": 100,  # best 200
+            "epochs": n_epochs,  # best 200
             "channels": chs,
         }
         train(config, 0)
