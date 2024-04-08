@@ -67,6 +67,10 @@ class Result:
 
         acc, sn, sp, pr = 1. * (TP + TN) / (TP + TN + FP + FN), 1. * TP / (TP + FN), 1. * TN / (TN + FP), 1. * TP / (
                 TP + FP)
+        acc = 1. * (TP + TN) / (TP + TN + FP + FN)
+        sn = 1. * TP / (TP + FN)
+        sp = 1. * TN / (TN + FP)
+        pr = 1. * TP / (TP + FP) if TP + FP != 0 else 0 # define precision to be zeero if there are NO positive predictions
         f1 = f1_score(y_test, y_predict)
         auc = roc_auc_score(y_test, y_score)
         auprc = average_precision_score(y_test, y_score)

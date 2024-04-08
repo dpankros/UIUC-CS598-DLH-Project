@@ -1,9 +1,13 @@
+import os
+from datetime import datetime
+
 import numpy as np
 from sklearn.utils import shuffle
 import tensorflow as tf
 from metrics import Result
 from data.noise_util import add_noise_to_data
 
+from channels import transform_for_channels
 
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -17,17 +21,35 @@ def test(config: dict[str, str], fold=None):
     data = np.load(config["data_path"], allow_pickle=True)
     ############################################################################
     x, y_apnea, y_hypopnea = data["x"], data["y_apnea"], data["y_hypopnea"]
+    x_transform = transform_for_channels(x=x, channels=config["channels"])
     y = y_apnea + y_hypopnea
-    for i in range(FOLD):
-        x[i], y[i] = shuffle(x[i], y[i])
+
+    max_fold = min(FOLD, x_transform.shape[0])
+    if max_fold < x_transform.shape[0]:
+        print(
+            f'WARNING: only looking at the first {max_fold} of '
+            f'{x_transform.shape[0]} total folds in X'
+        )
+
+    # for i in range(FOLD):
+    for i in range(max_fold):
+        x_transform[i], y[i] = shuffle(x_transform[i], y[i])
         x[i] = np.nan_to_num(x[i], nan=-1)
         y[i] = np.where(y[i] >= THRESHOLD, 1, 0)
-        x[i] = x[i][:, :, config["channels"]]
+        x_transform[i] = x[i][:, :, config["channels"]]
     ############################################################################
     result = Result()
-    folds = range(FOLD) if fold is None else [fold]
+    # folds = range(FOLD) if fold is None else [fold]
+    folds = range(max_fold)
     for fold in folds:
-        x_test = x[fold]
+        base_model_path = config["model_path"]
+        model_path = f"{base_model_path}/{str(fold)}"
+        if not os.path.exists(model_path):
+            print(
+                f"WARNING: model path {model_path} does not exist, skipping!"
+            )
+            continue
+        x_test = x_transform[fold]
         # NOTE: this config key is not set in both `main_chat.py` and
         # `main_nch.py`. if it were, the code under this `if` would fail
         # because there is no `add_noise_to_data` function in this repository.
@@ -37,10 +59,7 @@ def test(config: dict[str, str], fold=None):
         y_test = y[
             fold
         ]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
-
-        model = tf.keras.models.load_model(
-            config["model_path"] + str(fold), compile=False
-        )
+        model = tf.keras.models.load_model(model_path, compile=False)
 
         predict = model.predict(x_test)
         y_score = predict
@@ -50,8 +69,20 @@ def test(config: dict[str, str], fold=None):
 
         result.add(y_test, y_predict, y_score)
 
+    print(
+        '\n----------\n'
+        'results:\n'
+    )
     result.print()
-    result.save("./results/" + config["model_name"] + ".txt", config)
+    model_name = config["model_name"]
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M") # Format the date and time as a string "YYYYMMDD-HH:mm"
+    results_file = os.path.join('results', f"{model_name}-{timestamp}.txt")
+    print(
+        f'done, saving to {results_file}\n'
+        '----------\n'
+    )
+
+    result.save(path=results_file, config=config)
 
     del data, x_test, y_test, model, predict, y_score, y_predict
 

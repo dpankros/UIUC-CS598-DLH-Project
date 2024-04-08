@@ -162,3 +162,7 @@ cython_debug/
 # mne package log file
 /mne_log.txt
 /log.txt
+
+
+age_file.csv
+.ruff_cache

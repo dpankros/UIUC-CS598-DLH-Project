@@ -1,26 +1,18 @@
 #!/bin/bash
 
-DATA_ROOT=${1:-./data}
+DEFAULT_DATA_ROOT="./data"
+DATA_ROOT=${1:-$DEFAULT_DATA_ROOT}
 DATA_ROOT="$(realpath $DATA_ROOT)"
+echo "Using DATA_ROOT='${DATA_ROOT}'"
 
-# These need to be checked.  THey're just placeholders
+# the place where the AHI.csv file will be output
 AHI_FILE_PATH="$DATA_ROOT/physionet.org/AHI.csv"
-PREPROCESS_PATH="$DATA_ROOT/physionet.org/nch_30x64" # contains a buunch of npz files
-TRAINING_DATA_PATH="$DATA_ROOT/physionet.org/nch_30x64.npz" # one combined npz file
+# contains a bunch of npz files
+PREPROCESS_PATH="$DATA_ROOT/physionet.org/nch_30x64"
+# one combined npz file - the output of the data loader/preprocessor
+TRAINING_DATA_PATH="$DATA_ROOT/physionet.org/nch_30x64.npz"
 
 export DLHPROJ_DATA_ROOT="$DATA_ROOT/physionet.org"
-
-if [ ! -f "$AHI_FILE_PATH" ]; then
-  printf '1) Building AHI.csv to %s\n' "$AHI_FILE_PATH"
-   python3 data/nch/create_ahi.py "$DATA_ROOT/physionet.org" "$AHI_FILE_PATH"
-
-  if [ ! -f "$AHI_FILE_PATH" ]; then
-    printf 'Failed\n'
-    exit 1
-  fi
-else
-  printf '1) AHI.csv file found at %s \xE2\x9C\x94\n'  "$AHI_FILE_PATH"
-fi
 
 if [ ! -d  "$PREPROCESS_PATH" ] || [ "$(find "$PREPROCESS_PATH" -mindepth 1 -type f -name "*.npz" -print | wc -c)" == "0" ]; then
   printf '2) Preprocessing into %s\n' "$PREPROCESS_PATH"
