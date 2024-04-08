@@ -35,7 +35,7 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
     path = os.path.abspath(path)
     # file_size = os.stat(path).st_size / 1024 / 1024
     # print(f"Using study path: {path} preload: {preload} exclude: {exclude} verbose: {verbose}")
-    print(f"Using study path: {path}", os.path.isfile(path))
+    # print(f"Using study path: {path}", os.path.isfile(path))
     raw = None
     try:
         # raw = mne.io.edf.edf.RawEDF(input_fname=path, exclude=exclude, preload=preload,
@@ -45,7 +45,7 @@ def load_study(name, annotation_func, preload=False, exclude=[], verbose='CRITIC
         # THROWS: No mne.io attribute edf
         print(e)
         exit(1)
-        
+
     patient_id, study_id = name.split('_')
 
     tmp = ss.info.SLEEP_STUDY

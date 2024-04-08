@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 import numpy as np
 from sklearn.utils import shuffle
 import tensorflow as tf
@@ -28,7 +30,7 @@ def test(config: dict[str, str], fold=None):
             f'WARNING: only looking at the first {max_fold} of '
             f'{x_transform.shape[0]} total folds in X'
         )
-    
+
     # for i in range(FOLD):
     for i in range(max_fold):
         x_transform[i], y[i] = shuffle(x_transform[i], y[i])
@@ -73,7 +75,8 @@ def test(config: dict[str, str], fold=None):
     )
     result.print()
     model_name = config["model_name"]
-    results_file = f'results/{model_name}.txt'
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M") # Format the date and time as a string "YYYYMMDD-HH:mm"
+    results_file = os.path.join('results', f"{model_name}-{timestamp}.txt")
     print(
         f'done, saving to {results_file}\n'
         '----------\n'

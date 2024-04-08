@@ -82,7 +82,7 @@ def load_data(path) -> tuple[list[Any], list[Any], list[Any]]:
     ahi_dict = dict(zip(filename, ahi.AHI))
     root_dir = os.path.expanduser(path)
     file_list = os.listdir(root_dir)
-    length = 4 # len(file_list)
+    length = len(file_list)
 
     # print(f"Using AHI from {AHI_PATH}")
     # print(f"Using npz files from {root_dir}")
@@ -113,7 +113,7 @@ def load_data(path) -> tuple[list[Any], list[Any], list[Any]]:
         ahi_value = ahi_dict.get(filename, None)
         if ahi_value is None:
             print(f"Sleep study {filename} is not found in AHI.csv.  Skipping {file_list[i]}")
-            print(ahi_dict)
+            # print(ahi_dict)
             continue
 
         try:
@@ -223,17 +223,20 @@ def list_lengths(lst):
 
 if __name__ == "__main__":
     x, y_apnea, y_hypopnea = load_data(PATH)
-    print(f"Saving to {OUT_PATH}")
 
-    # these output the maximum size for dimension.  
+    # these output the maximum size for dimension.
     # If we're going to make this a consistent size without truncating,
     # this is the size to make it
-    print(f"original X.shape:{max_dimensions(x)}")
-    print(f"original Y_a shape: {max_dimensions(y_apnea)}")
-    print(f"original Y_h.shape:{max_dimensions(y_hypopnea)}")
+    print(f"Padded X.shape:{max_dimensions(x)}")
     x_norm = pad_lists(x, 0)
+
+    print(f"Padded Y_a shape: {max_dimensions(y_apnea)}")
     y_apnea_norm = pad_lists(y_apnea, 0)
+
+    print(f"Padded Y_h.shape:{max_dimensions(y_hypopnea)}")
     y_hypopnea_norm = pad_lists(y_hypopnea, 0)
+
+    print(f"Saving to {OUT_PATH}")
     np.savez_compressed(
         OUT_PATH,
         x=x_norm,

@@ -72,7 +72,7 @@ if __name__ == "__main__":
             chstr += name
             chs = chs + sig_dict[name]
         config = {
-            "data_path": f"{data_root}/physionet.org/nch_30x64.npz",
+            "data_path": f"{data_root}/nch_30x64.npz",
             "model_path": f"{model_path}",
             "model_name": "sem-mscnn_" + chstr,
             "regression": False,

@@ -1,6 +1,7 @@
 import concurrent.futures
 import logging.config
 import os.path
+import sys
 from datetime import datetime
 import pandas as pd
 import mne
@@ -12,6 +13,10 @@ from mne import make_fixed_length_events
 from scipy.interpolate import splev, splrep
 from itertools import compress
 import sleep_study as ss
+
+# this removes the annoying FutureWarnings.  Remove it if you want to see them
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 THRESHOLD = 3
 NUM_WORKER = 8
@@ -142,25 +147,25 @@ def preprocess(i, annotation_modifier, out_dir, ahi_dict):
 
     ########################################   CHECK CRITERIA FOR SS   #################################################
     if not all([name in raw.ch_names for name in channels]):
-        print("study " + str(study) + " skipped since insufficient channels")
+        print("study " + str(study) + " skipped since insufficient channels", file=sys.stderr)
         return 0
 
     ahi_value = ahi_dict.get(study,None)
     if ahi_value is None:
         print(ahi_dict)
-        print("study " + str(study) + " skipped since AHI is MISSING")
+        print("study " + str(study) + " skipped since AHI is MISSING.  Is AHI.csv out of date?", file=sys.stderr)
         return 0
 
     if ahi_value < THRESHOLD:
-        print("study " + str(study) + " skipped since low AHI ---  AHI = " + str(ahi_value))
+        print("study " + str(study) + " skipped since low AHI ---  AHI = " + str(ahi_value), file=sys.stderr)
         return 0
 
     try:
         apnea_events, event_ids = mne.events_from_annotations(raw, event_id=POS_EVENT_DICT, chunk_duration=1.0,
                                                               verbose=None)
-        print('|')
+        # print('|')
     except ValueError:
-        print("No Chunk found!")
+        print("No Chunk found!", file=sys.stderr)
         return 0
     except Exception as e:
         print(e)
@@ -232,7 +237,7 @@ def preprocess(i, annotation_modifier, out_dir, ahi_dict):
 
     out_name = study + "_" + str(total_apnea_event_second) + "_" + str(total_hypopnea_event_second)
     out_path = os.path.join(out_dir, out_name)
-    print(f"Saving {study} to {out_path}.npz")
+    # print(f"Saving {study} to {out_path}.npz")
     np.savez_compressed(out_path, data=data, labels_apnea=labels_apnea, labels_hypopnea=labels_hypopnea)
 
     return data.shape[0]

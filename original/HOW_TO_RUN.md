@@ -5,7 +5,7 @@
 1. Download data from [physionet.org](https://physionet.org) (or chat)
 1. Run `export DATA_ROOT=<path to your data directory>`
     - Make sure this points to the directory that contains your `physionet.org`
-    - Dave Uses: `/Volumes/project/data/physionet.org/` on Mac and `/mnt/e/data/`physionet.org/` on PC (wsl)
+    - Dave Uses: `/Volumes/project/data/physionet.org/` on Mac and `/mnt/e/data/physionet.org/` on PC (wsl)
     - Aaron Uses: `/root/data` on Ubuntu (DigitalOcean VM)
     - See below for other things you can configure
 1. Run `make dataload` to do the following in order:
