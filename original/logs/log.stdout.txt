@@ -1,0 +1,282 @@
+Using DATA_ROOT=/mnt/e/data
+----------------------------
+ensuring AHI.csv file exists
+----------------------------
+./scripts/ensure_ahi.sh "/mnt/e/data" "/mnt/e/data/physionet.org/AHI.csv"
+1) Building AHI.csv to /mnt/e/data/physionet.org/AHI.csv
+creating AHI from 1020 sleep studies in /mnt/e/data/physionet.org/files/nch-sleep/3.1.0/Sleep_Data and outputting the AHI results to /mnt/e/data/physionet.org/AHI.csv
+--------------------
+starting dataloading
+--------------------
+./scripts/preprocess.sh /mnt/e/data
+Using DATA_ROOT='/mnt/e/data'
+2) Preprocessing into /mnt/e/data/physionet.org/nch_30x64
+1---11:08:45 --- Processing 1
+13---11:08:46 --- Processing 13
+34---11:08:46 --- Processing 34
+46---11:08:48 --- Processing 46
+73---11:08:50 --- Processing 73
+55---11:08:52 --- Processing 55
+5---11:08:52 --- Processing 5
+65---11:08:52 --- Processing 65
+10198_19348    HAMED    214
+10297_14161    HAMED    43
+10156_4342    HAMED    300
+10339_13237    HAMED    68
+10003_26038    HAMED    50
+76---11:09:51 --- Processing 76
+10261_14368    HAMED    224
+10015_10063    HAMED    174
+10054_21487    HAMED    313
+81---11:09:58 --- Processing 81
+94---11:09:59 --- Processing 94
+95---11:10:03 --- Processing 95
+104---11:10:06 --- Processing 104
+117---11:10:10 --- Processing 117
+116---11:10:17 --- Processing 116
+99---11:10:20 --- Processing 99
+10435_20893    HAMED    57
+10372_22270    HAMED    117
+1051_19189    HAMED    35
+10348_2602    HAMED    397
+10462_20605    HAMED    48
+1042_775    HAMED    206
+139---11:11:16 --- Processing 139
+10519_4546    HAMED    167
+142---11:11:18 --- Processing 142
+153---11:11:18 --- Processing 153
+130---11:11:22 --- Processing 130
+10444_22135    HAMED    53
+174---11:11:38 --- Processing 174
+215---11:11:39 --- Processing 215
+175---11:11:52 --- Processing 175
+219---11:11:52 --- Processing 219
+10639_172    HAMED    66
+221---11:12:14 --- Processing 221
+10588_7951    HAMED    143
+10720_20008    HAMED    340
+10822_10051    HAMED    64
+10654_13777    HAMED    248
+11047_20668    HAMED    167
+239---11:12:58 --- Processing 239
+227---11:12:58 --- Processing 227
+1102_10120    HAMED    414
+245---11:13:00 --- Processing 245
+236---11:13:01 --- Processing 236
+10822_18757    HAMED    71
+11050_18700    HAMED    61
+256---11:13:12 --- Processing 256
+253---11:13:13 --- Processing 253
+266---11:13:18 --- Processing 266
+271---11:13:27 --- Processing 271
+11155_19774    HAMED    84
+281---11:14:00 --- Processing 281
+11203_25972    HAMED    193
+11122_17104    HAMED    315
+11257_20695    HAMED    9
+11125_3637    HAMED    346
+301---11:14:25 --- Processing 301
+11179_73    HAMED    437
+11272_1387    HAMED    301
+303---11:14:28 --- Processing 303
+314---11:14:30 --- Processing 314
+321---11:14:36 --- Processing 321
+284---11:14:37 --- Processing 284
+328---11:14:39 --- Processing 328
+11080_2014    HAMED    421
+330---11:14:50 --- Processing 330
+11323_21685    HAMED    104
+356---11:15:16 --- Processing 356
+11407_13894    HAMED    211
+11473_24703    HAMED    53
+358---11:15:29 --- Processing 358
+11419_23392    HAMED    43
+364---11:15:37 --- Processing 364
+11506_781    HAMED    220
+369---11:15:40 --- Processing 369
+1132_21922    HAMED    145
+11545_2296    HAMED    135
+374---11:15:44 --- Processing 374
+11554_25465    HAMED    105
+377---11:15:51 --- Processing 377
+389---11:15:53 --- Processing 389
+402---11:16:02 --- Processing 402
+11692_14989    HAMED    151
+408---11:16:22 --- Processing 408
+11707_12301    HAMED    84
+11779_3028    HAMED    34
+416---11:16:38 --- Processing 416
+11800_17395    HAMED    372
+1174_9394    HAMED    381
+11869_1564    HAMED    93
+442---11:16:50 --- Processing 442
+11734_20725    HAMED    269
+445---11:16:52 --- Processing 445
+11920_24400    HAMED    191
+451---11:17:01 --- Processing 451
+461---11:17:03 --- Processing 461
+463---11:17:04 --- Processing 463
+476---11:17:13 --- Processing 476
+11944_16372    HAMED    238
+11971_7141    HAMED    53
+479---11:17:36 --- Processing 479
+477---11:17:41 --- Processing 477
+12127_10159    HAMED    128
+495---11:18:06 --- Processing 495
+12196_25579    HAMED    161
+12145_24604    HAMED    66
+497---11:18:17 --- Processing 497
+12106_6916    HAMED    364
+12265_21259    HAMED    185
+12187_1396    HAMED    98
+507---11:18:26 --- Processing 507
+508---11:18:31 --- Processing 508
+516---11:18:32 --- Processing 516
+499---11:18:33 --- Processing 499
+12274_6265    HAMED    61
+517---11:18:46 --- Processing 517
+12337_10231    HAMED    70
+12265_25651    HAMED    427
+521---11:19:00 --- Processing 521
+545---11:19:04 --- Processing 545
+12388_23488    HAMED    38
+12349_10291    HAMED    350
+1234_628    HAMED    91
+12448_12664    HAMED    181
+12448_21766    HAMED    343
+12406_13414    HAMED    483
+547---11:19:35 --- Processing 547
+572---11:19:40 --- Processing 572
+578---11:19:40 --- Processing 578
+12589_5620    HAMED    127
+579---11:19:42 --- Processing 579
+558---11:19:42 --- Processing 558
+580---11:19:45 --- Processing 580
+587---11:19:53 --- Processing 587
+12457_5710    HAMED    373
+591---11:20:09 --- Processing 591
+1258_6319    HAMED    7
+12754_22234    HAMED    228
+12724_5827    HAMED    123
+12757_16084    HAMED    143
+12649_7864    HAMED    139
+593---11:20:43 --- Processing 593
+602---11:20:46 --- Processing 602
+614---11:20:51 --- Processing 614
+12763_1645    HAMED    37
+12787_24907    HAMED    94
+621---11:20:54 --- Processing 621
+635---11:20:55 --- Processing 635
+127_19126    HAMED    185
+641---11:21:05 --- Processing 641
+637---11:21:09 --- Processing 637
+652---11:21:10 --- Processing 652
+1285_12286    HAMED    116
+12913_16012    HAMED    33
+13006_5833    HAMED    46
+657---11:21:47 --- Processing 657
+658---11:21:50 --- Processing 658
+12808_17752    HAMED    223
+12937_9853    HAMED    218
+674---11:22:01 --- Processing 674
+676---11:22:03 --- Processing 676
+13009_6550    HAMED    151
+13018_23749    HAMED    140
+682---11:22:09 --- Processing 682
+13054_15526    HAMED    107
+683---11:22:18 --- Processing 683
+697---11:22:19 --- Processing 697
+698---11:22:24 --- Processing 698
+13081_2722    HAMED    227
+13210_5959    HAMED    101
+699---11:22:59 --- Processing 699
+13171_11965    HAMED    228
+13078_17635    HAMED    296
+703---11:23:07 --- Processing 703
+704---11:23:07 --- Processing 704
+13279_20710    HAMED    433
+707---11:23:14 --- Processing 707
+13156_13501    HAMED    105
+13216_24934    HAMED    28
+757---11:23:22 --- Processing 757
+761---11:23:25 --- Processing 761
+759---11:23:28 --- Processing 759
+13285_16159    HAMED    197
+762---11:23:42 --- Processing 762
+13285_5305    HAMED    51
+13336_23956    HAMED    124
+13357_11251    HAMED    184
+13336_3364    HAMED    42
+13591_12106    HAMED    380
+774---11:24:14 --- Processing 774
+775---11:24:15 --- Processing 775
+13576_22957    HAMED    459
+776---11:24:23 --- Processing 776
+809---11:24:24 --- Processing 809
+812---11:24:29 --- Processing 812
+13585_14758    HAMED    116
+769---11:24:32 --- Processing 769
+13591_18007    HAMED    299
+822---11:24:46 --- Processing 822
+841---11:24:54 --- Processing 841
+13636_7507    HAMED    483
+844---11:25:31 --- Processing 844
+13777_9553    HAMED    144
+13636_6034    HAMED    338
+13639_21085    HAMED    135
+13819_23593    HAMED    188
+863---11:25:46 --- Processing 863
+859---11:25:47 --- Processing 859
+1378_24625    HAMED    275
+13615_40    HAMED    111
+870---11:25:52 --- Processing 870
+871---11:25:56 --- Processing 871
+878---11:25:59 --- Processing 878
+908---11:26:05 --- Processing 908
+13903_10225    HAMED    441
+918---11:26:18 --- Processing 918
+13912_18703    HAMED    239
+14011_2746    HAMED    180
+13990_9496    HAMED    270
+935---11:26:48 --- Processing 935
+958---11:26:53 --- Processing 958
+1408_16276    HAMED    9
+977---11:26:55 --- Processing 977
+14038_22186    HAMED    198
+978---11:27:05 --- Processing 978
+14206_25669    HAMED    120
+14251_1897    HAMED    102
+14038_11431    HAMED    249
+984---11:27:09 --- Processing 984
+993---11:27:16 --- Processing 993
+1004---11:27:17 --- Processing 1004
+1003---11:27:17 --- Processing 1003
+14545_17482    HAMED    127
+14548_17881    HAMED    74
+14449_3415    HAMED    162
+1007---11:27:52 --- Processing 1007
+1006---11:27:54 --- Processing 1006
+1011---11:27:58 --- Processing 1011
+14326_18253    HAMED    133
+1468_8299    HAMED    78
+14698_11128    HAMED    103
+14572_23173    HAMED    73
+14626_7642    HAMED    247
+1471_2677    HAMED    54
+14707_3691    HAMED    18
+14707_20176    HAMED    103
+3) Combining dataset. Generating /mnt/e/data/physionet.org/nch_30x64.npz
+No training file was output.  Please check the logs
+-----------------------------------
+dataloading done. starting training
+-----------------------------------
+DLHPROJ_DATA_ROOT="/mnt/e/data" python main_nch.py
+-----beginning training-----
+data_root=/mnt/e/data
+model_path=./weights/semscnn_ecgspo2/f
+num_epochs=200
+force_retrain=True
+----------
+----------
+training channel ECGSPO2...
+training with config {'data_path': '/mnt/e/data/nch_30x64.npz', 'model_path': './weights/semscnn_ecgspo2/f', 'model_name': 'sem-mscnn_ECGSPO2', 'regression': False, 'transformer_layers': 5, 'drop_out_rate': 0.25, 'num_patches': 30, 'transformer_units': 32, 'regularization_weight': 0.001, 'num_heads': 4, 'epochs': 200, 'channels': [11, 12, 9]}, fold=0

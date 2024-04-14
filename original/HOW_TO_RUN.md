@@ -1,6 +1,6 @@
 # How to run this code
 
-(Or How to Hate Yourself in D-Minor)
+The code in the [notebook](../Project.ipynb) should be runnable as-is, but if you plan to make significant modifications to this codebase, you should do so in this directory, then copy your changes into the notebook. Instructions for running the code in here are as follows:
 
 1. Download data from [physionet.org](https://physionet.org) (or chat)
 1. Run `export DATA_ROOT=<path to your data directory>`

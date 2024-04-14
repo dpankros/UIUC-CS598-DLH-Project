@@ -5,5 +5,4 @@ variables.*
 keras_metadata.pb
 fingerprint.pb
 saved_model.pb
-/weights
 /results/sem-mscnn*
