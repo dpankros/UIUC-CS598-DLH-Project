@@ -166,3 +166,8 @@ cython_debug/
 
 age_file.csv
 .ruff_cache
+
+# eval out path
+/results
+
+/.idea

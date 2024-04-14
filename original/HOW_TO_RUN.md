@@ -14,7 +14,7 @@ The code in the [notebook](../Project.ipynb) should be runnable as-is, but if yo
     1. Run `python3 data/nch/preprocessing.py` to compile each sleep study into an `.npz` file
     1. Run `python3 data/nch/dataloader.py` to aggregate the sleep studies into a single `.npz` file.
         - If you want to force this file to be recreated, run `rm $DATA_ROOT/physionet.org/nch_30x64.npz`
-1. Run `python3 main_nch.py` **I hope??**
+1. Run `make train`
 
 ## Other configuration
 
