@@ -1,0 +1,1460 @@
+/bin/bash: /home/dpankros/miniconda3/envs/598dlh/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/bin/bash: /home/dpankros/miniconda3/envs/598dlh/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+study 10000_17728 skipped since low AHI ---  AHI = 0.6666666666666666
+study 10012_22912 skipped since low AHI ---  AHI = 0.0
+study 10006_20647 skipped since insufficient channels
+study 10018_22795 skipped since low AHI ---  AHI = 0.0
+study 10015_14671 skipped since low AHI ---  AHI = 0.9
+study 10009_25600 skipped since insufficient channels
+study 10030_16192 skipped since insufficient channels
+study 10036_20251 skipped since insufficient channels
+study 10033_16222 skipped since insufficient channels
+study 10048_24622 skipped since low AHI ---  AHI = 1.6
+study 10051_25690 skipped since low AHI ---  AHI = 0.1111111111111111
+study 10066_18364 skipped since insufficient channels
+study 10057_15631 skipped since low AHI ---  AHI = 0.1
+study 10069_15268 skipped since low AHI ---  AHI = 1.2222222222222223
+study 1006_22780 skipped since insufficient channels
+study 10072_24649 skipped since low AHI ---  AHI = 0.3333333333333333
+study 10078_7729 skipped since low AHI ---  AHI = 2.888888888888889
+study 10090_5857 skipped since insufficient channels
+study 10090_9685 skipped since low AHI ---  AHI = 0.3
+study 10093_6151 skipped since low AHI ---  AHI = 1.2727272727272727
+study 10096_20284 skipped since insufficient channels
+study 10099_17011 skipped since low AHI ---  AHI = 0.4444444444444444
+study 100_23083 skipped since low AHI ---  AHI = 0.3333333333333333
+study 10114_20053 skipped since insufficient channels
+study 10105_19129 skipped since low AHI ---  AHI = 0.1
+study 10120_9760 skipped since low AHI ---  AHI = 1.4
+study 10123_14797 skipped since insufficient channels
+study 10135_9082 skipped since low AHI ---  AHI = 1.818181818181818
+study 10144_23671 skipped since insufficient channels
+study 10153_25078 skipped since insufficient channels
+study 10153_67 skipped since insufficient channels
+study 10162_1414 skipped since insufficient channels
+study 1015_22468 skipped since low AHI ---  AHI = 0.0
+study 10165_11332 skipped since low AHI ---  AHI = 0.0
+study 10168_17788 skipped since low AHI ---  AHI = 0.2222222222222222
+study 10171_1792 skipped since insufficient channels
+study 10174_346 skipped since low AHI ---  AHI = 2.1
+study 10186_22441 skipped since low AHI ---  AHI = 0.1
+study 1018_8320 skipped since low AHI ---  AHI = 0.1818181818181818
+study 10180_22414 skipped since low AHI ---  AHI = 0.0
+study 10192_3532 skipped since insufficient channels
+study 10195_9385 skipped since insufficient channels
+study 10201_9262 skipped since low AHI ---  AHI = 1.0909090909090908
+study 10204_25699 skipped since low AHI ---  AHI = 0.2222222222222222
+study 10213_1738 skipped since insufficient channels
+study 10222_12718 skipped since low AHI ---  AHI = 0.25
+study 10246_12610 skipped since low AHI ---  AHI = 0.0909090909090909
+study 10252_24970 skipped since low AHI ---  AHI = 0.0909090909090909
+study 10255_9451 skipped since low AHI ---  AHI = 0.1
+study 10258_21364 skipped since insufficient channels
+study 10267_6370 skipped since insufficient channels
+study 10270_2200 skipped since low AHI ---  AHI = 2.4
+study 10276_8998 skipped since insufficient channels
+study 10279_8281 skipped since low AHI ---  AHI = 0.0
+study 10285_16114 skipped since low AHI ---  AHI = 0.75
+study 10288_7846 skipped since low AHI ---  AHI = 0.0
+study 10291_15346 skipped since insufficient channels
+study 10291_18322 skipped since low AHI ---  AHI = 2.333333333333333
+study 10294_16576 skipped since low AHI ---  AHI = 0.0
+study 10297_20458 skipped since low AHI ---  AHI = 0.2727272727272727
+study 10297_7960 skipped since low AHI ---  AHI = 2.0
+study 10312_4849 skipped since low AHI ---  AHI = 0.1
+study 10315_10021 skipped since insufficient channels
+study 10324_19570 skipped since low AHI ---  AHI = 0.0
+study 10333_4372 skipped since insufficient channels
+study 10336_6721 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.2s
+[Parallel(n_jobs=4)]: Done  17 tasks      | elapsed:    0.6s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.5s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    0.7s
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.5s
+[Parallel(n_jobs=4)]: Done 4612 tasks      | elapsed:    3.5s
+[Parallel(n_jobs=4)]: Done 10764 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Done 11572 out of 11572 | elapsed:    4.9s finished
+[Parallel(n_jobs=4)]: Done 940 tasks      | elapsed:    4.3s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 968 tasks      | elapsed:    3.6s
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 5756 tasks      | elapsed:    3.8s
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 12155 out of 12155 | elapsed:    7.4s finished
+[Parallel(n_jobs=4)]: Done 220 tasks      | elapsed:    4.0s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 296 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.0s
+[Parallel(n_jobs=4)]: Done 11616 out of 11616 | elapsed:    9.7s finished
+study 10342_12955 skipped since insufficient channels
+study 10345_25318 skipped since low AHI ---  AHI = 0.3333333333333333
+[Parallel(n_jobs=4)]: Done 14132 out of 14135 | elapsed:    8.4s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 14135 out of 14135 | elapsed:    8.4s finished
+[Parallel(n_jobs=4)]: Done 14308 tasks      | elapsed:    9.2s
+[Parallel(n_jobs=4)]: Done 14968 out of 14971 | elapsed:   10.6s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 14971 out of 14971 | elapsed:   10.6s finished
+[Parallel(n_jobs=4)]: Done 308 tasks      | elapsed:    3.9s
+study 10351_643 skipped since low AHI ---  AHI = 0.3636363636363636
+study 10360_23866 skipped since low AHI ---  AHI = 0.1818181818181818
+study 10369_5884 skipped since insufficient channels
+study 1036_11668 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 12344 tasks      | elapsed:    9.8s
+[Parallel(n_jobs=4)]: Done 12419 out of 12419 | elapsed:    9.9s finished
+[Parallel(n_jobs=4)]: Done 11294 tasks      | elapsed:    9.4s
+study 10381_17647 skipped since low AHI ---  AHI = 1.3636363636363635
+study 10384_18907 skipped since insufficient channels
+study 10390_6274 skipped since low AHI ---  AHI = 1.6666666666666667
+study 10396_11680 skipped since insufficient channels
+study 10399_20446 skipped since low AHI ---  AHI = 0.5
+study 103_12325 skipped since low AHI ---  AHI = 0.0
+study 10402_23326 skipped since low AHI ---  AHI = 0.0
+study 10405_6634 skipped since low AHI ---  AHI = 0.6666666666666666
+study 10414_3181 skipped since low AHI ---  AHI = 0.4
+study 10417_25045 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 12496 out of 12496 | elapsed:   11.1s finished
+study 10426_21286 skipped since insufficient channels
+study 1042_24913 skipped since low AHI ---  AHI = 1.9
+[Parallel(n_jobs=4)]: Done 14976 tasks      | elapsed:   10.0s
+[Parallel(n_jobs=4)]: Done 15917 out of 15917 | elapsed:   10.2s finished
+study 10435_6577 skipped since low AHI ---  AHI = 0.0
+study 10441_12229 skipped since low AHI ---  AHI = 2.2222222222222223
+study 10444_15721 skipped since insufficient channels
+study 10447_13432 skipped since low AHI ---  AHI = 0.625
+study 10450_2512 skipped since insufficient channels
+study 10453_1153 skipped since low AHI ---  AHI = 0.125
+study 1045_4819 skipped since insufficient channels
+study 10465_19255 skipped since insufficient channels
+study 10480_2032 skipped since low AHI ---  AHI = 0.0
+study 10483_8680 skipped since low AHI ---  AHI = 0.0
+study 10486_19483 skipped since low AHI ---  AHI = 1.181818181818182
+study 1048_7114 skipped since low AHI ---  AHI = 0.8181818181818182
+study 10498_13639 skipped since low AHI ---  AHI = 2.0
+study 10498_4996 skipped since insufficient channels
+study 10504_17392 skipped since low AHI ---  AHI = 0.1818181818181818
+study 10513_13801 skipped since insufficient channels
+study 10516_2392 skipped since insufficient channels
+study 10519_20674 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    1.0s
+[Parallel(n_jobs=4)]: Done  16 tasks      | elapsed:    0.7s
+[Parallel(n_jobs=4)]: Done 10972 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 12111 out of 12111 | elapsed:    3.8s finished
+[Parallel(n_jobs=4)]: Done 7176 tasks      | elapsed:    3.6s
+[Parallel(n_jobs=4)]: Done 4612 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 12386 out of 12386 | elapsed:    6.1s finished
+[Parallel(n_jobs=4)]: Done 12617 out of 12617 | elapsed:    6.0s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.3s
+[Parallel(n_jobs=4)]: Done 12572 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 13266 out of 13266 | elapsed:    3.2s finished
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 13376 out of 13376 | elapsed:    3.5s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 10522_13009 skipped since low AHI ---  AHI = 0.0
+study 10525_13915 skipped since low AHI ---  AHI = 0.1818181818181818
+study 10534_3961 skipped since low AHI ---  AHI = 0.3636363636363636
+study 10540_17215 skipped since low AHI ---  AHI = 0.625
+study 10549_8125 skipped since low AHI ---  AHI = 0.2727272727272727
+study 1054_11971 skipped since low AHI ---  AHI = 0.5454545454545454
+study 10552_17644 skipped since insufficient channels
+study 10564_15910 skipped since insufficient channels
+study 10570_22018 skipped since insufficient channels
+study 10579_208 skipped since insufficient channels
+study 1057_9547 skipped since low AHI ---  AHI = 0.8333333333333334
+study 10582_25837 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done 14612 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 15752 out of 15752 | elapsed:    3.0s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+study 10594_9313 skipped since insufficient channels
+study 10597_21898 skipped since low AHI ---  AHI = 0.6
+study 10600_15070 skipped since low AHI ---  AHI = 0.0
+study 10615_8221 skipped since low AHI ---  AHI = 0.0
+study 10603_1015 skipped since low AHI ---  AHI = 1.181818181818182
+study 10624_13717 skipped since low AHI ---  AHI = 0.0
+study 10633_24088 skipped since insufficient channels
+study 10636_16792 skipped since insufficient channels
+study 10648_8752 skipped since insufficient channels
+study 10645_8068 skipped since low AHI ---  AHI = 0.8333333333333334
+study 10657_5980 skipped since insufficient channels
+study 10660_11752 skipped since low AHI ---  AHI = 0.2
+study 10669_25549 skipped since low AHI ---  AHI = 0.0
+study 10675_21523 skipped since low AHI ---  AHI = 0.1
+study 10687_940 skipped since low AHI ---  AHI = 0.0909090909090909
+study 10696_11257 skipped since low AHI ---  AHI = 2.090909090909091
+[Parallel(n_jobs=4)]: Done 14428 tasks      | elapsed:    3.5s
+study 1069_8029 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 14839 out of 14839 | elapsed:    3.8s finished
+study 10702_25252 skipped since low AHI ---  AHI = 0.2
+study 10717_23026 skipped since low AHI ---  AHI = 0.7777777777777778
+study 10720_18445 skipped since low AHI ---  AHI = 1.818181818181818
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 10726_12454 skipped since low AHI ---  AHI = 1.0
+study 10729_21295 skipped since low AHI ---  AHI = 0.0
+study 1072_12373 skipped since insufficient channels
+study 10732_24130 skipped since low AHI ---  AHI = 0.0
+study 10738_20242 skipped since low AHI ---  AHI = 1.8888888888888888
+study 10744_21664 skipped since insufficient channels
+study 10747_21667 skipped since low AHI ---  AHI = 0.3636363636363636
+study 10750_20494 skipped since low AHI ---  AHI = 0.2
+study 10756_14332 skipped since low AHI ---  AHI = 0.0
+study 10759_11347 skipped since insufficient channels
+study 1075_5416 skipped since low AHI ---  AHI = 0.0
+study 10762_2980 skipped since low AHI ---  AHI = 0.1818181818181818
+study 10768_298 skipped since low AHI ---  AHI = 0.1111111111111111
+study 10774_17320 skipped since insufficient channels
+study 10780_19411 skipped since low AHI ---  AHI = 0.2
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.7s
+study 10786_2962 skipped since insufficient channels
+study 10792_23524 skipped since low AHI ---  AHI = 0.7272727272727273
+study 10798_556 skipped since low AHI ---  AHI = 1.3333333333333333
+study 10813_15271 skipped since low AHI ---  AHI = 0.3333333333333333
+study 10819_25945 skipped since low AHI ---  AHI = 0.1111111111111111
+[Parallel(n_jobs=4)]: Done 14817 out of 14817 | elapsed:    5.5s finished
+study 10834_9601 skipped since low AHI ---  AHI = 0.0
+study 10837_13219 skipped since low AHI ---  AHI = 1.2
+study 10849_5860 skipped since insufficient channels
+study 1084_17239 skipped since low AHI ---  AHI = 0.1
+study 10855_25105 skipped since low AHI ---  AHI = 0.2
+study 10858_17251 skipped since insufficient channels
+study 10864_18538 skipped since low AHI ---  AHI = 1.25
+study 10867_19945 skipped since insufficient channels
+study 10873_9136 skipped since insufficient channels
+study 10876_21967 skipped since insufficient channels
+study 10879_13192 skipped since low AHI ---  AHI = 1.181818181818182
+study 1087_6460 skipped since low AHI ---  AHI = 0.4545454545454545
+study 10885_9073 skipped since insufficient channels
+study 10888_26008 skipped since low AHI ---  AHI = 0.0
+study 10891_9559 skipped since low AHI ---  AHI = 2.090909090909091
+study 10903_14986 skipped since insufficient channels
+study 10909_1378 skipped since insufficient channels
+study 10924_2065 skipped since insufficient channels
+study 10936_1957 skipped since low AHI ---  AHI = 0.6363636363636364
+study 10939_7078 skipped since insufficient channels
+study 1093_1408 skipped since low AHI ---  AHI = 0.2727272727272727
+study 10948_1297 skipped since insufficient channels
+study 10951_6178 skipped since low AHI ---  AHI = 0.5454545454545454
+study 10963_14464 skipped since insufficient channels
+study 1096_18565 skipped since insufficient channels
+study 10975_5821 skipped since low AHI ---  AHI = 0.6363636363636364
+study 10978_6367 skipped since low AHI ---  AHI = 0.0
+study 10981_22453 skipped since insufficient channels
+study 10987_22303 skipped since low AHI ---  AHI = 0.5
+study 10996_10132 skipped since low AHI ---  AHI = 0.3333333333333333
+study 10999_23203 skipped since insufficient channels
+study 1099_20092 skipped since low AHI ---  AHI = 0.2222222222222222
+study 10_22339 skipped since low AHI ---  AHI = 2.4545454545454546
+study 11002_22960 skipped since low AHI ---  AHI = 0.2222222222222222
+study 11005_23680 skipped since low AHI ---  AHI = 0.0
+study 11011_4774 skipped since low AHI ---  AHI = 0.3
+study 11017_21778 skipped since insufficient channels
+study 11020_4750 skipped since insufficient channels
+study 11023_538 skipped since low AHI ---  AHI = 0.0
+study 11032_760 skipped since low AHI ---  AHI = 0.2
+study 11038_3319 skipped since low AHI ---  AHI = 2.8181818181818183
+study 11041_18442 skipped since low AHI ---  AHI = 2.2222222222222223
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.1s
+[Parallel(n_jobs=4)]: Done 11869 out of 11869 | elapsed:    3.6s finished
+study 11050_13084 skipped since low AHI ---  AHI = 2.2
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  36 tasks      | elapsed:    0.7s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 5164 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.0s
+[Parallel(n_jobs=4)]: Done 12331 out of 12331 | elapsed:    5.9s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 14718 out of 14718 | elapsed:    6.3s finished
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 6188 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 12496 out of 12496 | elapsed:    5.0s finished
+[Parallel(n_jobs=4)]: Done 2108 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 14256 out of 14256 | elapsed:    5.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10924 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=4)]: Done 11979 out of 11979 | elapsed:    2.1s finished
+study 1105_6529 skipped since insufficient channels
+study 11065_9355 skipped since low AHI ---  AHI = 0.3
+study 11068_17590 skipped since low AHI ---  AHI = 0.3333333333333333
+study 11071_12112 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11074_18238 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 11083_21130 skipped since low AHI ---  AHI = 0.9090909090909092
+study 11086_3460 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.8s
+study 11089_15991 skipped since low AHI ---  AHI = 0.0909090909090909
+study 1108_21616 skipped since low AHI ---  AHI = 2.7
+[Parallel(n_jobs=4)]: Done 14588 tasks      | elapsed:    3.0s
+study 11092_10465 skipped since insufficient channels
+study 11101_23188 skipped since insufficient channels
+study 11119_4711 skipped since insufficient channels
+study 1111_8218 skipped since insufficient channels
+study 11122_4258 skipped since low AHI ---  AHI = 0.0
+study 11122_7639 skipped since low AHI ---  AHI = 0.1
+[Parallel(n_jobs=4)]: Done 15642 out of 15642 | elapsed:    4.3s finished
+study 11137_22315 skipped since insufficient channels
+study 11146_11692 skipped since insufficient channels
+study 11146_21466 skipped since low AHI ---  AHI = 0.7
+study 1114_8143 skipped since low AHI ---  AHI = 0.3333333333333333
+study 11149_10651 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11158_7645 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11161_10387 skipped since low AHI ---  AHI = 1.9090909090909087
+study 11164_15403 skipped since low AHI ---  AHI = 0.3333333333333333
+study 11167_148 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 7188 tasks      | elapsed:    4.6s
+study 11173_24457 skipped since insufficient channels
+study 11176_12640 skipped since low AHI ---  AHI = 0.4166666666666667
+study 11179_14542 skipped since low AHI ---  AHI = 2.333333333333333
+[Parallel(n_jobs=4)]: Done 12771 out of 12771 | elapsed:    7.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    4.4s
+study 11185_4060 skipped since low AHI ---  AHI = 2.909090909090909
+study 11200_25552 skipped since low AHI ---  AHI = 1.6666666666666667
+[Parallel(n_jobs=4)]: Done 14773 out of 14773 | elapsed:    6.4s finished
+study 1120_17071 skipped since low AHI ---  AHI = 0.6
+study 11212_4831 skipped since low AHI ---  AHI = 0.1
+study 11215_8071 skipped since low AHI ---  AHI = 0.1111111111111111
+study 11221_4936 skipped since insufficient channels
+study 11224_17938 skipped since low AHI ---  AHI = 2.333333333333333
+study 11227_17311 skipped since low AHI ---  AHI = 0.0
+study 11239_4462 skipped since low AHI ---  AHI = 1.7
+study 11242_18661 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11251_19318 skipped since insufficient channels
+study 11257_21238 skipped since low AHI ---  AHI = 0.0
+study 11260_18094 skipped since low AHI ---  AHI = 0.5555555555555556
+study 11269_8845 skipped since low AHI ---  AHI = 0.1
+study 1126_19726 skipped since low AHI ---  AHI = 0.3
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10748 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 11528 out of 11528 | elapsed:    2.8s finished
+study 11272_8230 skipped since insufficient channels
+study 11275_8590 skipped since insufficient channels
+study 11278_1141 skipped since low AHI ---  AHI = 0.1111111111111111
+study 11287_9151 skipped since low AHI ---  AHI = 0.6666666666666666
+study 11299_18781 skipped since low AHI ---  AHI = 0.75
+study 1129_11833 skipped since low AHI ---  AHI = 0.5555555555555556
+study 11302_6445 skipped since low AHI ---  AHI = 0.5
+study 11308_7054 skipped since low AHI ---  AHI = 0.0
+study 11311_17761 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10716 tasks      | elapsed:    2.4s
+[Parallel(n_jobs=4)]: Done 11473 out of 11473 | elapsed:    2.5s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.0s
+[Parallel(n_jobs=4)]: Done 12356 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 12562 out of 12562 | elapsed:    3.4s finished
+[Parallel(n_jobs=4)]: Done 10268 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 13398 out of 13398 | elapsed:    3.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14524 tasks      | elapsed:    2.7s
+study 11329_19021 skipped since low AHI ---  AHI = 1.3
+[Parallel(n_jobs=4)]: Done 15323 out of 15323 | elapsed:    2.9s finished
+study 11329_6463 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.6s
+study 1132_9607 skipped since insufficient channels
+study 11335_19873 skipped since insufficient channels
+study 11338_3454 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11341_10369 skipped since low AHI ---  AHI = 0.6666666666666666
+study 11344_12463 skipped since insufficient channels
+study 11356_22288 skipped since insufficient channels
+study 11359_14803 skipped since low AHI ---  AHI = 0.3
+study 11362_10972 skipped since low AHI ---  AHI = 0.3
+study 11365_24661 skipped since insufficient channels
+study 11365_26188 skipped since low AHI ---  AHI = 0.1111111111111111
+[Parallel(n_jobs=4)]: Done 12320 tasks      | elapsed:    2.6s
+study 11386_15310 skipped since low AHI ---  AHI = 2.6666666666666665
+study 11389_4009 skipped since low AHI ---  AHI = 1.3333333333333333
+study 11395_14065 skipped since low AHI ---  AHI = 1.0
+study 11398_21148 skipped since low AHI ---  AHI = 0.0
+study 11401_1462 skipped since insufficient channels
+study 11404_7663 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 12430 out of 12430 | elapsed:    4.3s finished
+[Parallel(n_jobs=4)]: Done 10748 tasks      | elapsed:    4.2s
+[Parallel(n_jobs=4)]: Done 13431 out of 13431 | elapsed:    4.8s finished
+study 11413_4114 skipped since low AHI ---  AHI = 0.1
+study 11425_22981 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11431_6952 skipped since insufficient channels
+study 11434_17365 skipped since low AHI ---  AHI = 0.4444444444444444
+study 11437_18520 skipped since insufficient channels
+study 11443_1294 skipped since low AHI ---  AHI = 0.4545454545454545
+study 11449_5002 skipped since low AHI ---  AHI = 0.0
+study 1144_8992 skipped since insufficient channels
+study 11458_5281 skipped since low AHI ---  AHI = 0.125
+study 11464_13273 skipped since insufficient channels
+study 11467_19891 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 11476_21619 skipped since insufficient channels
+study 11485_20608 skipped since insufficient channels
+study 11491_8839 skipped since low AHI ---  AHI = 0.5
+study 11497_14551 skipped since low AHI ---  AHI = 1.3
+study 11497_7156 skipped since insufficient channels
+study 11500_6061 skipped since low AHI ---  AHI = 0.2727272727272727
+[Parallel(n_jobs=4)]: Done 5628 tasks      | elapsed:    2.9s
+study 11521_25297 skipped since insufficient channels
+study 11527_7306 skipped since insufficient channels
+study 11530_23344 skipped since insufficient channels
+study 11536_25804 skipped since low AHI ---  AHI = 0.0
+study 11539_11230 skipped since insufficient channels
+study 1153_15001 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 15594 tasks      | elapsed:    6.9s
+[Parallel(n_jobs=4)]: Done 15650 out of 15653 | elapsed:    6.9s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 15653 out of 15653 | elapsed:    6.9s finished
+study 11545_6472 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14492 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 15169 out of 15169 | elapsed:    3.6s finished
+study 11554_9718 skipped since insufficient channels
+study 11557_10996 skipped since insufficient channels
+study 11566_17863 skipped since low AHI ---  AHI = 0.6363636363636364
+study 11572_26017 skipped since insufficient channels
+study 11575_3391 skipped since low AHI ---  AHI = 0.1111111111111111
+study 11581_10960 skipped since insufficient channels
+study 11584_11191 skipped since insufficient channels
+study 11590_19498 skipped since insufficient channels
+study 11599_9121 skipped since insufficient channels
+study 115_22774 skipped since low AHI ---  AHI = 0.4
+study 11608_22936 skipped since low AHI ---  AHI = 0.2727272727272727
+study 11617_17509 skipped since low AHI ---  AHI = 2.0
+study 11620_20497 skipped since low AHI ---  AHI = 0.6666666666666666
+study 11638_11758 skipped since insufficient channels
+study 11641_8302 skipped since low AHI ---  AHI = 0.5555555555555556
+study 11647_16903 skipped since insufficient channels
+study 11650_24580 skipped since insufficient channels
+study 11656_7909 skipped since insufficient channels
+study 1165_11650 skipped since insufficient channels
+study 11665_889 skipped since insufficient channels
+study 11668_8965 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11677_24976 skipped since low AHI ---  AHI = 0.4
+study 11680_22999 skipped since low AHI ---  AHI = 0.2
+study 11686_6364 skipped since low AHI ---  AHI = 0.1111111111111111
+study 11689_3517 skipped since low AHI ---  AHI = 1.181818181818182
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10924 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 11957 out of 11957 | elapsed:    2.9s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12488 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 12980 out of 12980 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14364 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 14528 out of 14531 | elapsed:    2.8s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 14531 out of 14531 | elapsed:    2.8s finished
+study 11698_24613 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 11847 out of 11847 | elapsed:    3.0s finished
+study 11710_23167 skipped since low AHI ---  AHI = 0.6
+study 11713_25735 skipped since insufficient channels
+study 11719_24826 skipped since low AHI ---  AHI = 0.0
+study 1171_26053 skipped since low AHI ---  AHI = 0.3333333333333333
+study 11731_5977 skipped since low AHI ---  AHI = 0.2222222222222222
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.5s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.0s
+study 11737_3196 skipped since low AHI ---  AHI = 1.5555555555555556
+study 11740_16270 skipped since low AHI ---  AHI = 0.0
+study 11743_16615 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 3324 tasks      | elapsed:    3.2s
+study 1174_24529 skipped since low AHI ---  AHI = 2.888888888888889
+[Parallel(n_jobs=4)]: Done 13244 out of 13244 | elapsed:    5.5s finished
+[Parallel(n_jobs=4)]: Done 11539 out of 11539 | elapsed:    5.2s finished
+study 11752_12280 skipped since insufficient channels
+study 11758_3706 skipped since low AHI ---  AHI = 1.6363636363636365
+study 11764_13768 skipped since low AHI ---  AHI = 1.8888888888888888
+study 11776_20077 skipped since low AHI ---  AHI = 2.125
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 15950 out of 15950 | elapsed:    4.1s finished
+study 1177_6892 skipped since insufficient channels
+study 11788_14386 skipped since insufficient channels
+study 11809_358 skipped since low AHI ---  AHI = 1.625
+study 1180_11506 skipped since low AHI ---  AHI = 0.8
+study 11824_4612 skipped since low AHI ---  AHI = 0.0
+study 11830_6568 skipped since low AHI ---  AHI = 2.3
+study 11842_3862 skipped since low AHI ---  AHI = 0.0
+study 11845_3385 skipped since insufficient channels
+study 11848_21997 skipped since insufficient channels
+study 11854_31 skipped since low AHI ---  AHI = 0.3636363636363636
+study 11857_10417 skipped since insufficient channels
+study 11860_21208 skipped since low AHI ---  AHI = 1.5454545454545454
+study 11863_5341 skipped since low AHI ---  AHI = 0.75
+study 11875_15148 skipped since low AHI ---  AHI = 1.0
+study 11884_23272 skipped since insufficient channels
+study 11890_5023 skipped since insufficient channels
+study 11893_2665 skipped since low AHI ---  AHI = 0.5555555555555556
+study 11896_2857 skipped since low AHI ---  AHI = 0.0
+study 11899_13159 skipped since low AHI ---  AHI = 0.1
+study 1189_6484 skipped since low AHI ---  AHI = 0.5555555555555556
+study 11902_21001 skipped since low AHI ---  AHI = 1.0
+study 11902_21625 skipped since insufficient channels
+study 11905_22840 skipped since low AHI ---  AHI = 0.2222222222222222
+study 11908_7534 skipped since low AHI ---  AHI = 0.0
+study 11914_24283 skipped since low AHI ---  AHI = 0.0909090909090909
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12668 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 13596 out of 13596 | elapsed:    3.2s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 11923_11980 skipped since low AHI ---  AHI = 1.4545454545454546
+study 11929_13150 skipped since insufficient channels
+study 11935_22480 skipped since insufficient channels
+study 11938_10627 skipped since insufficient channels
+study 11941_6817 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 14380 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 14597 out of 14597 | elapsed:    3.4s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12716 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 13761 out of 13761 | elapsed:    2.8s finished
+study 11953_13003 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 11956_10246 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 11959_9301 skipped since insufficient channels
+study 1195_193 skipped since low AHI ---  AHI = 0.8181818181818182
+study 11962_16987 skipped since low AHI ---  AHI = 0.1818181818181818
+study 11965_20797 skipped since low AHI ---  AHI = 0.0909090909090909
+study 11971_26134 skipped since low AHI ---  AHI = 2.5
+[Parallel(n_jobs=4)]: Done 10252 out of 10252 | elapsed:    2.3s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12512 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 13068 out of 13068 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12608 tasks      | elapsed:    2.4s
+[Parallel(n_jobs=4)]: Done 13365 out of 13365 | elapsed:    2.6s finished
+study 11977_17332 skipped since low AHI ---  AHI = 0.7777777777777778
+study 11980_6088 skipped since low AHI ---  AHI = 1.0
+study 11983_12880 skipped since insufficient channels
+study 11989_25312 skipped since low AHI ---  AHI = 0.7
+study 11989_6601 skipped since low AHI ---  AHI = 0.3636363636363636
+study 1198_25633 skipped since insufficient channels
+study 11992_22183 skipped since low AHI ---  AHI = 2.25
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 11995_12805 skipped since low AHI ---  AHI = 0.5833333333333334
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 11998_5512 skipped since insufficient channels
+study 12001_10555 skipped since insufficient channels
+study 12010_20782 skipped since low AHI ---  AHI = 0.1818181818181818
+study 12013_22681 skipped since low AHI ---  AHI = 0.0909090909090909
+study 1201_25273 skipped since low AHI ---  AHI = 0.7777777777777778
+study 12031_20302 skipped since insufficient channels
+study 12037_10333 skipped since low AHI ---  AHI = 0.375
+study 12043_12496 skipped since low AHI ---  AHI = 1.6
+study 12046_24427 skipped since low AHI ---  AHI = 0.0
+study 12049_23485 skipped since low AHI ---  AHI = 0.1
+study 12055_4732 skipped since insufficient channels
+study 12079_919 skipped since low AHI ---  AHI = 1.4
+study 12058_5692 skipped since low AHI ---  AHI = 0.6
+study 1207_6835 skipped since insufficient channels
+study 12082_21730 skipped since insufficient channels
+study 12097_4072 skipped since insufficient channels
+study 12100_16624 skipped since insufficient channels
+study 12115_22927 skipped since insufficient channels
+study 12121_14677 skipped since low AHI ---  AHI = 0.1111111111111111
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 14564 out of 14564 | elapsed:    4.6s finished
+study 12127_19321 skipped since insufficient channels
+study 12130_2002 skipped since insufficient channels
+study 12139_23635 skipped since insufficient channels
+study 1213_24832 skipped since insufficient channels
+study 12142_9334 skipped since low AHI ---  AHI = 1.1
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 13959 out of 13959 | elapsed:    4.0s finished
+study 12145_24847 skipped since low AHI ---  AHI = 0.7
+study 12148_9634 skipped since low AHI ---  AHI = 2.555555555555556
+study 12154_1339 skipped since insufficient channels
+study 12157_2935 skipped since low AHI ---  AHI = 0.7
+study 12160_4150 skipped since low AHI ---  AHI = 2.2222222222222223
+study 1216_23932 skipped since low AHI ---  AHI = 0.7272727272727273
+study 12172_26158 skipped since insufficient channels
+study 12178_10660 skipped since insufficient channels
+study 12181_25429 skipped since low AHI ---  AHI = 0.2222222222222222
+study 12187_6781 skipped since insufficient channels
+study 121_23845 skipped since insufficient channels
+study 12202_7006 skipped since low AHI ---  AHI = 0.3333333333333333
+study 12205_7993 skipped since insufficient channels
+study 12217_10615 skipped since insufficient channels
+study 12220_12619 skipped since low AHI ---  AHI = 1.3636363636363635
+study 12226_22747 skipped since low AHI ---  AHI = 0.3
+study 12229_1177 skipped since insufficient channels
+study 12238_8455 skipped since low AHI ---  AHI = 0.5454545454545454
+study 12244_4978 skipped since low AHI ---  AHI = 0.2222222222222222
+study 12253_18727 skipped since insufficient channels
+study 12259_3964 skipped since insufficient channels
+study 12259_7213 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.8s
+[Parallel(n_jobs=4)]: Done 14707 out of 14707 | elapsed:    4.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12320 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 12430 out of 12430 | elapsed:    2.7s finished
+study 12271_2752 skipped since low AHI ---  AHI = 0.6363636363636364
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12380 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 12617 out of 12617 | elapsed:    3.0s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 12280_24994 skipped since low AHI ---  AHI = 1.8
+study 12286_16975 skipped since low AHI ---  AHI = 0.3
+study 12292_12685 skipped since insufficient channels
+study 12295_13402 skipped since low AHI ---  AHI = 2.625
+study 12295_17314 skipped since insufficient channels
+study 12298_3895 skipped since low AHI ---  AHI = 0.1
+study 12304_4792 skipped since low AHI ---  AHI = 0.4444444444444444
+study 12307_19969 skipped since low AHI ---  AHI = 0.3
+study 12310_12469 skipped since low AHI ---  AHI = 0.0
+study 12316_8932 skipped since low AHI ---  AHI = 1.0
+study 1231_892 skipped since low AHI ---  AHI = 0.5555555555555556
+study 12322_15499 skipped since low AHI ---  AHI = 0.1818181818181818
+study 12325_14590 skipped since insufficient channels
+study 12328_22102 skipped since insufficient channels
+study 12334_19465 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 12788 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 13992 out of 13992 | elapsed:    3.6s finished
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.6s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done 5628 tasks      | elapsed:    4.0s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.6s
+[Parallel(n_jobs=4)]: Done 13783 out of 13783 | elapsed:    6.6s finished
+[Parallel(n_jobs=4)]: Done 15235 out of 15235 | elapsed:    6.9s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.8s
+[Parallel(n_jobs=4)]: Done 13841 tasks      | elapsed:    3.5s
+[Parallel(n_jobs=4)]: Done 14553 out of 14553 | elapsed:    4.1s finished
+[Parallel(n_jobs=4)]: Done 7196 tasks      | elapsed:    2.8s
+study 12343_13447 skipped since low AHI ---  AHI = 0.5
+[Parallel(n_jobs=4)]: Done 15529 out of 15532 | elapsed:    4.7s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 15532 out of 15532 | elapsed:    4.7s finished
+study 12349_13747 skipped since low AHI ---  AHI = 1.5
+study 12358_15160 skipped since low AHI ---  AHI = 0.4
+study 12361_12493 skipped since low AHI ---  AHI = 0.0909090909090909
+study 12370_17455 skipped since insufficient channels
+study 12373_7585 skipped since low AHI ---  AHI = 0.1
+study 12376_25021 skipped since low AHI ---  AHI = 0.9090909090909092
+study 12379_1636 skipped since low AHI ---  AHI = 0.5555555555555556
+study 12385_11209 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 1240_5092 skipped since insufficient channels
+study 12415_1663 skipped since low AHI ---  AHI = 1.3333333333333333
+study 12421_8383 skipped since insufficient channels
+study 12424_12541 skipped since insufficient channels
+study 12427_1756 skipped since low AHI ---  AHI = 1.125
+study 12430_20656 skipped since low AHI ---  AHI = 0.4545454545454545
+study 1243_6580 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    5.6s
+[Parallel(n_jobs=4)]: Done 15136 out of 15136 | elapsed:    7.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12476 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 12936 out of 12936 | elapsed:    3.5s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 13178 out of 13178 | elapsed:    3.7s finished
+study 12448_6832 skipped since low AHI ---  AHI = 2.4444444444444446
+study 12451_8215 skipped since low AHI ---  AHI = 0.7777777777777778
+study 12454_784 skipped since insufficient channels
+study 12463_1105 skipped since low AHI ---  AHI = 0.375
+study 12466_21760 skipped since low AHI ---  AHI = 0.1111111111111111
+study 12469_3289 skipped since low AHI ---  AHI = 0.1
+study 1246_17488 skipped since low AHI ---  AHI = 1.5
+study 12478_2941 skipped since low AHI ---  AHI = 0.0
+study 12490_22843 skipped since insufficient channels
+study 12493_7543 skipped since low AHI ---  AHI = 0.3636363636363636
+study 1249_17515 skipped since low AHI ---  AHI = 0.4
+study 12520_7897 skipped since insufficient channels
+study 12523_4297 skipped since low AHI ---  AHI = 0.1111111111111111
+study 12526_1372 skipped since low AHI ---  AHI = 0.0
+study 1252_6277 skipped since low AHI ---  AHI = 0.1111111111111111
+study 12532_1822 skipped since low AHI ---  AHI = 1.6666666666666667
+study 12535_24715 skipped since low AHI ---  AHI = 0.4444444444444444
+study 12544_7858 skipped since low AHI ---  AHI = 0.1
+study 12547_17713 skipped since low AHI ---  AHI = 0.2
+study 12550_14731 skipped since low AHI ---  AHI = 0.0
+study 12556_2917 skipped since insufficient channels
+study 12562_22399 skipped since low AHI ---  AHI = 1.2727272727272727
+study 12565_10111 skipped since insufficient channels
+study 12568_14020 skipped since insufficient channels
+study 12571_18946 skipped since insufficient channels
+study 12583_3694 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12620 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 13431 out of 13431 | elapsed:    3.1s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.9s
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.9s
+[Parallel(n_jobs=4)]: Done 12836 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 2108 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 14135 out of 14135 | elapsed:    3.9s finished
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    1.2s
+[Parallel(n_jobs=4)]: Done 6172 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.4s
+[Parallel(n_jobs=4)]: Done 172 tasks      | elapsed:    3.5s
+[Parallel(n_jobs=4)]: Done 11792 out of 11792 | elapsed:    6.2s finished
+[Parallel(n_jobs=4)]: Done 12705 out of 12705 | elapsed:    7.8s finished
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.4s
+study 1258_4825 skipped since low AHI ---  AHI = 0.125
+[Parallel(n_jobs=4)]: Done 10901 out of 10901 | elapsed:    4.0s finished
+[Parallel(n_jobs=4)]: Done 11748 out of 11748 | elapsed:    6.9s finished
+study 12592_7396 skipped since insufficient channels
+study 12598_18724 skipped since insufficient channels
+study 12607_10381 skipped since low AHI ---  AHI = 0.0833333333333333
+study 12619_3661 skipped since low AHI ---  AHI = 0.1818181818181818
+study 12619_6154 skipped since low AHI ---  AHI = 0.6363636363636364
+study 1261_23965 skipped since low AHI ---  AHI = 0.3333333333333333
+study 1261_25324 skipped since low AHI ---  AHI = 0.4444444444444444
+study 12631_25816 skipped since low AHI ---  AHI = 2.1
+study 12637_8776 skipped since low AHI ---  AHI = 0.3333333333333333
+study 12646_5497 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 12664_15928 skipped since insufficient channels
+study 12655_10843 skipped since low AHI ---  AHI = 2.3
+study 12670_2710 skipped since low AHI ---  AHI = 0.0
+study 12667_9169 skipped since low AHI ---  AHI = 0.1818181818181818
+study 12673_24127 skipped since insufficient channels
+study 12679_20962 skipped since low AHI ---  AHI = 0.125
+study 12682_13372 skipped since low AHI ---  AHI = 0.0
+study 12676_25081 skipped since low AHI ---  AHI = 0.2727272727272727
+study 12688_6439 skipped since low AHI ---  AHI = 0.0
+study 12685_19972 skipped since insufficient channels
+study 12691_24454 skipped since low AHI ---  AHI = 1.3
+study 12709_10441 skipped since low AHI ---  AHI = 0.0
+study 12703_16816 skipped since insufficient channels
+study 12742_4363 skipped since insufficient channels
+study 12730_8431 skipped since insufficient channels
+study 12748_10936 skipped since low AHI ---  AHI = 0.0
+study 12751_14872 skipped since low AHI ---  AHI = 0.5555555555555556
+study 12754_19879 skipped since low AHI ---  AHI = 1.6666666666666667
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done 12320 out of 12320 | elapsed:    4.7s finished
+study 12766_14611 skipped since low AHI ---  AHI = 0.1
+study 12769_16885 skipped since low AHI ---  AHI = 1.7272727272727273
+study 1276_13549 skipped since low AHI ---  AHI = 0.5
+study 12772_14167 skipped since low AHI ---  AHI = 0.6666666666666666
+study 12775_9916 skipped since low AHI ---  AHI = 0.6
+study 12784_1780 skipped since low AHI ---  AHI = 0.2222222222222222
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done 13354 out of 13354 | elapsed:    4.7s finished
+study 12790_25657 skipped since low AHI ---  AHI = 2.0
+study 12793_5491 skipped since insufficient channels
+study 1279_7510 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12512 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 13046 out of 13046 | elapsed:    3.0s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.8s
+[Parallel(n_jobs=4)]: Done 10636 tasks      | elapsed:    2.2s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 11253 out of 11253 | elapsed:    3.2s finished
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.0s
+[Parallel(n_jobs=4)]: Done 11898 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 4148 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 13211 out of 13211 | elapsed:    4.5s finished
+[Parallel(n_jobs=4)]: Done 12438 out of 12441 | elapsed:    4.6s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 12441 out of 12441 | elapsed:    4.6s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Done 10940 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 12001 out of 12001 | elapsed:    2.7s finished
+study 12805_23572 skipped since low AHI ---  AHI = 0.2
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 12814_25069 skipped since low AHI ---  AHI = 0.3333333333333333
+study 12820_8146 skipped since insufficient channels
+study 12826_7921 skipped since low AHI ---  AHI = 0.0
+study 12847_15103 skipped since low AHI ---  AHI = 0.8888888888888888
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.6s
+study 12850_2539 skipped since low AHI ---  AHI = 0.25
+study 12853_10759 skipped since insufficient channels
+study 12856_22714 skipped since low AHI ---  AHI = 0.3
+study 12859_12145 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.1s
+[Parallel(n_jobs=4)]: Done 6140 tasks      | elapsed:    4.1s
+study 12862_1672 skipped since low AHI ---  AHI = 0.3636363636363636
+study 12871_14248 skipped since insufficient channels
+study 12874_22849 skipped since insufficient channels
+study 12877_22522 skipped since low AHI ---  AHI = 0.0909090909090909
+study 12886_328 skipped since low AHI ---  AHI = 1.1
+study 12877_3094 skipped since low AHI ---  AHI = 0.4545454545454545
+study 12880_1162 skipped since low AHI ---  AHI = 0.3636363636363636
+study 12895_9994 skipped since low AHI ---  AHI = 0.0909090909090909
+study 12898_16861 skipped since low AHI ---  AHI = 0.4444444444444444
+[Parallel(n_jobs=4)]: Done 14861 out of 14861 | elapsed:    7.4s finished
+study 12904_18559 skipped since low AHI ---  AHI = 0.1
+study 12910_5950 skipped since low AHI ---  AHI = 0.7
+study 12913_19063 skipped since insufficient channels
+study 12916_13642 skipped since insufficient channels
+study 12919_11878 skipped since low AHI ---  AHI = 0.3636363636363636
+study 1291_6313 skipped since insufficient channels
+study 12922_9436 skipped since insufficient channels
+study 12925_1909 skipped since low AHI ---  AHI = 0.1818181818181818
+study 12943_22516 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done 14982 out of 14982 | elapsed:    6.9s finished
+study 12952_4570 skipped since low AHI ---  AHI = 0.2727272727272727
+study 12958_337 skipped since insufficient channels
+study 12964_16756 skipped since insufficient channels
+study 12967_9037 skipped since low AHI ---  AHI = 0.0
+study 12976_25363 skipped since insufficient channels
+study 12982_18472 skipped since insufficient channels
+study 12985_19870 skipped since low AHI ---  AHI = 0.5
+study 12988_8002 skipped since insufficient channels
+study 12994_22804 skipped since insufficient channels
+study 12997_15667 skipped since low AHI ---  AHI = 1.25
+study 13003_13342 skipped since low AHI ---  AHI = 0.6666666666666666
+study 13006_2701 skipped since low AHI ---  AHI = 0.9
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 13596 out of 13596 | elapsed:    3.5s finished
+study 13009_24016 skipped since insufficient channels
+study 1300_4243 skipped since insufficient channels
+study 13012_13369 skipped since low AHI ---  AHI = 0.1111111111111111
+study 13015_18343 skipped since low AHI ---  AHI = 0.0
+study 13018_7591 skipped since low AHI ---  AHI = 0.5555555555555556
+study 13021_772 skipped since low AHI ---  AHI = 0.7272727272727273
+study 13030_283 skipped since low AHI ---  AHI = 0.0909090909090909
+study 13033_14131 skipped since insufficient channels
+study 13036_11977 skipped since low AHI ---  AHI = 0.375
+study 1303_13309 skipped since insufficient channels
+study 1303_3406 skipped since low AHI ---  AHI = 2.0
+study 13042_766 skipped since low AHI ---  AHI = 0.0
+study 13045_17473 skipped since low AHI ---  AHI = 0.5
+study 13051_7069 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10972 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 12078 out of 12078 | elapsed:    2.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12392 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 12650 out of 12650 | elapsed:    2.6s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 11052 tasks      | elapsed:    2.2s
+[Parallel(n_jobs=4)]: Done 12276 out of 12276 | elapsed:    2.4s finished
+study 13057_14236 skipped since low AHI ---  AHI = 0.8888888888888888
+study 13063_7801 skipped since insufficient channels
+study 13066_14983 skipped since low AHI ---  AHI = 0.0
+study 13072_26239 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14556 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 15488 out of 15488 | elapsed:    3.3s finished
+study 13084_16093 skipped since low AHI ---  AHI = 0.1111111111111111
+study 13087_14965 skipped since low AHI ---  AHI = 0.0
+study 13090_24472 skipped since low AHI ---  AHI = 0.8
+study 13093_14827 skipped since low AHI ---  AHI = 1.1111111111111112
+study 13096_1873 skipped since insufficient channels
+study 130_5164 skipped since low AHI ---  AHI = 0.1
+study 13105_14305 skipped since insufficient channels
+study 13114_2905 skipped since insufficient channels
+study 13120_14755 skipped since low AHI ---  AHI = 0.2222222222222222
+study 13126_7357 skipped since low AHI ---  AHI = 0.1
+study 13129_19186 skipped since low AHI ---  AHI = 0.2
+study 1312_19906 skipped since low AHI ---  AHI = 0.2222222222222222
+study 13132_16378 skipped since insufficient channels
+study 13135_5191 skipped since insufficient channels
+study 13144_6853 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14396 tasks      | elapsed:    4.0s
+[Parallel(n_jobs=4)]: Done 14652 out of 14652 | elapsed:    4.1s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 13168_25759 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.6s
+[Parallel(n_jobs=4)]: Done 12078 out of 12078 | elapsed:    4.8s finished
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done 14608 out of 14608 | elapsed:    4.8s finished
+study 13177_10060 skipped since low AHI ---  AHI = 0.1
+study 13180_18121 skipped since low AHI ---  AHI = 2.75
+study 1318_16324 skipped since insufficient channels
+study 13207_9178 skipped since low AHI ---  AHI = 0.125
+study 13210_442 skipped since low AHI ---  AHI = 1.75
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 5628 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 14190 out of 14190 | elapsed:    6.5s finished
+study 13237_7336 skipped since insufficient channels
+study 13240_4918 skipped since low AHI ---  AHI = 1.5
+study 13243_20707 skipped since insufficient channels
+study 13246_24217 skipped since low AHI ---  AHI = 0.4444444444444444
+study 1324_1474 skipped since insufficient channels
+study 13255_868 skipped since low AHI ---  AHI = 1.6666666666666667
+study 13258_7618 skipped since insufficient channels
+study 13261_19648 skipped since low AHI ---  AHI = 2.4545454545454546
+study 13264_4468 skipped since low AHI ---  AHI = 0.2
+study 13267_3922 skipped since low AHI ---  AHI = 0.0
+study 13270_10213 skipped since insufficient channels
+study 13273_20692 skipped since low AHI ---  AHI = 0.1111111111111111
+study 13279_15115 skipped since low AHI ---  AHI = 0.3636363636363636
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 11036 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 12243 out of 12243 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10636 tasks      | elapsed:    2.3s
+[Parallel(n_jobs=4)]: Done 11264 out of 11264 | elapsed:    2.4s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12488 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 12969 out of 12969 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 13871 out of 13871 | elapsed:    3.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+study 13309_8407 skipped since insufficient channels
+study 13312_20482 skipped since low AHI ---  AHI = 0.5454545454545454
+study 13318_16993 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  28 tasks      | elapsed:    0.5s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 2820 tasks      | elapsed:    3.5s
+[Parallel(n_jobs=4)]: Done 14729 out of 14729 | elapsed:    5.8s finished
+[Parallel(n_jobs=4)]: Done 10318 out of 10318 | elapsed:    5.5s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 13342_20593 skipped since insufficient channels
+study 13345_17368 skipped since low AHI ---  AHI = 0.5555555555555556
+[Parallel(n_jobs=4)]: Done 14348 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 14432 out of 14432 | elapsed:    3.0s finished
+study 13357_11617 skipped since low AHI ---  AHI = 0.625
+study 13360_17044 skipped since insufficient channels
+study 13366_17521 skipped since insufficient channels
+study 13369_17245 skipped since low AHI ---  AHI = 0.5555555555555556
+study 13381_14278 skipped since low AHI ---  AHI = 1.2222222222222223
+study 13393_10039 skipped since low AHI ---  AHI = 0.4444444444444444
+study 13393_1213 skipped since insufficient channels
+study 13396_10255 skipped since low AHI ---  AHI = 0.2222222222222222
+study 13408_6004 skipped since insufficient channels
+study 13411_14992 skipped since low AHI ---  AHI = 0.5
+study 1342_13966 skipped since low AHI ---  AHI = 0.0
+study 13432_7204 skipped since low AHI ---  AHI = 0.6363636363636364
+study 13435_17479 skipped since low AHI ---  AHI = 0.0
+study 13438_2653 skipped since low AHI ---  AHI = 2.7
+study 13447_22411 skipped since insufficient channels
+study 13447_8866 skipped since low AHI ---  AHI = 2.0
+study 13450_13315 skipped since insufficient channels
+study 13450_23842 skipped since low AHI ---  AHI = 0.1818181818181818
+study 13456_12568 skipped since low AHI ---  AHI = 1.1666666666666667
+study 13456_23782 skipped since low AHI ---  AHI = 1.8888888888888888
+study 13459_3601 skipped since low AHI ---  AHI = 1.2222222222222223
+study 13459_7576 skipped since insufficient channels
+study 1345_24895 skipped since low AHI ---  AHI = 0.625
+study 13465_20827 skipped since low AHI ---  AHI = 0.0
+study 13468_26272 skipped since low AHI ---  AHI = 1.2222222222222223
+study 13471_5233 skipped since insufficient channels
+study 13477_25798 skipped since low AHI ---  AHI = 0.7777777777777778
+study 13480_25456 skipped since low AHI ---  AHI = 1.8
+study 13483_22972 skipped since low AHI ---  AHI = 0.0833333333333333
+study 13486_3916 skipped since low AHI ---  AHI = 0.125
+study 13492_1771 skipped since low AHI ---  AHI = 0.0
+study 13498_19024 skipped since insufficient channels
+study 13501_2098 skipped since insufficient channels
+study 13504_23893 skipped since low AHI ---  AHI = 0.1
+study 13513_9202 skipped since low AHI ---  AHI = 0.1111111111111111
+study 13522_20935 skipped since low AHI ---  AHI = 1.8
+study 13525_24901 skipped since insufficient channels
+study 13531_26254 skipped since low AHI ---  AHI = 0.1
+study 13534_6814 skipped since low AHI ---  AHI = 1.4166666666666667
+study 13537_3325 skipped since insufficient channels
+study 13540_1483 skipped since low AHI ---  AHI = 1.2
+study 13546_15418 skipped since low AHI ---  AHI = 0.0
+study 13549_7276 skipped since insufficient channels
+study 13555_12562 skipped since low AHI ---  AHI = 1.0
+study 13561_10954 skipped since low AHI ---  AHI = 0.0
+study 13567_5911 skipped since insufficient channels
+study 13573_21196 skipped since low AHI ---  AHI = 0.2
+study 13576_13663 skipped since insufficient channels
+study 13576_20395 skipped since insufficient channels
+study 13585_11473 skipped since low AHI ---  AHI = 1.1
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 13588_9268 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Done 14660 tasks      | elapsed:    4.3s
+[Parallel(n_jobs=4)]: Done 15972 out of 15972 | elapsed:    4.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 12111 out of 12111 | elapsed:    3.2s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12620 tasks      | elapsed:    2.6s
+[Parallel(n_jobs=4)]: Done 13420 out of 13420 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.7s
+[Parallel(n_jobs=4)]: Done 14492 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 15147 out of 15147 | elapsed:    3.9s finished
+[Parallel(n_jobs=4)]: Done 10572 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 11891 out of 11891 | elapsed:    3.1s finished
+study 13597_23605 skipped since low AHI ---  AHI = 0.4545454545454545
+study 13606_2461 skipped since low AHI ---  AHI = 0.0
+study 1360_5413 skipped since insufficient channels
+study 1360_6232 skipped since insufficient channels
+study 13612_11155 skipped since low AHI ---  AHI = 0.5454545454545454
+study 13615_11203 skipped since low AHI ---  AHI = 1.0
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Done 10380 tasks      | elapsed:    2.0s
+study 13621_8110 skipped since low AHI ---  AHI = 0.4444444444444444
+[Parallel(n_jobs=4)]: Done 10615 out of 10615 | elapsed:    2.1s finished
+study 13627_1285 skipped since insufficient channels
+study 13630_7012 skipped since insufficient channels
+study 13633_26119 skipped since low AHI ---  AHI = 0.6666666666666666
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10700 tasks      | elapsed:    2.9s
+[Parallel(n_jobs=4)]: Done 11396 out of 11396 | elapsed:    3.1s finished
+study 13639_21694 skipped since insufficient channels
+study 13645_12358 skipped since low AHI ---  AHI = 2.2222222222222223
+study 13648_21586 skipped since low AHI ---  AHI = 0.0
+study 13651_11308 skipped since low AHI ---  AHI = 1.0833333333333333
+study 13654_13171 skipped since low AHI ---  AHI = 0.5555555555555556
+study 13657_12337 skipped since low AHI ---  AHI = 0.0
+study 13660_25093 skipped since low AHI ---  AHI = 0.1818181818181818
+study 13666_2869 skipped since low AHI ---  AHI = 0.3636363636363636
+study 13666_6298 skipped since insufficient channels
+study 1366_19519 skipped since low AHI ---  AHI = 0.4545454545454545
+study 13675_18847 skipped since insufficient channels
+study 13687_7207 skipped since low AHI ---  AHI = 0.3333333333333333
+study 13690_24265 skipped since low AHI ---  AHI = 0.2727272727272727
+study 13699_20776 skipped since low AHI ---  AHI = 0.3333333333333333
+study 136_4501 skipped since low AHI ---  AHI = 1.1
+study 13702_9574 skipped since insufficient channels
+study 13708_18154 skipped since low AHI ---  AHI = 1.1111111111111112
+study 13711_21565 skipped since insufficient channels
+study 13717_14743 skipped since insufficient channels
+study 13720_25480 skipped since insufficient channels
+study 13723_14884 skipped since low AHI ---  AHI = 0.3333333333333333
+study 13726_5152 skipped since low AHI ---  AHI = 0.0
+study 1372_26035 skipped since insufficient channels
+study 13732_2023 skipped since insufficient channels
+study 13735_11914 skipped since low AHI ---  AHI = 0.0
+study 13738_17458 skipped since low AHI ---  AHI = 1.7272727272727273
+study 13750_11860 skipped since low AHI ---  AHI = 0.9090909090909092
+study 13753_1708 skipped since low AHI ---  AHI = 0.0
+study 1375_24850 skipped since insufficient channels
+study 13765_21283 skipped since insufficient channels
+study 13768_13390 skipped since low AHI ---  AHI = 0.0
+study 13774_13195 skipped since insufficient channels
+study 13780_23059 skipped since low AHI ---  AHI = 0.2
+study 13786_23776 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 9724 tasks      | elapsed:    4.5s
+[Parallel(n_jobs=4)]: Done 14924 out of 14927 | elapsed:    6.8s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 14927 out of 14927 | elapsed:    6.8s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    4.3s
+[Parallel(n_jobs=4)]: Done 13530 out of 13530 | elapsed:    5.7s finished
+study 1378_25951 skipped since low AHI ---  AHI = 0.4
+study 13792_16513 skipped since insufficient channels
+study 13798_4639 skipped since low AHI ---  AHI = 0.3
+study 13801_1867 skipped since low AHI ---  AHI = 0.7777777777777778
+study 13804_616 skipped since insufficient channels
+study 13807_24748 skipped since low AHI ---  AHI = 0.25
+study 13810_3409 skipped since low AHI ---  AHI = 2.3
+study 13819_16213 skipped since insufficient channels
+study 13819_18637 skipped since low AHI ---  AHI = 0.0
+study 13822_19696 skipped since insufficient channels
+study 13828_1558 skipped since insufficient channels
+study 13834_22471 skipped since low AHI ---  AHI = 0.1
+study 13837_16183 skipped since insufficient channels
+study 13843_12448 skipped since insufficient channels
+study 13855_2332 skipped since low AHI ---  AHI = 0.0909090909090909
+study 13861_22528 skipped since low AHI ---  AHI = 0.25
+study 13876_7441 skipped since low AHI ---  AHI = 0.8
+study 13879_23656 skipped since insufficient channels
+study 1387_23278 skipped since insufficient channels
+study 13882_11578 skipped since low AHI ---  AHI = 0.5454545454545454
+study 13885_490 skipped since low AHI ---  AHI = 0.9
+study 13888_12850 skipped since insufficient channels
+study 13891_14146 skipped since insufficient channels
+study 13894_22738 skipped since low AHI ---  AHI = 0.4545454545454545
+study 13897_21727 skipped since insufficient channels
+study 13897_22141 skipped since insufficient channels
+study 13900_11764 skipped since low AHI ---  AHI = 0.8888888888888888
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10812 tasks      | elapsed:    2.4s
+[Parallel(n_jobs=4)]: Done 11715 out of 11715 | elapsed:    2.6s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 14396 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.2s
+[Parallel(n_jobs=4)]: Done 14652 out of 14652 | elapsed:    3.4s finished
+study 13909_15604 skipped since low AHI ---  AHI = 2.3
+study 1390_7384 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 14460 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.2s
+[Parallel(n_jobs=4)]: Done 15004 out of 15004 | elapsed:    3.9s finished
+[Parallel(n_jobs=4)]: Done 14452 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Done 14938 out of 14938 | elapsed:    3.3s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Done 10940 tasks      | elapsed:    2.2s
+[Parallel(n_jobs=4)]: Done 12001 out of 12001 | elapsed:    2.4s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+study 13924_23794 skipped since low AHI ---  AHI = 0.25
+study 13927_22924 skipped since low AHI ---  AHI = 0.1111111111111111
+study 13930_19948 skipped since low AHI ---  AHI = 0.7777777777777778
+study 13939_11092 skipped since insufficient channels
+study 1393_19294 skipped since insufficient channels
+study 13942_24409 skipped since low AHI ---  AHI = 0.2222222222222222
+study 13945_9175 skipped since low AHI ---  AHI = 0.8
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.4s
+study 13951_13837 skipped since low AHI ---  AHI = 2.5454545454545454
+study 13951_2629 skipped since low AHI ---  AHI = 0.75
+study 13963_13234 skipped since insufficient channels
+study 13969_4984 skipped since low AHI ---  AHI = 0.0909090909090909
+study 13975_20974 skipped since insufficient channels
+study 13981_15121 skipped since low AHI ---  AHI = 0.1
+study 13984_19006 skipped since low AHI ---  AHI = 0.3
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 13999_20389 skipped since low AHI ---  AHI = 2.2222222222222223
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 139_20275 skipped since low AHI ---  AHI = 1.0909090909090908
+[Parallel(n_jobs=4)]: Done 14146 out of 14146 | elapsed:    3.5s finished
+study 14002_25279 skipped since low AHI ---  AHI = 0.1818181818181818
+study 14017_13984 skipped since low AHI ---  AHI = 0.1
+study 14020_8638 skipped since low AHI ---  AHI = 0.375
+study 14026_23422 skipped since low AHI ---  AHI = 0.1818181818181818
+study 14029_6793 skipped since low AHI ---  AHI = 0.7777777777777778
+study 1402_877 skipped since low AHI ---  AHI = 1.9
+study 14032_7 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 12836 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 14135 out of 14135 | elapsed:    3.8s finished
+study 14041_9991 skipped since insufficient channels
+study 14047_3976 skipped since low AHI ---  AHI = 0.4
+study 14056_25090 skipped since low AHI ---  AHI = 0.1818181818181818
+study 1405_4654 skipped since low AHI ---  AHI = 0.3
+study 14071_17641 skipped since insufficient channels
+study 14080_14749 skipped since insufficient channels
+study 14098_23773 skipped since low AHI ---  AHI = 0.0
+study 14104_19081 skipped since low AHI ---  AHI = 0.1
+study 14107_18991 skipped since insufficient channels
+study 14110_178 skipped since low AHI ---  AHI = 0.375
+study 14113_14311 skipped since low AHI ---  AHI = 1.0
+study 14119_22060 skipped since insufficient channels
+study 1411_5017 skipped since insufficient channels
+study 14125_24271 skipped since low AHI ---  AHI = 0.9
+study 14128_12517 skipped since insufficient channels
+study 14134_1000 skipped since low AHI ---  AHI = 0.3
+study 14140_24316 skipped since low AHI ---  AHI = 0.8181818181818182
+study 14143_23482 skipped since low AHI ---  AHI = 0.2
+study 14146_11590 skipped since insufficient channels
+study 14146_14857 skipped since insufficient channels
+study 14149_18208 skipped since low AHI ---  AHI = 0.25
+study 1414_6757 skipped since low AHI ---  AHI = 0.0
+study 14152_5797 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+study 14155_8470 skipped since low AHI ---  AHI = 0.4
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 14158_6925 skipped since insufficient channels
+study 14167_3913 skipped since low AHI ---  AHI = 0.0
+study 14173_14668 skipped since insufficient channels
+study 14179_22552 skipped since low AHI ---  AHI = 0.3636363636363636
+study 1417_19045 skipped since insufficient channels
+study 14182_22006 skipped since low AHI ---  AHI = 0.5555555555555556
+study 14188_4555 skipped since insufficient channels
+study 14194_721 skipped since low AHI ---  AHI = 0.1
+study 14197_14902 skipped since insufficient channels
+study 14200_3118 skipped since low AHI ---  AHI = 0.0
+study 14206_13897 skipped since low AHI ---  AHI = 0.9
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.9s
+[Parallel(n_jobs=4)]: Done 14806 out of 14806 | elapsed:    5.6s finished
+study 14209_4864 skipped since insufficient channels
+study 14218_3427 skipped since low AHI ---  AHI = 0.0
+study 14221_19210 skipped since low AHI ---  AHI = 0.6
+study 14230_22507 skipped since insufficient channels
+study 14233_3139 skipped since low AHI ---  AHI = 0.0
+study 14236_8662 skipped since insufficient channels
+study 1423_9898 skipped since low AHI ---  AHI = 0.0
+study 14242_19375 skipped since insufficient channels
+study 14245_24172 skipped since low AHI ---  AHI = 2.5454545454545454
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 12524 tasks      | elapsed:    3.0s
+[Parallel(n_jobs=4)]: Done 13123 out of 13123 | elapsed:    3.1s finished
+study 14260_4780 skipped since low AHI ---  AHI = 0.6363636363636364
+study 14263_10975 skipped since low AHI ---  AHI = 0.4
+study 14263_15505 skipped since low AHI ---  AHI = 1.4
+study 14266_26179 skipped since insufficient channels
+study 14266_5539 skipped since low AHI ---  AHI = 1.3636363636363635
+study 14269_1201 skipped since insufficient channels
+study 1426_23110 skipped since low AHI ---  AHI = 0.6666666666666666
+study 14275_1072 skipped since low AHI ---  AHI = 2.9
+study 14278_6202 skipped since insufficient channels
+study 14281_15688 skipped since low AHI ---  AHI = 0.0
+study 14287_7252 skipped since insufficient channels
+study 14290_1552 skipped since insufficient channels
+study 14302_19684 skipped since insufficient channels
+study 14311_25885 skipped since insufficient channels
+study 14314_202 skipped since low AHI ---  AHI = 0.6666666666666666
+study 14317_23839 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 12344 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 12485 out of 12485 | elapsed:    3.3s finished
+[Parallel(n_jobs=4)]: Done 8208 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 11374 out of 11374 | elapsed:    4.0s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.4s
+[Parallel(n_jobs=4)]: Done 14212 out of 14212 | elapsed:    3.1s finished
+study 14326_3742 skipped since insufficient channels
+study 14335_15592 skipped since low AHI ---  AHI = 0.6363636363636364
+study 14338_6229 skipped since low AHI ---  AHI = 1.6
+study 14341_949 skipped since low AHI ---  AHI = 1.3333333333333333
+study 14344_21679 skipped since low AHI ---  AHI = 1.5
+study 14347_17878 skipped since low AHI ---  AHI = 0.0
+study 14353_19813 skipped since low AHI ---  AHI = 2.4545454545454546
+study 14365_17293 skipped since low AHI ---  AHI = 0.2727272727272727
+study 14368_15940 skipped since low AHI ---  AHI = 0.2
+study 14374_8980 skipped since low AHI ---  AHI = 0.0
+study 14380_646 skipped since low AHI ---  AHI = 0.0
+study 14377_7231 skipped since low AHI ---  AHI = 1.1666666666666667
+study 14389_5518 skipped since low AHI ---  AHI = 0.0
+study 14395_262 skipped since low AHI ---  AHI = 0.0
+study 14401_18583 skipped since insufficient channels
+study 14401_22111 skipped since low AHI ---  AHI = 0.4
+study 14410_17341 skipped since insufficient channels
+study 14413_20308 skipped since low AHI ---  AHI = 0.1818181818181818
+study 1441_9340 skipped since low AHI ---  AHI = 0.6
+study 14416_1999 skipped since low AHI ---  AHI = 2.8
+study 14440_24052 skipped since low AHI ---  AHI = 0.3
+study 14428_97 skipped since low AHI ---  AHI = 2.8181818181818183
+study 14452_18214 skipped since low AHI ---  AHI = 0.125
+study 14455_11443 skipped since low AHI ---  AHI = 1.8888888888888888
+study 14473_22003 skipped since low AHI ---  AHI = 0.3076923076923077
+study 14479_15496 skipped since low AHI ---  AHI = 0.4444444444444444
+study 1447_8008 skipped since low AHI ---  AHI = 0.0
+study 14482_11149 skipped since low AHI ---  AHI = 0.0
+study 14485_23647 skipped since insufficient channels
+study 14488_17422 skipped since insufficient channels
+study 14506_1057 skipped since low AHI ---  AHI = 0.0
+study 14509_11644 skipped since low AHI ---  AHI = 2.0
+study 1450_1660 skipped since low AHI ---  AHI = 0.0
+study 14512_26185 skipped since low AHI ---  AHI = 0.7
+study 14518_14413 skipped since insufficient channels
+study 14524_17920 skipped since insufficient channels
+study 14527_7321 skipped since insufficient channels
+study 14533_10999 skipped since insufficient channels
+study 14539_23395 skipped since low AHI ---  AHI = 0.0
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 1453_8665 skipped since low AHI ---  AHI = 0.7777777777777778
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.8s
+[Parallel(n_jobs=4)]: Done  36 tasks      | elapsed:    0.8s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.1s
+[Parallel(n_jobs=4)]: Done  14 tasks      | elapsed:    0.9s
+[Parallel(n_jobs=4)]: Done 1020 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Done 908 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 13090 out of 13090 | elapsed:    5.8s finished
+[Parallel(n_jobs=4)]: Done 916 tasks      | elapsed:    3.7s
+[Parallel(n_jobs=4)]: Done 13387 out of 13387 | elapsed:    9.7s finished
+[Parallel(n_jobs=4)]: Done 11916 tasks      | elapsed:    9.7s
+[Parallel(n_jobs=4)]: Done 11166 tasks      | elapsed:    9.6s
+[Parallel(n_jobs=4)]: Done 11176 out of 11176 | elapsed:    9.6s finished
+[Parallel(n_jobs=4)]: Done 14707 out of 14707 | elapsed:   10.7s finished
+study 14554_1108 skipped since insufficient channels
+study 14557_24373 skipped since low AHI ---  AHI = 0.0909090909090909
+study 14560_18913 skipped since insufficient channels
+study 14563_11899 skipped since low AHI ---  AHI = 0.1818181818181818
+study 14566_24733 skipped since low AHI ---  AHI = 0.0
+study 14575_18109 skipped since low AHI ---  AHI = 0.5
+study 14587_26149 skipped since low AHI ---  AHI = 0.9090909090909092
+study 14593_9952 skipped since low AHI ---  AHI = 0.0
+study 145_1537 skipped since low AHI ---  AHI = 0.3
+study 1459_17746 skipped since low AHI ---  AHI = 2.4545454545454546
+study 14608_18415 skipped since insufficient channels
+study 14614_23122 skipped since low AHI ---  AHI = 0.0
+study 14623_8203 skipped since insufficient channels
+study 1462_3292 skipped since insufficient channels
+study 14644_15652 skipped since insufficient channels
+study 14653_3631 skipped since low AHI ---  AHI = 0.0
+study 14659_18694 skipped since low AHI ---  AHI = 0.0909090909090909
+study 1465_21343 skipped since low AHI ---  AHI = 1.6
+study 14671_20197 skipped since insufficient channels
+study 14677_3190 skipped since low AHI ---  AHI = 0.7272727272727273
+study 14683_3859 skipped since insufficient channels
+study 14689_19051 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 12476 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 12936 out of 12936 | elapsed:    3.4s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.9s
+[Parallel(n_jobs=4)]: Done 10268 tasks      | elapsed:    3.4s
+[Parallel(n_jobs=4)]: Done 10846 out of 10846 | elapsed:    4.3s finished
+[Parallel(n_jobs=4)]: Done 8228 tasks      | elapsed:    3.3s
+[Parallel(n_jobs=4)]: Done 14069 out of 14069 | elapsed:    4.3s finished
+study 14701_15523 skipped since low AHI ---  AHI = 0.2
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+study 14707_6247 skipped since insufficient channels
+study 14710_4837 skipped since insufficient channels
+study 14713_23689 skipped since insufficient channels
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Done 12287 out of 12287 | elapsed:    3.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    1.1s
+[Parallel(n_jobs=4)]: Done 12344 tasks      | elapsed:    2.8s
+[Parallel(n_jobs=4)]: Done 12485 out of 12485 | elapsed:    3.5s finished
+[Parallel(n_jobs=4)]: Done 4148 tasks      | elapsed:    3.2s
+[Parallel(n_jobs=4)]: Done 12177 out of 12177 | elapsed:    4.7s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 14612 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 15763 out of 15763 | elapsed:    2.9s finished
+study 14722_7546 skipped since low AHI ---  AHI = 1.3333333333333333
+study 14725_1699 skipped since low AHI ---  AHI = 2.272727272727273
+study 14728_10411 skipped since insufficient channels
+study 14728_1615 skipped since low AHI ---  AHI = 0.0
+study 14731_14392 skipped since low AHI ---  AHI = 0.0
+study 14734_13909 skipped since low AHI ---  AHI = 0.75
+study 14737_19807 skipped since insufficient channels
+study 14740_19222 skipped since insufficient channels
+/mnt/e/UIUC-CS598-DLH-Project/original/data/nch/sleep_study/raw.py:13: RuntimeWarning: Number of records from the header does not match the file size (perhaps the recording was not stopped before exiting). Inferring from the file size.
+  return mne.io.read_raw_edf(
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=4)]: Done 10236 tasks      | elapsed:    2.5s
+[Parallel(n_jobs=4)]: Done 13607 out of 13607 | elapsed:    3.1s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Done 11889 tasks      | elapsed:    1.6s
+[Parallel(n_jobs=4)]: Done 12680 out of 12683 | elapsed:    1.6s remaining:    0.0s
+[Parallel(n_jobs=4)]: Done 12683 out of 12683 | elapsed:    1.6s finished
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  44 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  24 tasks      | elapsed:    0.9s
+[Parallel(n_jobs=4)]: Done 13884 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=4)]: Done 15510 out of 15510 | elapsed:    2.8s finished
+[Parallel(n_jobs=4)]: Done 10268 tasks      | elapsed:    2.7s
+[Parallel(n_jobs=4)]: Done 14949 out of 14949 | elapsed:    3.3s finished
+2024-04-12 11:28:34.395414: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-12 11:28:34.395680: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-12 11:28:34.396950: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-12 11:28:34.409200: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-12 11:28:35.109055: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-04-12 11:50:04.850789: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.063148: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.063387: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.100021: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.100308: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.100502: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.366596: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.367207: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.367682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2022] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+2024-04-12 11:50:05.367955: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:0a:00.0/numa_node
+Your kernel may have been built without NUMA support.
+2024-04-12 11:50:05.368172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9502 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4070 Ti, pci bus id: 0000:0a:00.0, compute capability: 8.9
+2024-04-12 11:50:05.393791: W external/local_tsl/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 2558008320 exceeds 10% of free system memory.
+./scripts/preprocess.sh: line 34:  8523 Killed                  python3 data/nch/dataloader.py
+2024-04-12 11:53:58.193661: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-12 11:53:58.193906: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-12 11:53:58.227178: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-12 11:53:58.308145: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-12 11:53:59.254624: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+/home/dpankros/miniconda3/envs/598dlh/lib/python3.11/site-packages/tensorflow_addons/utils/tfa_eol_msg.py:23: UserWarning:
+
+TensorFlow Addons (TFA) has ended development and introduction of new features.
+TFA has entered a minimal maintenance and release mode until a planned end of life in May 2024.
+Please modify downstream libraries to take dependencies from other repositories in our TensorFlow community (e.g. Keras, Keras-CV, and Keras-NLP).
+
+For more information see: https://github.com/tensorflow/addons/issues/2807
