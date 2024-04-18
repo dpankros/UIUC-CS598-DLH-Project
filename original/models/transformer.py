@@ -38,8 +38,9 @@ class PatchEncoder(Layer):
         self.num_patches = num_patches
         self.projection = Dense(units=projection_dim, kernel_regularizer=L2(l2_weight),
                                 bias_regularizer=L2(l2_weight))
-        self.position_embedding = tf.keras.layers.Embedding(
-            input_dim=num_patches, output_dim=projection_dim)
+        # this is commented out in self.call, below so it's not needed here
+        # self.position_embedding = tf.keras.layers.Embedding(
+        #     input_dim=num_patches, output_dim=projection_dim)
 
     def call(self, patch):
         positions = tf.range(start=0, limit=self.num_patches, delta=1)

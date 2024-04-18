@@ -1,4 +1,5 @@
 import gc
+import itertools
 import os
 
 from test import test
@@ -33,14 +34,48 @@ sig_dict = {"EOG": [0, 1],
             }
 
 channel_list = [
-    ["ECG", "SPO2"],
+    ["ECG", "SPO2"]
+    # ["EOG"],
+    # ["EEG"],
+    # ["RESP"],
+    # ["SPO2"],
+    # ["CO2"],
+    # ["ECG"],
+    # ["EOG", "EEG", "RESP", "SPO2", "CO2", "ECG"],
 ]
+RUN_ALL_COMBINATIONS = True # True
+EXCLUDED_SIGS = ["DEMO"]
+ALLOWED_LENGTHS = [6, 2, 1]
+
+
+def all_combinations(signal_names: list, lengths: (list | None) = None) -> list:
+    """
+    Return all the combinations of signals from the list of signal_names where the number of signals is listed in lengths
+    :param signal_names: a list of all possible signal names
+    :param lengths: a list of all possible combination lengths.  For example [1] will return all the single-element
+    combinations, [1, 2] would return all single-element combinations and all two-element combinations, and so on.
+    :return:
+    """
+    lengths = lengths if lengths is not None else range(1, len(signal_names) + 1)
+    all = []
+    for l in lengths:
+        for combo in itertools.combinations(signal_names, l):
+            all.append([*combo])
+
+    return all
+
 
 def getenv_bool(key_name: str, default: bool) -> bool:
     ret_str = os.getenv(key_name, str(default))
     return True if ret_str == "True" else False
 
+
 if __name__ == "__main__":
+    if RUN_ALL_COMBINATIONS:
+        sig_names = [*filter(lambda n: n not in EXCLUDED_SIGS, sig_dict.keys())]
+        # override the selected list of channels with all the combinations, except those in EXCLUDED_SIGS
+        channel_list = all_combinations(sig_names, ALLOWED_LENGTHS)
+
     data_root = os.getenv(
         "DLHPROJ_DATA_ROOT",
         "/mnt/e/data"
@@ -65,7 +100,16 @@ if __name__ == "__main__":
         f"force_retrain={force_retrain}\n"
         "----------"
     )
-    for ch in channel_list:
+    print(
+        f"-----run details-----\n"
+        f"Total Combinations: {len(channel_list)}\n"
+        f"Signal Combinations:"
+    )
+    for n, ch in enumerate(channel_list):
+        print(f"    {n+1} {ch}")
+    print("----------\n")
+
+    for n, ch in enumerate(channel_list):
         chs = []
         chstr = ""
         for name in ch:
@@ -74,9 +118,10 @@ if __name__ == "__main__":
         config = {
             "data_path": f"{data_root}/nch_30x64.npz",
             "model_path": f"{model_path}",
-            "model_name": "sem-mscnn_" + chstr,
+            # "model_name": "sem-mscnn_" + chstr,  # Must be one of: "Transformer", "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
+            "model_name": "Transformer_" + chstr,
+            # Must be one of: Transformer: "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
             "regression": False,
-
             "transformer_layers": 5,  # best 5
             "drop_out_rate": 0.25,  # best 0.25
             "num_patches": 30,  # best 30 TBD
@@ -87,7 +132,7 @@ if __name__ == "__main__":
             "channels": chs,
         }
         print(
-            f"----------\n"
+            f"---{n + 1} of {len(channel_list)}----\n"
             f"training channel {chstr}..."
         )
         train(config=config, fold=0, force_retrain=force_retrain)

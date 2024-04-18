@@ -95,8 +95,10 @@ def create_semscnn_model(input_a_shape):
     return model
 
 
+# this assumes 3 channels (the second value of the tuple),  We can change that behavior by making each of these a
+# lambda taking the number of channels as an argument.  I.e. "cnn": lambda n: create_cnn_model((60 * 32, n)),
+# and then call the value with len(config["channels"])
 model_dict = {
-
     "cnn": create_cnn_model((60 * 32, 3)),
     "sem-mscnn": create_semscnn_model((60 * 32, 3)),
     "cnn-lstm": create_cnnlstm_model((60 * 32, 3)),

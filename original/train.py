@@ -36,7 +36,7 @@ def train(
     y = y_apnea + y_hypopnea
     ########################################################################################
     # Channel selection
-    
+
     chans = config["channels"]
     x_transform = transform_for_channels(x=x, channels=chans)
     print(f'Extracting channels {chans}')
@@ -55,29 +55,29 @@ def train(
             y[i][y[i] != 0] += 2
         else:
             y[i] = np.where(y[i] >= THRESHOLD, 1, 0)
-        
+
         replace = x[i][:, :, chans]
-        
+
         x_transform[i] = replace  # CHANNEL SELECTION
 
     ########################################################################################
     #
     # The original code for this is taken from the following link:
-    # 
+    #
     # https://github.com/healthylaife/Pediatric-Apnea-Detection/blob/6dc5ec87ef17810c461d4738dd4f46240816999c/train.py#L39-L48
-    # 
+    #
     # I (Aaron) think that in the inner loop, they're just trying to create
-    # one big NDArray with the concatenation of all the folds except for the 
+    # one big NDArray with the concatenation of all the folds except for the
     # one on which they're currently on in the outer loop.
-    # 
+    #
     # Then, they train on the concatenated array. In other words, the outer
     # loop behaves similarly to epochs, with a small twist.
-    # 
+    #
     # They used to have the logic to do this inside the outer loop,
     # but I pulled it out.
-    # 
-    # also note, the folds selection (commented below) didn't work because 
-    # they pass fold=0 into this function, which results in no training 
+    #
+    # also note, the folds selection (commented below) didn't work because
+    # they pass fold=0 into this function, which results in no training
     # whatsoever.
     folds = range(max_fold)
     # folds = range(FOLD) if fold is None else range(fold)
@@ -86,7 +86,7 @@ def train(
         base_model_path = config["model_path"]
         model_path = f"{base_model_path}/{str(fold)}"
         if (
-            os.path.exists(model_path) and 
+            os.path.exists(model_path) and
             not force_retrain
         ):
             print(
