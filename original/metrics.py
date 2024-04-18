@@ -1,7 +1,8 @@
 import tensorflow as tf
 import tensorflow_addons as tfa
 import numpy as np
-from sklearn.metrics import confusion_matrix, f1_score, average_precision_score, roc_auc_score, accuracy_score
+from sklearn.metrics import confusion_matrix, average_precision_score, roc_auc_score, accuracy_score, \
+    precision_recall_fscore_support
 
 
 class FromLogitsMixin:
@@ -65,16 +66,12 @@ class Result:
         # C = confusion_matrix(y_test, y_predict, labels=(1, 0))
         # TP, TN, FP, FN = C[0, 0], C[1, 1], C[1, 0], C[0, 1]
         TN, FP, FN, TP = confusion_matrix(y_test, y_predict).ravel()
-        # acc, sn, sp, pr = 1. * (TP + TN) / (TP + TN + FP + FN), 1. * TP / (TP + FN), 1. * TN / (TN + FP), 1. * TP / (
-        #         TP + FP)
 
         print(f"TN: {TN}, FP: {FP}, FN: {FN}, TP: {TP}")
-        acc = accuracy_score(y_test, y_predict)
-        acc = 1. * (TP + TN) / (TP + TN + FP + FN) if (TP + TN + FP + FN) != 0 else 0
-        sn = 1. * TP / (TP + FN) if (TP + FN) != 0 else 0
+
+        acc = accuracy_score(y_test, y_predict, zero_division=0.0)
         sp = 1. * TN / (TN + FP) if (TN + FP) != 0 else 0
-        pr = 1. * TP / (TP + FP) if (TP + FP) != 0 else 0 # define precision to be zeero if there are NO positive predictions
-        f1 = f1_score(y_test, y_predict)
+        pr, sn, f1, _ = precision_recall_fscore_support(y_test, y_predict, zero_division=0.0)
         auc = roc_auc_score(y_test, y_score)
         auprc = average_precision_score(y_test, y_score)
 
