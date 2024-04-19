@@ -67,8 +67,6 @@ class Result:
         # TP, TN, FP, FN = C[0, 0], C[1, 1], C[1, 0], C[0, 1]
         tn, fp, fn, tp = confusion_matrix(y_test, y_predict).ravel()
 
-        print(f"TN: {tn}, FP: {fp}, FN: {fn}, TP: {tp}")
-
         acc = accuracy_score(y_test, y_predict)
         sp = 1. * tn / (tn + fp) if (tn + fp) != 0 else 0
         pr, sn, f1, _ = precision_recall_fscore_support(y_test, y_predict, zero_division=0.0)

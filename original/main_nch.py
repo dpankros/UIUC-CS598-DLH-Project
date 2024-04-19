@@ -4,6 +4,7 @@ import os
 
 from test import test
 from train import train
+from model_name import get_model_name
 
 # "EOG LOC-M2",  # 0
 # "EOG ROC-M1",  # 1
@@ -82,20 +83,27 @@ if __name__ == "__main__":
     )
     model_path = os.getenv(
         "DLHPROJ_MODEL_PATH",
-        "./weights/semscnn_ecgspo2/f"
+        # "./weights/semscnn_ecgspo2/f"
+        None
     )
+    model_dir = os.getenv(
+        "DLHPROJ_MODEL_DIR",
+        "./weights"
+    )
+
     n_epochs = int(os.getenv(
         "DLHPROJ_NUM_EPOCHS",
         "100"
     ))
     force_retrain = getenv_bool(
         key_name="DLHPROJ_FORCE_RETRAIN",
-        default=True,
+        default=False,
     )
     print(
         f"-----beginning training-----\n"
         f"data_root={data_root}\n"
         f"model_path={model_path}\n"
+        f"model_dir={model_dir}\n"
         f"num_epochs={n_epochs}\n"
         f"force_retrain={force_retrain}\n"
         "----------"
@@ -117,7 +125,8 @@ if __name__ == "__main__":
             chs = chs + sig_dict[name]
         config = {
             "data_path": f"{data_root}/nch_30x64.npz",
-            "model_path": f"{model_path}",
+            "model_path": f"{model_path}" if model_path is not None else None,
+            "model_dir": f"{model_dir}",
             # "model_name": "sem-mscnn_" + chstr,  # Must be one of: "Transformer", "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
             "model_name": "Transformer_" + chstr,
             # Must be one of: Transformer: "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
@@ -133,14 +142,15 @@ if __name__ == "__main__":
         }
         print(
             f"---{n + 1} of {len(channel_list)}----\n"
+            f"model_name={model_path if model_path else get_model_name(config)}\n"
             f"training channel {chstr}..."
         )
-        train(config=config, fold=0, force_retrain=force_retrain)
+        train(config=config, force_retrain=force_retrain)
         print(
             f"\ndone training. beginning testing...\n"
             f"----------\n"
         )
-        test(config, 0)
+        test(config)
         print(
             f'done testing\n'
             '----------'

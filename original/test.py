@@ -6,7 +6,7 @@ from sklearn.utils import shuffle
 import tensorflow as tf
 from metrics import Result
 from data.noise_util import add_noise_to_data
-
+from model_name import get_model_name
 from channels import transform_for_channels
 
 
@@ -39,6 +39,12 @@ def test(config: dict[str, str], fold=None):
     ############################################################################
     result = Result()
     folds = range(FOLD) if fold is None else [fold]
+
+    if config["model_path"]:
+        model_path = config["model_path"]
+    else:
+        model_name = get_model_name(config)
+        model_path = os.path.join(config["model_dir"], model_name)
     for fold in folds:
         x_test = x[fold]
         if config.get("test_noise_snr"):
@@ -47,7 +53,7 @@ def test(config: dict[str, str], fold=None):
         y_test = y[
             fold
         ]  # For MultiClass keras.utils.to_categorical(y[fold], num_classes=2)
-        model = tf.keras.models.load_model(os.path.join(config["model_path"], str(fold)), compile=False)
+        model = tf.keras.models.load_model(os.path.join(model_path, str(fold)), compile=False)
 
         predict = model.predict(x_test)
         y_score = predict
@@ -62,8 +68,8 @@ def test(config: dict[str, str], fold=None):
         'results:\n'
     )
     result.print()
-    model_name = config["model_name"]
-    timestamp = datetime.now().strftime("%Y%m%d-%H%M") # Format the date and time as a string "YYYYMMDD-HH:mm"
+    # model_name = config["model_name"]
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M")  # Format the date and time as a string "YYYYMMDD-HH:mm"
     results_file = os.path.join('results', f"{model_name}-{timestamp}.txt")
     print(
         f'done, saving to {results_file}\n'

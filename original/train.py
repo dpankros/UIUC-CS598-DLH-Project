@@ -6,6 +6,7 @@ from keras.callbacks import LearningRateScheduler, EarlyStopping
 from keras.losses import BinaryCrossentropy
 from sklearn.utils import shuffle
 import numpy.typing as npt
+from model_name import get_model_name
 
 from models.models import get_model
 from channels import transform_for_channels
@@ -18,6 +19,8 @@ def lr_schedule(epoch, lr):
     if epoch > 50 and (epoch - 1) % 5 == 0:
         lr *= 0.5
     return lr
+
+
 
 
 def train(
@@ -79,22 +82,32 @@ def train(
     # whatsoever.
     # folds = range(max_fold)
     # folds = range(FOLD) if fold is None else range(fold)
+
+    if config["model_path"]:
+        base_model_path = config["model_path"]
+    else:
+        model_name = get_model_name(config)
+        model_dir = config["model_dir"]
+        base_model_path = os.path.join(model_dir, model_name)
+
+
     folds = range(FOLD) if fold is None else [fold]
     print(f'iterating over {folds} fold(s)')
     for fold in folds:
+        model_path = os.path.join(base_model_path, str(fold))
+
+        if os.path.exists(model_path) and not force_retrain:
+            print(
+                f'Training fold {fold}: force_retrain==False and '
+                f'{model_path} already exists, skipping.'
+            )
+            continue
+
         first = True
+        x_train = None
+        y_train = None
         for i in range(5):
-            base_model_path = config["model_path"]
-            model_path = os.path.join(base_model_path, str(fold))
-            if (
-                    os.path.exists(model_path) and
-                    not force_retrain
-            ):
-                print(
-                    f'Training fold {fold}: force_retrain==False and '
-                    f'{model_path} already exists, skipping.'
-                )
-                continue
+
             if i != fold:
                 if first:
                     x_train = x[i]
