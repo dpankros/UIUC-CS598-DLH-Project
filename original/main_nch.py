@@ -102,8 +102,8 @@ if __name__ == "__main__":
     )
     print(
         f"-----run details-----\n"
-        f"Total Combinations: {len(channel_list)}\n"
-        f"Signal Combinations:"
+        f"Total Ablations: {len(channel_list)}\n"
+        f"Signal Ablations:"
     )
     for n, ch in enumerate(channel_list):
         print(f"    {n+1} {ch}")

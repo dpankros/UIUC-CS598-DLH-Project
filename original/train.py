@@ -37,18 +37,9 @@ def train(
     ########################################################################################
     # Channel selection
 
-    chans = config["channels"]
-    x_transform = transform_for_channels(x=x, channels=chans)
-    print(f'Extracting channels {chans}')
-    max_fold = min(FOLD, x_transform.shape[0])
-    if max_fold < x_transform.shape[0]:
-        print(
-            f'WARNING: only looking at the first {max_fold} of '
-            f'{x_transform.shape[0]} total folds in X'
-        )
-    # for i in range(FOLD):
-    for i in range(max_fold):
-        x_transform[i], y[i] = shuffle(x_transform[i], y[i])
+    x_tmp = None
+    for i in range(FOLD):
+        x[i], y[i] = shuffle(x[i], y[i])
         x[i] = np.nan_to_num(x[i], nan=-1)
         if config["regression"]:
             y[i] = np.sqrt(y[i])
@@ -56,9 +47,16 @@ def train(
         else:
             y[i] = np.where(y[i] >= THRESHOLD, 1, 0)
 
-        replace = x[i][:, :, chans]
+        channels = x[i][:, :, config["channels"]]  # CHANNEL SELECTION
+        if x_tmp is None:
+            x_tmp = np.zeros((FOLD, *channels.shape))
 
-        x_transform[i] = replace  # CHANNEL SELECTION
+        x_tmp[i] = channels
+
+    x = x_tmp
+
+    # x_transform here is just the channels from the fold
+    # y is min(y_apnea + y_hypopnea, 1)  Basically 1, if there is SDB and 0 otherwise
 
     ########################################################################################
     #
@@ -79,23 +77,32 @@ def train(
     # also note, the folds selection (commented below) didn't work because
     # they pass fold=0 into this function, which results in no training
     # whatsoever.
-    folds = range(max_fold)
+    # folds = range(max_fold)
     # folds = range(FOLD) if fold is None else range(fold)
+    folds = range(FOLD) if fold is None else [fold]
     print(f'iterating over {folds} fold(s)')
     for fold in folds:
-        base_model_path = config["model_path"]
-        model_path = f"{base_model_path}/{str(fold)}"
-        if (
-            os.path.exists(model_path) and
-            not force_retrain
-        ):
-            print(
-                f'Training fold {fold}: force_retrain==False and '
-                f'{model_path} already exists, skipping.'
-            )
-            continue
-        x_train = concat_all_folds(orig=x_transform, except_fold=fold)
-        y_train = concat_all_folds(orig=y, except_fold=fold)
+        first = True
+        for i in range(5):
+            base_model_path = config["model_path"]
+            model_path = os.path.join(base_model_path, str(fold))
+            if (
+                    os.path.exists(model_path) and
+                    not force_retrain
+            ):
+                print(
+                    f'Training fold {fold}: force_retrain==False and '
+                    f'{model_path} already exists, skipping.'
+                )
+                continue
+            if i != fold:
+                if first:
+                    x_train = x[i]
+                    y_train = y[i]
+                    first = False
+                else:
+                    x_train = np.concatenate((x_train, x[i]))
+                    y_train = np.concatenate((y_train, y[i]))
 
         model = get_model(config)
         if config["regression"]:

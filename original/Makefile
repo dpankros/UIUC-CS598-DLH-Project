@@ -11,7 +11,7 @@ ensure-ahi: print-data-root
 	@echo "ensuring AHI.csv file exists"
 	@echo "----------------------------"
 	./scripts/ensure_ahi.sh "${DATA_ROOT}" "${AHI_FILE_PATH}"
-	
+
 .PHONY: dataload
 dataload: ensure-ahi
 	@echo "--------------------"
@@ -24,4 +24,4 @@ train: dataload
 	@echo "-----------------------------------"
 	@echo "dataloading done. starting training"
 	@echo "-----------------------------------"
-	DLHPROJ_DATA_ROOT=${DATA_ROOT} python main_nch.py
+	DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python main_nch.py
