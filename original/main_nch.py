@@ -46,7 +46,8 @@ channel_list = [
 ]
 RUN_ALL_COMBINATIONS = True # True
 EXCLUDED_SIGS = ["DEMO"]
-ALLOWED_LENGTHS = [6, 2, 1]
+# ALLOWED_LENGTHS = [6, 2, 1]
+ALLOWED_LENGTHS = [3, 4, 5]
 
 
 def all_combinations(signal_names: list, lengths: (list | None) = None) -> list:
