@@ -1,6 +1,5 @@
 import gc
 import itertools
-import os
 
 from test import test
 from config.train import ModelPrefix, parse_train_env
@@ -64,8 +63,8 @@ def all_combinations(signal_names: list[str], lengths: (list[int] | None) = None
         else list(range(1, len(signal_names) + 1))
     )
     all: list[list[str]] = []
-    for l in reified_lengths:
-        for combo in itertools.combinations(signal_names, l):
+    for length in reified_lengths:
+        for combo in itertools.combinations(signal_names, length):
             all.append([*combo])
 
     return all
@@ -111,12 +110,12 @@ if __name__ == "__main__":
         )
         train(config=train, force_retrain=model_env.force_retrain)
         print(
-            f"\ndone training. beginning testing...\n"
-            f"----------\n"
+            "\ndone training. beginning testing...\n"
+            "----------\n"
         )
         test(train)
         print(
-            f'done testing\n'
+            'done testing\n'
             '----------'
         )
         gc.collect()
