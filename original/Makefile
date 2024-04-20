@@ -46,7 +46,4 @@ train: dataload
 
 .PHONY: eval
 eval:
-	@echo "-----------------------------------"
-	@echo "evaluating"
-	@echo "-----------------------------------"
-	DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python results/results_to_csv.py
+	@DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python results/results_to_csv.py
