@@ -65,12 +65,10 @@ class Result:
     def add(self, y_test, y_predict, y_score):
         # C = confusion_matrix(y_test, y_predict, labels=(1, 0))
         # TP, TN, FP, FN = C[0, 0], C[1, 1], C[1, 0], C[0, 1]
-        TN, FP, FN, TP = confusion_matrix(y_test, y_predict).ravel()
+        tn, fp, fn, tp = confusion_matrix(y_test, y_predict).ravel()
 
-        print(f"TN: {TN}, FP: {FP}, FN: {FN}, TP: {TP}")
-
-        acc = accuracy_score(y_test, y_predict, zero_division=0.0)
-        sp = 1. * TN / (TN + FP) if (TN + FP) != 0 else 0
+        acc = accuracy_score(y_test, y_predict)
+        sp = 1. * tn / (tn + fp) if (tn + fp) != 0 else 0
         pr, sn, f1, _ = precision_recall_fscore_support(y_test, y_predict, zero_division=0.0)
         auc = roc_auc_score(y_test, y_score)
         auprc = average_precision_score(y_test, y_score)
