@@ -12,12 +12,30 @@ ensure-ahi: print-data-root
 	@echo "----------------------------"
 	./scripts/ensure_ahi.sh "${DATA_ROOT}" "${AHI_FILE_PATH}"
 
+.PHONY: purge-ahi
+purge-ahi:
+	@echo "--------------------"
+	@echo "Removing AHI file ${AHI_FILE_PATH}"
+	@echo "--------------------"
+	rm ${AHI_FILE_PATH}
+
 .PHONY: dataload
 dataload: ensure-ahi
 	@echo "--------------------"
 	@echo "starting dataloading"
 	@echo "--------------------"
 	./scripts/preprocess.sh ${DATA_ROOT}
+
+.PHONY: purge-dataload
+purge-dataload:
+	@echo "--------------------"
+	@echo "purging dataload and training data files"
+	@echo "--------------------"
+	# remove preprocessed data files
+	@rm -rf "${DATA_ROOT}/physionet.org/nch_30x64"
+	# remove final training data file
+	@rm -rf "${DATA_ROOT}/physionet.org/nch_30x64.npz"
+	
 
 .PHONY: train
 train: dataload
