@@ -25,3 +25,10 @@ train: dataload
 	@echo "dataloading done. starting training"
 	@echo "-----------------------------------"
 	DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python main_nch.py
+
+.PHONY: eval
+eval:
+	@echo "-----------------------------------"
+	@echo "evaluating"
+	@echo "-----------------------------------"
+	DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python results/results_to_csv.py
