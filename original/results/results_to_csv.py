@@ -1,9 +1,15 @@
 import re
 import os
 
-def get_csv_from_files(files_list):
-    signals_dict = {} # signals to statistics object {stat: (mean, stddev)}
 
+def get_csv_lines_from_files(files_list, included_stats=['F1', 'AUROC']):
+    """
+    Returns a list of csv lines from a list of files ncluding only included_stats
+    :param files_list: a list of filenames
+    :param included_stats: a list of stats that are listed in the files
+    :return: a list of csv lines
+    """
+    signals_dict = {}  # signals to statistics object {stat: (mean, stddev)}
 
     for filename in files_list:
         filename_parts = filename.split('_')
@@ -19,22 +25,34 @@ def get_csv_from_files(files_list):
                     continue
 
                 parts = line.split(' ')
-                stat = parts[0][0:-1]
-                stat_obj[stat] = (parts[1], parts[3])
+                stat, mean, _, stddev, *rest = parts
+                stat = stat[0:-1]
+
+                stat_obj[stat] = (mean, stddev)
 
         signals_dict[signals] = stat_obj
 
     csv_lines = []
     for signal, stats in signals_dict.items():
-        csv_lines.append(f"\"{signal}\",{stats['F1'][0]},{stats['F1'][1]},{stats['AUROC'][0]},{stats['AUROC'][1]}")
+        line = f"\"{signal}\""
+        for s in included_stats:
+            line += f",{stats[s][0]},{stats[s][1]}"
+        csv_lines.append(line)
 
     return csv_lines
 
-def results_files_from_path(path):
-    files =  os.listdir(path)
+
+def results_files_from_path(path=os.getcwd()):
+    """
+    Returns files that look like results files that are in path
+    :param path: a path
+    :return:
+    """
+    files = os.listdir(path)
+    # we assume that filenames start with Transformer_ for now
     return [file for file in files if len(file.split('_')) >= 3 and file.startswith('Transformer_')]
 
 
 if __name__ == '__main__':
-    file_list = results_files_from_path(os.getcwd())
-    print('\n'.join(get_csv_from_files(file_list)))
+    file_list = results_files_from_path()
+    print('\n'.join(get_csv_lines_from_files(file_list)))
