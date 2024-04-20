@@ -51,7 +51,7 @@ EXCLUDED_SIGS = ["DEMO"]
 ALLOWED_LENGTHS = [3, 4, 5]
 
 
-def all_combinations(signal_names: list[str], lengths: (list[int] | None) = None) -> list:
+def all_combinations(signal_names: list[str], lengths: (list[int] | None) = None) -> list[list[str]]:
     """
     Return all the combinations of signals from the list of signal_names where the number of signals is listed in lengths
     :param signal_names: a list of all possible signal names
@@ -59,9 +59,12 @@ def all_combinations(signal_names: list[str], lengths: (list[int] | None) = None
     combinations, [1, 2] would return all single-element combinations and all two-element combinations, and so on.
     :return:
     """
-    lengths = lengths if lengths is not None else range(1, len(signal_names) + 1)
-    all = []
-    for l in lengths:
+    reified_lengths: list[int] = (
+        lengths if lengths is not None 
+        else list(range(1, len(signal_names) + 1))
+    )
+    all: list[list[str]] = []
+    for l in reified_lengths:
         for combo in itertools.combinations(signal_names, l):
             all.append([*combo])
 
