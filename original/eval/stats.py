@@ -92,7 +92,7 @@ class StatFile:
 
 def get_raw_signals_dict(
     files_list: list[StatFile],
-) -> dict[str, dict[str, SignalStat]]:
+) -> SignalsDict:
     """
     Returns a dictionary with statistics for each channel, built from each
     of the given files.
@@ -101,7 +101,7 @@ def get_raw_signals_dict(
     :return: the statistics dictionary
     """
     # Dictionary with this structure: {signal -> {stat -> SignalStat}}
-    signals_dict: dict[str, dict[str, SignalStat]] = {}
+    raw_dict: dict[str, dict[str, SignalStat]] = {}
 
     for stat_file in files_list:
         filename = stat_file.file_name
@@ -109,9 +109,9 @@ def get_raw_signals_dict(
         _, signal, *_ = filename_parts
 
         file_stats = stats_for_file(stat_file)
-        signals_dict[signal] = file_stats
+        raw_dict[signal] = file_stats
     
-    return signals_dict
+    return SignalsDict(raw_dict)
 
 
 def stats_for_file(stat_file: StatFile) -> dict[str, SignalStat]:

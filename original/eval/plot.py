@@ -1,11 +1,10 @@
 import os
-from math import ceil
 import matplotlib.pyplot as plt
-from eval.stats import SignalStat, SignalsDict
+from eval.stats import SignalsDict
 from eval.reference_stats import get_reference_data
 
 def plot_stats(
-    signals_dict: dict[str, dict[str, SignalStat]],
+    our_dict: SignalsDict,
     plots_dir_abs: str,
 ) -> None:
     """
@@ -14,14 +13,9 @@ def plot_stats(
     to the plots directory.
     """
     ref_dict_wrapper = SignalsDict(get_reference_data())
-    our_dict_wrapper = SignalsDict(signals_dict)
     x_labels = list(ref_dict_wrapper.dict.keys())
 
-    max_y_axis = max(
-        our_dict_wrapper.max(), ref_dict_wrapper.max()
-    )
-    fig, ax = plt.subplots()
-    # ax.bar(x=x_labels, height=max_y_axis)
+    # fig, ax = plt.subplots()
 
     plt.xlabel("channel")
     plt.xticks(
@@ -45,14 +39,14 @@ def plot_stats(
 
     plt.plot(
         x_labels,
-        our_dict_wrapper.means_for_keys("F1", x_labels),
+        our_dict.means_for_keys("F1", x_labels),
         color="cyan",
         label="Our avg. F1"
     )
     
     plt.plot(
         x_labels,
-        our_dict_wrapper.means_for_keys("AUROC", x_labels),
+        our_dict.means_for_keys("AUROC", x_labels),
         color="green",
         label="Our avg. AUROC",
     )

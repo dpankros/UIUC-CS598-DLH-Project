@@ -15,7 +15,10 @@ The code in the [notebook](../Project.ipynb) should be runnable as-is, but if yo
     1. Run `python3 data/nch/dataloader.py` to aggregate the sleep studies into a single `.npz` file.
         - If you want to force this file to be recreated, run `rm $DATA_ROOT/physionet.org/nch_30x64.npz`
 1. Run `make train`
-1. If you want to run evaluations, run `make eval`
+1. If you want to run evaluations, run `make eval`. This command does two things:
+    - Prints to STDOUT a CSV with statistics describing model performance for all channel combinations for which ablations were run. Each line is structured as follows:
+    `$CHANNEL_IDENTIFIER,$F1_MEAN,$F1_STD_DEV,$AUROC_MEAN,$AUROC_STD_DEV`
+    - Renders a graph comparing the trained model's performance and the performance claimed by the paper. The graph will be available in [`original/results/plots`](./results/plots)
 
 ## Other configuration
 
