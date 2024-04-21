@@ -1,6 +1,82 @@
+from functools import lru_cache
 from results.stats import SignalStat
 
+def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
+    """
+    The paper gives stats in the form:
 
-REFERENCE_STATS: dict[str, dict[str, SignalStat]] = {
-        
-}
+    $F1_MEAN($F1_STDDEV) $AUROC_MEAN($AUROC_STDDEV)
+
+    Parse this form into a dictionary of the form:
+
+    {
+        "F1": SignalStat(mean=$F1_MEAN, std_dev=$F1_STDDEV),
+        "AUROC": SignalStat(mean=$AUROC_MEAN, std_dev=$AUROC_STDDEV)
+    }
+    """
+
+    f1_comb, auroc_comb = fmt.split(" ")
+    f1_mean, f1_std_dev = f1_comb[:-1].split("(")
+    auroc_mean, auroc_std_dev = auroc_comb[:-1].split("(")
+    return {
+        "F1": SignalStat(f1_mean, f1_std_dev),
+        "AUROC": SignalStat(auroc_mean, auroc_std_dev)
+    }
+
+_channel_combos = [
+    "EOG",
+    "EEG",
+    "ECG",
+    "RESP",
+    "SPO2",
+    "CO2",
+    "EOGEEG",
+    "EOGECG",
+    "EOGRESP",
+    "EOGSPO2",
+    "EOGCO2",
+    "EEGECG",
+    "EEGRESP",
+    "EEGSPO2",
+    "EEGCO2",
+    "ECGRESP",
+    "ECGSPO2",
+    "ECGCO2",
+    "RESPSPO2",
+    "ECGCO2",
+    "SPO2CO2",
+    "EOGEEGECGRESPSPO2CO2",
+]
+
+_stat_vals = [
+    "75.4(1.5) 79.9(1.1)",
+    "72.7(1.3) 77.5(1.0)",
+    "73.0(1.2) 80.1(0.6)",
+    "76.4(0.8) 85.3(0.7)",
+    "78.6(0.9) 87.1(0.7)",
+    "67.4(0.2) 75.9(0.8)",
+    "77.0(1.4) 81.2(1.0)",
+    "76.6(1.0) 83.4(0.8)",
+    "79.9(0.9) 87.6(0.6)",
+    "79.6(0.8) 87.8(0.6)",
+    "76.1(1.5) 83.1(1.2)",
+    "75.1(0.8) 81.1(0.8)",
+    "79.2(1.0) 86.9(1.3)",
+    "78.9(0.6) 87.4(0.6)",
+    "72.7(1.0) 79.1(0.8)",
+    "77.5(1.1) 85.7(0.9)",
+    "80.7(0.4) 88.4(0.4)",
+    "75.1(0.9) 81.9(0.6)",
+    "78.4(0.9) 87.0(0.8)",
+    "75.9(0.5) 84.7(0.7)",
+    "79.8(0.8) 87.5(0.6)",
+    "82.6(0.5) 90.4(0.4)"
+]
+
+def get_reference_data() -> dict[str, dict[str, SignalStat]]:
+    assert len(_channel_combos) == len(_stat_vals)
+    chan_dict: dict[str, dict[str, SignalStat]] = {}
+    for idx, chan in enumerate(_channel_combos):
+        chan_dict[chan] = parse_from_paper(_stat_vals[idx])
+    
+    return chan_dict

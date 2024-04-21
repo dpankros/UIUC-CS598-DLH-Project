@@ -4,13 +4,13 @@ from dataclasses import dataclass
 
 DEFAULT_INCLUDED_STATS = ["F1", "AUROC"]
 
-@dataclass
+@dataclass(frozen=True)
 class SignalStat:
     """A set of statistics for a single signal"""
     mean: str
     std_dev: str
 
-@dataclass
+@dataclass(frozen=True)
 class StatFile:
     base_dir: str
     file_name: str

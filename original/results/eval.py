@@ -1,23 +1,7 @@
 import os
-import matplotlib.pyplot as plt
-
 from config.evals import Evals
+from results.plot import plot_stats
 from results.stats import SignalStat, StatFile, DEFAULT_INCLUDED_STATS, get_raw_signals_dict
-
-
-
-def plot_stats(
-    signals_dict: dict[str, dict[str, SignalStat]],
-    plots_dir_abs: str,
-) -> None:
-    """
-    Given a signals dictionary and absolute path to a directory in which
-    to write plots, process the signals dict, generate plots, and save them
-    to the plots directory.
-    """
-    for signal, signal_dict in signals_dict.items():
-        pass
-        # print(f"signal={signal}: {signal_dict}")
 
 
 def get_csv_lines_from_files(
