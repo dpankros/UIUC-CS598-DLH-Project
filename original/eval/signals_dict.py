@@ -1,29 +1,10 @@
 from math import ceil
 from eval.stats import SignalStat
+from eval import sorted_chan_str
 
-
-INDIVIDUAL_CHANS = set([
-    "EOG",
-    "EEG",
-    "ECG",
-    "RESP",
-    "SPO2",
-    "CO2"
-])
 
 class NoChannelFoundError(Exception):
     pass
-
-def sorted_chan_str(chan_str: str) -> str:
-    consumed = 0
-    present: list[str] = []
-    for candidate in INDIVIDUAL_CHANS:
-        if candidate in chan_str:
-            consumed += len(candidate)
-            present.append(candidate)
-    assert consumed == len(chan_str)
-    return "".join(sorted(present))
-
 
 class SignalsDict:
     _vals: dict[str, dict[str, SignalStat]]

@@ -1,5 +1,6 @@
 from eval.stats import SignalStat
 from eval.signals_dict import SignalsDict
+from eval import sorted_chan_str
 
 def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
     """
@@ -83,7 +84,9 @@ def get_chan_combo_str(chan_combo: list[int]) -> str:
     for chan_id in chan_combo:
         chan_name = _channel_id_lookup[chan_id]
         chans_list.append(chan_name)
-    return "".join(chans_list)
+    
+    sorted_chans_list = sorted(chans_list)
+    return "".join(sorted_chans_list)
 
 def get_reference_data() -> SignalsDict:
     assert len(_channel_combos) == len(_stat_vals)
