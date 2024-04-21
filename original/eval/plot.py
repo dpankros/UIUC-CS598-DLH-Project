@@ -12,8 +12,8 @@ def plot_stats(
     to write plots, process the signals dict, generate plots, and save them
     to the plots directory.
     """
-    ref_dict_wrapper = SignalsDict(get_reference_data())
-    x_labels = list(ref_dict_wrapper.dict.keys())
+    ref_dict = SignalsDict(get_reference_data())
+    x_labels = list(ref_dict.dict.keys())
 
     fig, _ = plt.subplots()
     # increase bottom spacing to avoid cutting off longer channel combos
@@ -28,13 +28,13 @@ def plot_stats(
 
     plt.plot(
         x_labels,
-        ref_dict_wrapper.means_for_keys("F1", x_labels),
+        ref_dict.means_for_keys("F1", x_labels),
         color="red",
         label="Paper avg. F1"
     )
     plt.plot(
         x_labels,
-        ref_dict_wrapper.means_for_keys("AUROC", x_labels),
+        ref_dict.means_for_keys("AUROC", x_labels),
         color="black",
         label="Paper avg. AUROC"
     )
