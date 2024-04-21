@@ -15,7 +15,9 @@ def plot_stats(
     ref_dict_wrapper = SignalsDict(get_reference_data())
     x_labels = list(ref_dict_wrapper.dict.keys())
 
-    # fig, ax = plt.subplots()
+    fig, _ = plt.subplots()
+    # increase bottom spacing to avoid cutting off longer channel combos
+    fig.subplots_adjust(bottom=0.4)
 
     plt.xlabel("channel")
     plt.xticks(
