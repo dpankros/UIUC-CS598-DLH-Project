@@ -1,7 +1,7 @@
 import os
 from config.evals import Evals
-from results.plot import plot_stats
-from results.stats import SignalStat, StatFile, DEFAULT_INCLUDED_STATS, get_raw_signals_dict
+from eval.plot import plot_stats
+from eval.stats import SignalStat, StatFile, DEFAULT_INCLUDED_STATS, get_raw_signals_dict
 
 
 def get_csv_lines_from_files(

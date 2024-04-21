@@ -1,5 +1,4 @@
-from functools import lru_cache
-from results.stats import SignalStat
+from eval.stats import SignalStat
 
 def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
     """

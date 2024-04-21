@@ -46,4 +46,4 @@ train: dataload
 
 .PHONY: eval
 eval:
-	@DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org python results/eval.py
+	@DLHPROJ_DATA_ROOT=${DATA_ROOT}/physionet.org PYTHONPATH="${PWD}" python eval/main.py
