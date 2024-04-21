@@ -1,7 +1,9 @@
 import os
 from config.evals import Evals
 from eval.plot import plot_stats
-from eval.stats import SignalsDict, StatFile, DEFAULT_INCLUDED_STATS, get_raw_signals_dict
+from eval.stats import StatFile, DEFAULT_INCLUDED_STATS
+from eval.signals_dict import SignalsDict
+from eval.files import get_raw_signals_dict
 
 
 def get_csv_lines_from_files(
@@ -17,7 +19,7 @@ def get_csv_lines_from_files(
     """
 
     csv_lines: list[str] = []
-    for signal, stats in signals_dict.dict.items():
+    for signal, stats in signals_dict.items():
         line = f"\"{signal}\""
         for s in included_stats:
             line += f",{stats[s].mean},{stats[s].std_dev}"

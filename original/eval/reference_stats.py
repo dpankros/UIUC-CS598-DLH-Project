@@ -1,4 +1,5 @@
 from eval.stats import SignalStat
+from eval.signals_dict import SignalsDict
 
 def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
     """
@@ -22,7 +23,7 @@ def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
         "AUROC": SignalStat(auroc_mean, auroc_std_dev)
     }
 
-_channel_combos = [
+_channel_combo_strs = [
     "EOG",
     "EEG",
     "ECG",
@@ -40,7 +41,7 @@ _channel_combos = [
     "EEGCO2",
     "ECGRESP",
     "ECGSPO2",
-    "ECGCO2",
+    "EEGCO2",
     "RESPSPO2",
     "ECGCO2",
     "SPO2CO2",
@@ -72,10 +73,13 @@ _stat_vals = [
     "82.6(0.5) 90.4(0.4)"
 ]
 
-def get_reference_data() -> dict[str, dict[str, SignalStat]]:
-    assert len(_channel_combos) == len(_stat_vals)
+def get_reference_data() -> SignalsDict:
+    assert len(_channel_combo_strs) == len(_stat_vals)
     chan_dict: dict[str, dict[str, SignalStat]] = {}
-    for idx, chan in enumerate(_channel_combos):
-        chan_dict[chan] = parse_from_paper(_stat_vals[idx])
+    for idx, chan_combo_str in enumerate(_channel_combo_strs):
+        assert chan_combo_str not in chan_dict, (
+            f"duplicate channel combination '{chan_combo_str}' found"
+        )
+        chan_dict[chan_combo_str] = parse_from_paper(_stat_vals[idx])
     
-    return chan_dict
+    return SignalsDict(chan_dict)

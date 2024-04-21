@@ -9,11 +9,11 @@ class ModelPrefix(Enum):
     CNN_LSTM = 4
     Hybrid = 5
 
-    def to_string(self):
+    def to_string(self) -> str:
         match self:
             case ModelPrefix.Transformer:
                 return "Transformer"
-            case ModelPrefix .CNN:
+            case ModelPrefix.CNN:
                 return "cnn"
             case ModelPrefix.Sem_MSCNN:
                 return "sem-mscnn"
