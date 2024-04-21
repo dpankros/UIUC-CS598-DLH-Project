@@ -23,30 +23,35 @@ def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
         "AUROC": SignalStat(auroc_mean, auroc_std_dev)
     }
 
-_channel_combo_strs = [
-    "EOG",
-    "EEG",
-    "ECG",
-    "RESP",
-    "SPO2",
-    "CO2",
-    "EOGEEG",
-    "EOGECG",
-    "EOGRESP",
-    "EOGSPO2",
-    "EOGCO2",
-    "EEGECG",
-    "EEGRESP",
-    "EEGSPO2",
-    "EEGCO2",
-    "ECGRESP",
-    "ECGSPO2",
-    "EEGCO2",
-    "RESPSPO2",
-    "ECGCO2",
-    "SPO2CO2",
-    "EOGEEGECGRESPSPO2CO2",
+_channel_id_lookup = [
+    "EOG", "EEG", "ECG", "RESP", "SPO2", "CO2"
 ]
+
+_channel_combos = [
+    [0], 
+    [1],
+    [2],
+    [3],
+    [4],
+    [5],
+    [0, 1],
+    [0, 2],
+    [0, 3],
+    [0, 4],
+    [0, 5],
+    [1, 2],
+    [1, 3],
+    [1, 4],
+    [1, 5],
+    [2, 3],
+    [2, 4],
+    [2, 5],
+    [3, 4],
+    [3, 5],
+    [4, 5],
+    [0, 1, 2, 3, 4, 5]
+]
+
 
 _stat_vals = [
     "75.4(1.5) 79.9(1.1)",
@@ -73,10 +78,18 @@ _stat_vals = [
     "82.6(0.5) 90.4(0.4)"
 ]
 
+def get_chan_combo_str(chan_combo: list[int]) -> str:
+    chans_list: list[str] = []
+    for chan_id in chan_combo:
+        chan_name = _channel_id_lookup[chan_id]
+        chans_list.append(chan_name)
+    return "".join(chans_list)
+
 def get_reference_data() -> SignalsDict:
-    assert len(_channel_combo_strs) == len(_stat_vals)
+    assert len(_channel_combos) == len(_stat_vals)
     chan_dict: dict[str, dict[str, SignalStat]] = {}
-    for idx, chan_combo_str in enumerate(_channel_combo_strs):
+    for idx, chan_combo in enumerate(_channel_combos):
+        chan_combo_str = get_chan_combo_str(chan_combo)
         assert chan_combo_str not in chan_dict, (
             f"duplicate channel combination '{chan_combo_str}' found"
         )

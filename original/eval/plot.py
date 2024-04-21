@@ -26,7 +26,7 @@ def plot_stats(
     plt.xticks(
         ticks=range(len(x_labels)),
         labels=x_labels,
-        rotation=50,
+        rotation=90,
     )
 
     plt.plot(

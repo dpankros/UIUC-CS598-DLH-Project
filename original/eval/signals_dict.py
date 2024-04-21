@@ -14,14 +14,24 @@ INDIVIDUAL_CHANS = set([
 class NoChannelFoundError(Exception):
     pass
 
+def sorted_chan_str(chan_str: str) -> str:
+    consumed = 0
+    present: list[str] = []
+    for candidate in INDIVIDUAL_CHANS:
+        if candidate in chan_str:
+            consumed += len(candidate)
+            present.append(candidate)
+    assert consumed == len(chan_str)
+    return "".join(sorted(present))
+
 
 class SignalsDict:
     _vals: dict[str, dict[str, SignalStat]]
 
     def __init__(self, input_dict: dict[str, dict[str, SignalStat]]):
         d = {}
-        for chan, stats in input_dict.items():
-            chan_alpha = "".join(sorted(chan))
+        for chan_str, stats in input_dict.items():
+            chan_alpha = sorted_chan_str(chan_str)
             d[chan_alpha] = stats
         self._vals = d
 
