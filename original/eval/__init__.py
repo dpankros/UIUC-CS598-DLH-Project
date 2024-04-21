@@ -19,5 +19,6 @@ def sorted_chan_str(chan_str: str) -> str:
             consumed += len(candidate)
             present.append(candidate)
     assert consumed == len(chan_str)
-    return "".join(sorted(present))
+    present_sorted = sorted(present)
+    return "".join(present_sorted)
 

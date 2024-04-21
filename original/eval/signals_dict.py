@@ -59,10 +59,7 @@ class SignalsDict:
         """
         # sort each channel alphabetically, and get a new list in the same
         # order or all the alphabetically-sorted channels
-        sorted_chans = [
-            "".join(sorted(ch))
-            for ch in chans
-        ]
+        sorted_chans = [sorted_chan_str(ch) for ch in chans]
         keys = self.channels()
         ret_list: list[SignalStat] = []
         for chan in sorted_chans:
