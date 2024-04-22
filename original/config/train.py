@@ -68,9 +68,6 @@ class TrainEnv:
             channels=channels,
         )
 
-    
-
-
 def parse_train_env() -> TrainEnv:
     data_root = os.getenv("DLHPROJ_DATA_ROOT", "/mnt/e/data")
     # i.e. "./weights/semscnn_ecgspo2/f"
