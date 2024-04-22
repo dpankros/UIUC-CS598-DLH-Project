@@ -1,6 +1,6 @@
-from scipy.stats import spearmanr, pearson3
+from scipy.stats import spearmanr
 from eval import INDIVIDUAL_CHANS
-from eval.signals_dict import SignalsDict
+from eval.signals_dict import SignalsDict, list_by_len_then_alpha
 import pandas as pd
 from eval.dataframe import dataframe_from_signals
 
@@ -14,11 +14,9 @@ def rank_correlation(signals_dict: SignalsDict, statistics=['F1', 'AUROC']) -> d
     df = dataframe_from_signals(signals_dict)
 
     # Calculate correlation for each signal
-    # f = pearson3
-    f = spearmanr
-    for signal in all_signals:
+    for signal in sorted(all_signals, key=list_by_len_then_alpha):
         for stat in statistics:
-            corr, pvalue = f(df[signal], df[stat])
+            corr, pvalue = spearmanr(df[signal], df[stat])
 
             # Store results in the dictionary
             c = correlation_results.get(signal, {})
