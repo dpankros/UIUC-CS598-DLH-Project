@@ -23,6 +23,7 @@ dependencies:
   - python-dateutil~=2.8.2
   - pyright
   - pylint
+  - matplotlib
   # these two packages are not installable with conda, so install with pip
   - pip
   - pip:
