@@ -1,8 +1,8 @@
-from eval.stats import SignalStat
 from eval.signals_dict import SignalsDict
-from eval import sorted_chan_str
+from eval.stats import SignalStat
 
-def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
+
+def _parse_from_paper(fmt: str) -> dict[str, SignalStat]:
     """
     The paper gives stats in the form:
 
@@ -16,7 +16,12 @@ def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
     }
     """
 
+    # split on space to separate F1 and AUROC data
     f1_comb, auroc_comb = fmt.split(" ")
+    # for both F1 and AUROC, strip out the final ')' character, then split 
+    # on '(' to separate mean and stddev
+    # 
+    # this could be done with a simple regex, but I (Aaron) think this is simpler
     f1_mean, f1_std_dev = f1_comb[:-1].split("(")
     auroc_mean, auroc_std_dev = auroc_comb[:-1].split("(")
     return {
@@ -24,10 +29,17 @@ def parse_from_paper(fmt: str) -> dict[str, SignalStat]:
         "AUROC": SignalStat(auroc_mean, auroc_std_dev)
     }
 
+# the index in this array corresponds to the indices listed in the below
+# _channel_combos variable
 _channel_id_lookup = [
     "EOG", "EEG", "ECG", "RESP", "SPO2", "CO2"
 ]
 
+# combinations of channels as listed on page 10 of the paper. each element 
+# in this list is itself a list of indices into _channel_id_lookup
+# 
+# for example, [0, 2] would correspond to "EOG" and "ECG" (indices 0 and 2 
+# into _channel_id_lookup)
 _channel_combos = [
     [0], 
     [1],
@@ -53,7 +65,9 @@ _channel_combos = [
     [0, 1, 2, 3, 4, 5]
 ]
 
-
+# the F1 (average and stddev) and AUROC (average and stddev) values for 
+# each channel combination in _channel_combos above. this array is parallel
+# with _channel_combos
 _stat_vals = [
     "75.4(1.5) 79.9(1.1)",
     "72.7(1.3) 77.5(1.0)",
@@ -79,7 +93,7 @@ _stat_vals = [
     "82.6(0.5) 90.4(0.4)"
 ]
 
-def get_chan_combo_str(chan_combo: list[int]) -> str:
+def _get_chan_combo_str(chan_combo: list[int]) -> str:
     chans_list: list[str] = []
     for chan_id in chan_combo:
         chan_name = _channel_id_lookup[chan_id]
@@ -92,10 +106,10 @@ def get_reference_data() -> SignalsDict:
     assert len(_channel_combos) == len(_stat_vals)
     chan_dict: dict[str, dict[str, SignalStat]] = {}
     for idx, chan_combo in enumerate(_channel_combos):
-        chan_combo_str = get_chan_combo_str(chan_combo)
+        chan_combo_str = _get_chan_combo_str(chan_combo)
         assert chan_combo_str not in chan_dict, (
             f"duplicate channel combination '{chan_combo_str}' found"
         )
-        chan_dict[chan_combo_str] = parse_from_paper(_stat_vals[idx])
+        chan_dict[chan_combo_str] = _parse_from_paper(_stat_vals[idx])
     
     return SignalsDict(chan_dict)
