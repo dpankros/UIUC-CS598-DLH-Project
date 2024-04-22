@@ -1,6 +1,7 @@
 from math import ceil
 from eval.stats import SignalStat
-from eval import sorted_chan_str
+from eval import sorted_chan_str, INDIVIDUAL_CHANS
+
 
 def list_by_len_then_alpha(v: str) -> list:
     return [
