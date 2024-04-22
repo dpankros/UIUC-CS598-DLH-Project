@@ -2,6 +2,17 @@ from math import ceil
 from eval.stats import SignalStat
 from eval import sorted_chan_str
 
+def list_by_len_then_alpha(v: str) -> list:
+    return [
+        len(v),
+        v,
+    ]
+def dict_by_len_then_alpha(v: (str, dict[str, SignalStat])) -> list:
+    signal, stat = v
+    return [
+        len(signal),
+        signal
+    ]
 
 class NoChannelFoundError(Exception):
     pass
@@ -11,17 +22,23 @@ class SignalsDict:
 
     def __init__(self, input_dict: dict[str, dict[str, SignalStat]]):
         d = {}
-        for chan_str, stats in input_dict.items():
+        for chan_str, stats in sorted(input_dict.items(), key=dict_by_len_then_alpha):
             chan_alpha = sorted_chan_str(chan_str)
             d[chan_alpha] = stats
         self._vals = d
+
+    def __repr__(self):
+        return f"[SignalsDict {self._vals.__repr__()}]"
+
+    def __len__(self):
+        return len(self._vals.keys())
 
     def keyset(self) -> set[str]:
         return set(self._vals.keys())
 
     def items(self) -> list[tuple[str, dict[str, SignalStat]]]:
         return list(self._vals.items())
-    
+
     def max(self) -> int:
         """
         Given a bunch of statistics in the signals_dict, return the maximal
@@ -41,6 +58,13 @@ class SignalsDict:
         """Return all the channels in this dictionary as strings"""
         return [str(ch) for ch in self._vals.keys()]
 
+    def all_stats(self):
+        stats = set()
+        for stats_dict in self._vals.values():
+            for stat in stats_dict.keys():
+                stats.add(stat)
+        return stats
+
     def stats_for_keys(
         self,
         measure: str,
@@ -49,12 +73,12 @@ class SignalsDict:
     ) -> list[SignalStat]:
         """
         Returns a list of SignalStats for
-        each signals_dict[chan][measure], where chan is each element in 
+        each signals_dict[chan][measure], where chan is each element in
         chans. Results will be returned in the same order as specified in
         chans.
-        
-        If default is None, raises NoChannelFoundError if any channel in chans 
-        doesn't exist self. Otherwise, returns a list of means where all 
+
+        If default is None, raises NoChannelFoundError if any channel in chans
+        doesn't exist self. Otherwise, returns a list of means where all
         missing channels have value default.
         """
         # sort each channel alphabetically, and get a new list in the same
@@ -75,7 +99,7 @@ class SignalsDict:
             else:
                 ret_list.append(self._vals[chan][measure])
         return ret_list
-    
+
     def means_for_keys(
         self,
         measure: str,
@@ -86,8 +110,8 @@ class SignalsDict:
         Same as stats_for_keys except calls self.dict[chan][measure].mean_float()
         for all chan in chans.
 
-        If default is None, raises NoChannelFoundError if any channel in chans 
-        doesn't exist in self. Otherwise, returns a list of means where all 
+        If default is None, raises NoChannelFoundError if any channel in chans
+        doesn't exist in self. Otherwise, returns a list of means where all
         missing channels have value default.
         """
         reified_default = SignalStat(str(default), str(default)) if default is not None else None
@@ -96,5 +120,5 @@ class SignalsDict:
             chans=chans,
             default=reified_default
         )
-        return [signal_stat.mean_float() for signal_stat in signal_stats]    
+        return [signal_stat.mean_float() for signal_stat in signal_stats]
 
