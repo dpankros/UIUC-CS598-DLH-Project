@@ -1,6 +1,11 @@
 import os
 from dataclasses import dataclass
 from enum import Enum
+import sys
+
+# this file uses syntax that requires python version 3.10 or higher
+assert sys.version_info >= (3, 10), "Python 3.10 or higher is required"
+
 
 class ModelPrefix(Enum):
     Transformer = 1
@@ -25,18 +30,18 @@ class ModelPrefix(Enum):
 
 @dataclass
 class TrainConfig:
-    data_path: str #": f"{model_env.data_root}/nch_30x64.npz",
-    model_path: str | None # f"{model_env.model_path}" if model_env.model_path is not None else None,
-    model_dir: str # f"{model_env.model_dir}",
+    data_path: str  # ": f"{model_env.data_root}/nch_30x64.npz",
+    model_path: str | None  # f"{model_env.model_path}" if model_env.model_path is not None else None,
+    model_dir: str  # f"{model_env.model_dir}",
     # "model_name": "sem-mscnn_" + chstr,  # Must be one of: "Transformer", "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
-    model_name: str # "model_name": "Transformer_" + chstr,
+    model_name: str  # "model_name": "Transformer_" + chstr,
     # Must be one of: Transformer: "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
-    epochs: int # model_env.n_epochs,  # best 200
-    channels: list[float] #"channels": chs,
+    epochs: int  # model_env.n_epochs,  # best 200
+    channels: list[float]  # "channels": chs,
 
     regression: bool = False
     transformer_layers: int = 5
-    transformer_layers: int= 5  # best 5
+    transformer_layers: int = 5  # best 5
     drop_out_rate: float = 0.25  # best 0.25
     num_patches: int = 30  # best 30 TBD
     transformer_units: int = 32  # best 32
@@ -53,11 +58,11 @@ class TrainEnv:
     force_retrain: bool
 
     def to_train_config(
-        self,
-        # Must be one of: Transformer: "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
-        model_prefix: ModelPrefix,
-        chan_str: str,
-        channels: list[float],
+            self,
+            # Must be one of: Transformer: "cnn", "sem-mscnn", "cnn-lstm", "hybrid"
+            model_prefix: ModelPrefix,
+            chan_str: str,
+            channels: list[float],
     ) -> TrainConfig:
         return TrainConfig(
             data_path=f"{self.data_root}/nch_30x64.npz",
@@ -67,6 +72,7 @@ class TrainEnv:
             epochs=self.n_epochs,
             channels=channels,
         )
+
 
 def parse_train_env() -> TrainEnv:
     data_root = os.getenv("DLHPROJ_DATA_ROOT", "/mnt/e/data")

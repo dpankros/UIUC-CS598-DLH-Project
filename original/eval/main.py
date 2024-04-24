@@ -34,6 +34,7 @@ if __name__ == '__main__':
     file_list = [
         StatFile(base_dir=root_dir, file_name=fname)
         for fname in evals_cfg.result_filenames()
+        if "_200-" in fname
     ]
     signals_dict = get_raw_signals_dict(
         file_list,
