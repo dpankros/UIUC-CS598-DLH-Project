@@ -1,6 +1,5 @@
 import gc
 import itertools
-
 from test import test
 from config.train import ModelPrefix, parse_train_env
 from train import train
@@ -59,7 +58,7 @@ def all_combinations(signal_names: list[str], lengths: (list[int] | None) = None
     :return:
     """
     reified_lengths: list[int] = (
-        lengths if lengths is not None 
+        lengths if lengths is not None
         else list(range(1, len(signal_names) + 1))
     )
     all: list[list[str]] = []
@@ -96,8 +95,8 @@ if __name__ == "__main__":
         for name in ch:
             chstr += name
             chs = chs + sig_dict[name]
-        
-        train = model_env.to_train_config(
+
+        config = model_env.to_train_config(
             ModelPrefix.Transformer,
             chstr,
             chs,
@@ -105,15 +104,15 @@ if __name__ == "__main__":
 
         print(
             f"---{n + 1} of {len(channel_list)}----\n"
-            f"model_name={model_env.model_path if model_env.model_path else get_model_name(train)}\n"
+            f"model_name={model_env.model_path if model_env.model_path else get_model_name(config)}\n"
             f"training channel {chstr}..."
         )
-        train(config=train, force_retrain=model_env.force_retrain)
+        train(config=config, force_retrain=model_env.force_retrain)
         print(
             "\ndone training. beginning testing...\n"
             "----------\n"
         )
-        test(train)
+        test(config)
         print(
             'done testing\n'
             '----------'
