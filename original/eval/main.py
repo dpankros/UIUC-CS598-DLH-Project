@@ -45,8 +45,8 @@ if __name__ == '__main__':
 
     plot_heatmap(correlation_results, plots_dir, title="Correlation of Signal to Statistic", filename="correlation_hm.png")
     plot_heatmap(p_value_results, plots_dir, title="P-Value of Signal to Statistic", filename="p_value_hm.png")
-    plot_stats([get_reference_data(), signals_dict], ["Paper avg.", "Our avg."], plots_dir)
-    plot_stats(signals_dict, None, plots_dir, statistics=['F1', 'AUROC'], filename="all_ablations.png", size=(14, 5))
+    plot_stats([get_reference_data(), signals_dict], ["Paper avg.", "Our avg."], plots_dir, colors=["royalblue", "darkblue", "coral", "darkred"])
+    plot_stats(signals_dict, None, plots_dir, statistics=['F1', 'AUROC'], filename="all_ablations.png", size=(14, 5), colors=["coral", "darkred"])
 
     csv_lines = get_csv_lines_from_files(signals_dict)
     print('\n'.join(csv_lines))
