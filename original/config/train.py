@@ -48,6 +48,8 @@ class TrainConfig:
     regularization_weight: float = 0.001  # best 0.001
     num_heads: int = 4
 
+    def __getitem__(self, item):
+        return getattr(self, item, None)
 
 @dataclass
 class TrainEnv:

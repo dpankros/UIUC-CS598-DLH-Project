@@ -47,7 +47,7 @@ def test(config: dict[str, str], fold=None):
         model_path = os.path.join(config["model_dir"], model_name)
     for fold in folds:
         x_test = x[fold]
-        if config.get("test_noise_snr"):
+        if config["test_noise_snr"]:
             x_test = add_noise_to_data(x_test, config["test_noise_snr"])
 
         y_test = y[
@@ -102,7 +102,7 @@ def test_age_seperated(config):
 
     for fold in range(10):
         x_test = x[fold]
-        if config.get("test_noise_snr"):
+        if config["test_noise_snr"]:
             x_test = add_noise_to_data(x_test, config["test_noise_snr"])
 
         y_test = y[

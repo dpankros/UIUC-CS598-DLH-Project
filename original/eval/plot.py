@@ -47,12 +47,14 @@ def plot_stats(
         labels=x_labels,
         rotation=90,
     )
+
     for d_ndx, d in enumerate(data):
         for s_ndx, s in enumerate(statistics):
+            color_ndx = ((d_ndx * len(statistics)) + s_ndx) % len(colors)
             plt.plot(
                 x_labels_strs,
                 d.means_for_keys(s, x_labels),
-                color=colors[(d_ndx * len(d) + s_ndx) % len(colors)],
+                color=colors[color_ndx],
                 label=' '.join([data_prefixes[d_ndx], s])
             )
 
