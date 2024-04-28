@@ -40,3 +40,4 @@ The following is the prompt for this video:
 - Built evaluation code, including visualization/graphing logic
 - Did significantly more ablations than what was included
 - Did deeper statistical analyses on the results of our extensive ablation suite
+- Finally translated our on-filesystem code to the notebook (i.e. linearize dependencies, etc...)
