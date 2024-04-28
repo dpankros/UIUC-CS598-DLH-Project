@@ -6,7 +6,11 @@ Aaron Schlesinger and Dave Pankros
 - The paper we're implementing is [here](https://static1.squarespace.com/static/59d5ac1780bd5ef9c396eda6/t/64d1b55f6760773810429929/1691465055738/ID203_Research+Paper_2023.pdf)
 - The original codebase for the paper is [here](https://github.com/healthylaife/Pediatric-Apnea-Detection)
 
->NOTE: This repository is publicly available as per the project's requirements. If you are a student enrolled in CS 598 - DLH, you are not permitted to utilize any content from this repository for your own project. We do not accept responsibility for any breaches of academic integrity that may occur if other students copy the materials contained herein.
+If you'd like to run the code herein, please see [`original/HOW_TO_RUN.md`](./original/HOW_TO_RUN.md)
+
+## Notes About Academic Integrity
+
+Per this project's requirements, we have made this repository publicly available. If you are a student enrolled in CS 598 - Deep Learning for Healthcare (any semester), you are not permitted to utilize any part of this repository for your own project. We do not accept responsibility for any breaches of academic integrity that may occur if other students copy the materials contained herein.
 
 ## Notes about data
 
@@ -20,5 +24,5 @@ This repository contains [pre-trained model weights](./original/weights), which 
 
 ## Original code
 
-Much of the code in this repository is derived from the original [open source research code](https://github.com/healthylaife/Pediatric-Apnea-Detection). When we downloaded the research code, it had many serious issues and could not be run. We spent a lot of time and energy to clean it up and get it running properly. We aim in this repsotory to make the code both in the [notebook](./Project.ipynb) and in the [`original/` directory](./original/) (the location to which we originally downloaded the research code) easily runnable. Please see [`./original/HOW_TO_RUN.md`](./original/HOW_TO_RUN.md) for instructions on how to run the code in that directory.
+Much of the code in this repository is derived from the original [open source research code](https://github.com/healthylaife/Pediatric-Apnea-Detection). When we downloaded the research code, it had many serious issues and could not be run. We spent a lot of time and energy to clean it up and get it running properly. We aim in this repsotory to make the code both in the [notebook](./Project.ipynb) and in the [`original/` directory](./original/) (the location to which we originally downloaded the research code) easily runnable. [`./original/HOW_TO_RUN.md`](./original/HOW_TO_RUN.md) contains instructions on how to run the code in the `original/` directory.
 
