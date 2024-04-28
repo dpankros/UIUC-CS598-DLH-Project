@@ -9,6 +9,7 @@ The following is the prompt for this video:
 * Explain the general problem clearly
 * Explain the specific approach taken in the paper clearly
 * Explain reproduction attempts clearly
+---
 
 ## Outline
 
