@@ -15,12 +15,11 @@ from folds import concat_all_folds
 THRESHOLD = 1
 FOLD = 5
 
+
 def lr_schedule(epoch, lr):
     if epoch > 50 and (epoch - 1) % 5 == 0:
         lr *= 0.5
     return lr
-
-
 
 
 def train(
@@ -89,7 +88,6 @@ def train(
         model_name = get_model_name(config)
         model_dir = config["model_dir"]
         base_model_path = os.path.join(model_dir, model_name)
-
 
     folds = range(FOLD) if fold is None else [fold]
     print(f'iterating over {folds} fold(s)')

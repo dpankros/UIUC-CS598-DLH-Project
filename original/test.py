@@ -40,10 +40,10 @@ def test(config: dict[str, str], fold=None):
     result = Result()
     folds = range(FOLD) if fold is None else [fold]
 
+    model_name = get_model_name(config)
     if config["model_path"]:
         model_path = config["model_path"]
     else:
-        model_name = get_model_name(config)
         model_path = os.path.join(config["model_dir"], model_name)
     for fold in folds:
         x_test = x[fold]
