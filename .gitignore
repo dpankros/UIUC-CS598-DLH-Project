@@ -172,3 +172,5 @@ age_file.csv
 
 /.idea
 .envrc.secrets
+
+.DS_Store

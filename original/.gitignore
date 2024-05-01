@@ -1,3 +1,6 @@
 log.txt
 AHI.csv
 /.envrc
+
+# ignore weights generated from the notebook
+weights/*_NOTEBOOK_*
